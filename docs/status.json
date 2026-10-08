@@ -1,0 +1,35 @@
+{
+  "uptime": "15m",
+  "goroutines": 8,
+  "ramAllocMB": 1.15,
+  "ramSysMB": 13.10,
+  "accounts": [
+    {
+      "id": "kbelludoo",
+      "name": "kbelludoo",
+      "vocation": "KNIGHT",
+      "level": 24,
+      "hp": 425,
+      "maxHp": 425,
+      "mana": 115,
+      "maxMana": 115,
+      "gold": 21,
+      "xp": "194003",
+      "status": "hunting",
+      "currentHunt": "Crocodiles Port Hope",
+      "kills": 91,
+      "expPerHour": 9570,
+      "goldPerHour": 1200,
+      "durationSec": 900,
+      "updatedAt": 1791419900000,
+      "recentLogs": [
+        "Bot iniciado para ID: kbelludoo",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Ticket de jogo validado com sucesso!",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Iniciando caçada (Crocodiles Port Hope)...",
+        "Auto-Sell: vendendo itens de loot..."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tibidle Bot — Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0c0f17; color: #e1e7f0; padding: 20px; }
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f293d; padding-bottom: 15px; margin-bottom: 20px; }
+    .title { font-size: 22px; font-weight: bold; color: #f59e0b; display: flex; align-items: center; gap: 8px; }
+    .badge { font-size: 12px; background: #1e293b; color: #10b981; padding: 4px 10px; border-radius: 9999px; font-weight: bold; }
+    .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 25px; }
+    .stat-card { background: #131a2a; border: 1px solid #1f293d; border-radius: 8px; padding: 15px; }
+    .stat-val { font-size: 20px; font-weight: bold; color: #38bdf8; margin-top: 5px; }
+    .stat-label { font-size: 12px; color: #94a3b8; text-transform: uppercase; }
+    .acc-card { background: #131a2a; border: 1px solid #243048; border-radius: 10px; padding: 20px; margin-bottom: 20px; }
+    .acc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+    .acc-name { font-size: 18px; font-weight: bold; color: #f8fafc; }
+    .acc-status { font-size: 13px; font-weight: bold; padding: 3px 10px; border-radius: 6px; }
+    .status-hunting { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .status-idle { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .bar-container { margin-bottom: 10px; }
+    .bar-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px; color: #cbd5e1; }
+    .bar-track { background: #1e293b; height: 12px; border-radius: 6px; overflow: hidden; }
+    .bar-fill-hp { background: linear-gradient(90deg, #ef4444, #dc2626); height: 100%; transition: width 0.3s; }
+    .bar-fill-mana { background: linear-gradient(90deg, #3b82f6, #2563eb); height: 100%; transition: width 0.3s; }
+    .grid-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 15px; }
+    .info-item { background: #0f172a; padding: 10px; border-radius: 6px; text-align: center; }
+    .info-val { font-size: 15px; font-weight: bold; color: #fbbf24; }
+    .info-label { font-size: 11px; color: #64748b; }
+    .logs { background: #0a0d14; border: 1px solid #1e293b; border-radius: 6px; padding: 10px; font-family: monospace; font-size: 12px; color: #94a3b8; max-height: 120px; overflow-y: auto; margin-top: 15px; }
+    .log-line { margin-bottom: 3px; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">⚔ Tibidle Headless Bot <span class="badge">Nativo em Go</span></div>
+    <div id="uptime" style="font-size: 13px; color: #94a3b8;">Uptime: ...</div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-label">RAM Alocada</div>
+      <div class="stat-val" id="ramAlloc">... MB</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">RAM Sistema</div>
+      <div class="stat-val" id="ramSys">... MB</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Goroutines Ativas</div>
+      <div class="stat-val" id="goroutines">...</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total de Contas</div>
+      <div class="stat-val" id="totalAccs">...</div>
+    </div>
+  </div>
+
+  <div class="stat-card" style="margin-bottom: 20px;">
+    <div style="font-size: 12px; color: #94a3b8; text-transform: uppercase; margin-bottom: 8px;">Conectar com Ticket Manual / Push</div>
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <input type="text" id="ticketInput" placeholder="Cole aqui um Ticket de Jogo (FRESH_TICKET) se necessário..." style="flex: 1; min-width: 280px; padding: 10px 14px; background: #0a0d14; border: 1px solid #1f293d; border-radius: 6px; color: #fff; font-family: monospace; font-size: 13px;">
+      <button onclick="submitTicket()" style="padding: 10px 20px; background: #f59e0b; color: #000; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s;">Conectar com Ticket</button>
+      <span id="ticketStatus" style="font-size: 13px; font-weight: bold;"></span>
+    </div>
+  </div>
+
+  <div id="accounts-container">Carregando dados do bot...</div>
+
+  <script>
+    async function update() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+
+        document.getElementById('uptime').innerText = 'Uptime: ' + data.uptime;
+        document.getElementById('ramAlloc').innerText = data.ramAllocMB.toFixed(2) + ' MB';
+        document.getElementById('ramSys').innerText = data.ramSysMB.toFixed(2) + ' MB';
+        document.getElementById('goroutines').innerText = data.goroutines;
+        document.getElementById('totalAccs').innerText = (data.accounts || []).length;
+
+        const container = document.getElementById('accounts-container');
+        if (!data.accounts || data.accounts.length === 0) {
+          container.innerHTML = '<div style="color: #64748b;">Nenhuma conta conectada no momento.</div>';
+          return;
+        }
+
+        container.innerHTML = data.accounts.map(a => {
+          const hpPct = a.maxHp > 0 ? Math.min(100, Math.round((a.hp / a.maxHp) * 100)) : 0;
+          const manaPct = a.maxMana > 0 ? Math.min(100, Math.round((a.mana / a.maxMana) * 100)) : 0;
+          const statusClass = a.status === 'hunting' ? 'status-hunting' : 'status-idle';
+
+          return `
+            <div class="acc-card">
+              <div class="acc-head">
+                <div>
+                  <span class="acc-name">${a.name || a.id}</span>
+                  <span style="font-size: 13px; color: #94a3b8; margin-left: 8px;">Lv. ${a.level || 1} ${a.vocation || ''}</span>
+                </div>
+                <div class="acc-status ${statusClass}">${a.status}</div>
+              </div>
+
+              <div class="bar-container">
+                <div class="bar-label"><span>Vida (HP)</span><span>${a.hp || 0} / ${a.maxHp || 0} (${hpPct}%)</span></div>
+                <div class="bar-track"><div class="bar-fill-hp" style="width: ${hpPct}%;"></div></div>
+              </div>
+
+              <div class="bar-container">
+                <div class="bar-label"><span>Mana</span><span>${a.mana || 0} / ${a.maxMana || 0} (${manaPct}%)</span></div>
+                <div class="bar-track"><div class="bar-fill-mana" style="width: ${manaPct}%;"></div></div>
+              </div>
+
+              <div class="grid-info">
+                <div class="info-item"><div class="info-val">${a.currentHunt || '—'}</div><div class="info-label">Caçada Atual</div></div>
+                <div class="info-item"><div class="info-val">${a.gold ? a.gold.toLocaleString() + ' gp' : '0 gp'}</div><div class="info-label">Ouro</div></div>
+                <div class="info-item"><div class="info-val">${a.kills || 0}</div><div class="info-label">Abates (Kills)</div></div>
+                <div class="info-item"><div class="info-val">${a.expPerHour ? Math.round(a.expPerHour).toLocaleString() + '/h' : '—'}</div><div class="info-label">EXP/Hora</div></div>
+              </div>
+
+              ${a.recentLogs && a.recentLogs.length > 0 ? `
+                <div class="logs">
+                  ${a.recentLogs.map(l => '<div class="log-line">▸ ' + l + '</div>').join('')}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function submitTicket() {
+      const input = document.getElementById('ticketInput');
+      const statusEl = document.getElementById('ticketStatus');
+      const ticket = (input.value || '').trim();
+      if (!ticket) return;
+      statusEl.style.color = '#fbbf24';
+      statusEl.innerText = 'Enviando...';
+      try {
+        const res = await fetch('/api/ticket', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ticket: ticket })
+        });
+        const d = await res.json();
+        if (res.ok && d.ok) {
+          statusEl.style.color = '#34d399';
+          statusEl.innerText = '✔ Conectado!';
+          input.value = '';
+          setTimeout(() => { statusEl.innerText = ''; update(); }, 2000);
+        } else {
+          statusEl.style.color = '#ef4444';
+          statusEl.innerText = '✘ ' + (d.error || 'Erro ao enviar');
+        }
+      } catch (err) {
+        statusEl.style.color = '#ef4444';
+        statusEl.innerText = '✘ Erro de conexão';
+      }
+    }
+
+    update();
+    setInterval(update, 2000);
+  </script>
+</body>
+</html>

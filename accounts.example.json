@@ -1,0 +1,14 @@
+[
+  {
+    "id": "char-1",
+    "email": "seu-email@gmail.com",
+    "password": "sua-senha",
+    "sessionCookie": "did=...; sid=...",
+    "huntName": "Desert Quest",
+    "huntId": 194,
+    "lure": 1,
+    "autoSell": true,
+    "autoBlessings": true,
+    "autoDaily": true
+  }
+]

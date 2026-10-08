@@ -1,0 +1,25 @@
+{
+  "id": "kbelludoo",
+  "name": "kbelludoo",
+  "vocation": "KNIGHT",
+  "level": 24,
+  "hp": 391,
+  "maxHp": 425,
+  "mana": 19,
+  "maxMana": 115,
+  "gold": 21,
+  "xp": "193855",
+  "status": "hunting",
+  "currentHunt": "Desert Quest",
+  "kills": 677,
+  "expPerHour": 10592,
+  "goldPerHour": 0,
+  "durationSec": 3786,
+  "updatedAt": 1791416595561,
+  "recentLogs": [
+    "Bot iniciado para ID: kbelludoo",
+    "Conectado como kbelludoo (kbelludoo@gmail.com)",
+    "Conexão WebSocket estabelecida com sucesso!",
+    "Auto-Sell: vendendo 14 itens de loot..."
+  ]
+}

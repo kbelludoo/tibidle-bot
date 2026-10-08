@@ -1,0 +1,24 @@
+# Binaries and executables
+tibidle-bot
+tibidle-bot-linux
+tibidle-bot.exe
+*.exe
+*.tar.gz
+*.deb
+
+# Secrets & Sessions
+accounts.json
+session.json
+*.key
+*.pem
+
+# Logs & temp files
+*.log
+tmp/
+temp/
+Tibidle_files/
+Tibidle.html
+
+# OS artifacts
+.DS_Store
+Thumbs.db
