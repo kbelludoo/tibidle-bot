@@ -41,13 +41,17 @@ func main() {
 	}
 
 	log.Println("[TicketGenerator] Abrindo navegador local para resolver desafio e obter ticket...")
-	ticket, err := auth.FetchTicketViaBrowser(cookies)
+	res, err := auth.FetchTicketViaBrowser(cookies)
 	if err != nil {
 		log.Fatalf("Erro ao capturar ticket: %v", err)
 	}
 
+	ticket := res.Ticket
+	wsURL := res.WSURL
+
 	fmt.Println("\n================================================================================")
 	fmt.Printf("FRESH_TICKET:%s\n", ticket)
+	fmt.Printf("WS_URL:%s\n", wsURL)
 	fmt.Println("================================================================================")
 
 	if *noPush {
@@ -61,6 +65,7 @@ func main() {
 
 		payload, _ := json.Marshal(map[string]string{
 			"ticket": ticket,
+			"wsUrl":  wsURL,
 		})
 		client := &http.Client{Timeout: 10 * time.Second}
 		resp, err := client.Post(target, "application/json", bytes.NewReader(payload))
@@ -79,7 +84,7 @@ func main() {
 	// 2. Enviar via SSH direto para a VPS
 	if *sshTarget != "" {
 		log.Printf("[TicketGenerator] Enviando ticket com segurança via SSH para %s ...", *sshTarget)
-		remoteCmd := fmt.Sprintf(`curl -s -X POST http://127.0.0.1:3001/api/ticket -H 'Content-Type: application/json' -d '{"ticket":"%s"}'`, ticket)
+		remoteCmd := fmt.Sprintf(`curl -s -X POST http://127.0.0.1:3001/api/ticket -H 'Content-Type: application/json' -d '{"ticket":"%s","wsUrl":"%s"}'`, ticket, wsURL)
 
 		var cmd *exec.Cmd
 		if *sshKey != "" {

@@ -16,7 +16,7 @@ var indexHTML []byte
 
 type BotController interface {
 	GetAllStatuses() []bot.AccountStatus
-	SupplyTicket(accountID, ticket string) error
+	SupplyTicket(accountID, ticket, wsURL string) error
 }
 
 type Server struct {
@@ -70,6 +70,7 @@ func (s *Server) handleAPITicket(w http.ResponseWriter, r *http.Request) {
 	var body struct {
 		AccountID string `json:"accountId"`
 		Ticket    string `json:"ticket"`
+		WSURL     string `json:"wsUrl"`
 	}
 	if err := json.NewDecoder(r.Body).Decode(&body); err != nil || body.Ticket == "" {
 		w.WriteHeader(http.StatusBadRequest)
@@ -77,7 +78,7 @@ func (s *Server) handleAPITicket(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := s.controller.SupplyTicket(body.AccountID, body.Ticket); err != nil {
+	if err := s.controller.SupplyTicket(body.AccountID, body.Ticket, body.WSURL); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		_ = json.NewEncoder(w).Encode(map[string]any{"ok": false, "error": err.Error()})
 		return

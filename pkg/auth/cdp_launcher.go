@@ -77,10 +77,10 @@ func FindBrowserExecutable() string {
 
 // FetchTicketViaBrowser launches a browser for ~4 seconds, extracts a live WebSocket ticket,
 // and terminates the browser immediately to keep VPS memory footprint minimal (~15MB RAM).
-func FetchTicketViaBrowser(cookieString string) (string, error) {
+func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	browserPath := FindBrowserExecutable()
 	if browserPath == "" {
-		return "", fmt.Errorf("no browser executable found (install chromium or google-chrome)")
+		return nil, fmt.Errorf("no browser executable found (install chromium or google-chrome)")
 	}
 
 	tempDir := filepath.Join(os.TempDir(), fmt.Sprintf("tibidle-auth-%d", time.Now().UnixNano()))
@@ -115,7 +115,7 @@ func FetchTicketViaBrowser(cookieString string) (string, error) {
 
 	cmd := exec.Command(browserPath, args...)
 	if err := cmd.Start(); err != nil {
-		return "", fmt.Errorf("failed to start auth browser (%s): %w", browserPath, err)
+		return nil, fmt.Errorf("failed to start auth browser (%s): %w", browserPath, err)
 	}
 
 	// Always ensure the browser process is killed when this function returns
@@ -159,12 +159,12 @@ func FetchTicketViaBrowser(cookieString string) (string, error) {
 	}
 
 	if wsURL == "" {
-		return "", fmt.Errorf("could not connect to browser CDP (%s) within timeout", browserPath)
+		return nil, fmt.Errorf("could not connect to browser CDP (%s) within timeout", browserPath)
 	}
 
 	conn, _, err := websocket.DefaultDialer.Dial(wsURL, nil)
 	if err != nil {
-		return "", fmt.Errorf("failed to dial CDP websocket: %w", err)
+		return nil, fmt.Errorf("failed to dial CDP websocket: %w", err)
 	}
 	defer conn.Close()
 
@@ -261,7 +261,7 @@ func FetchTicketViaBrowser(cookieString string) (string, error) {
 		"url": "https://play.tibidle.com/",
 	})
 
-	ticketChan := make(chan string, 1)
+	ticketChan := make(chan TicketResult, 1)
 
 	go func() {
 		for {
@@ -293,7 +293,7 @@ func FetchTicketViaBrowser(cookieString string) (string, error) {
 						jsonPayload := strings.TrimPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:")
 						var res TicketResult
 						if err := json.Unmarshal([]byte(jsonPayload), &res); err == nil && res.Ticket != "" {
-							ticketChan <- res.Ticket
+							ticketChan <- res
 							return
 						}
 					}
@@ -303,10 +303,10 @@ func FetchTicketViaBrowser(cookieString string) (string, error) {
 	}()
 
 	select {
-	case ticket := <-ticketChan:
-		log.Println("[AuthHelper] Fresh, UNUSED game ticket captured! Shutting down browser.")
-		return ticket, nil
+	case res := <-ticketChan:
+		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
+		return &res, nil
 	case <-time.After(45 * time.Second):
-		return "", fmt.Errorf("ticket capture timed out after 45s")
+		return nil, fmt.Errorf("ticket capture timed out after 45s")
 	}
 }

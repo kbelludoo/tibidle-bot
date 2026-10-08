@@ -117,12 +117,16 @@ func (s *SessionClient) GetGameTicket(cookies string, sessionProof string) (stri
 	}
 
 	// 2. If captcha or browser challenge is required, use lightweight CDP helper
-	ticket, err = auth.FetchTicketViaBrowser(cookies)
+	res, err := auth.FetchTicketViaBrowser(cookies)
 	if err != nil {
 		return "", "", fmt.Errorf("failed to obtain ticket: %w", err)
 	}
 
-	return ticket, "wss://play.tibidle.com/", nil
+	wsURL = res.WSURL
+	if wsURL == "" {
+		wsURL = "wss://play.tibidle.com/"
+	}
+	return res.Ticket, wsURL, nil
 }
 
 func (s *SessionClient) tryDirectTicket(cookies string, sessionProof string) (string, string, error) {

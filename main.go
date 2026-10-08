@@ -29,19 +29,19 @@ func (m *BotManager) GetAllStatuses() []bot.AccountStatus {
 	return list
 }
 
-func (m *BotManager) SupplyTicket(accountID, ticket string) error {
+func (m *BotManager) SupplyTicket(accountID, ticket, wsURL string) error {
 	if len(m.bots) == 0 {
 		return fmt.Errorf("nenhum bot ativo no momento")
 	}
 	for _, b := range m.bots {
 		st := b.GetStatus()
 		if accountID == "" || st.ID == accountID || st.Name == accountID {
-			b.SupplyTicket(ticket)
+			b.SupplyTicket(ticket, wsURL)
 			return nil
 		}
 	}
 	// Se não achou por ID/Nome específico, entrega ao primeiro bot
-	m.bots[0].SupplyTicket(ticket)
+	m.bots[0].SupplyTicket(ticket, wsURL)
 	return nil
 }
 

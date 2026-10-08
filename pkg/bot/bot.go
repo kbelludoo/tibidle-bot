@@ -2,17 +2,24 @@ package bot
 
 import (
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 	"sync"
 	"time"
 
 	"tibidle-bot/pkg/client"
 	"tibidle-bot/pkg/protocol"
 )
+
+type TicketSubmission struct {
+	Ticket string
+	WSURL  string
+}
 
 type Bot struct {
 	config AccountConfig
@@ -22,13 +29,39 @@ type Bot struct {
 	socket        *client.SocketClient
 
 	mu               sync.Mutex
-	ticketChan       chan string
+	ticketChan       chan TicketSubmission
 	currentHuntID    int
 	isHunting        bool
 	lastActionTime   time.Time
 	lastDailyCheck   time.Time
 	lastBlessingBuy  time.Time
 	lastSellTime     time.Time
+}
+
+func ResolveWSURL(ticket string, providedWSURL string) string {
+	if providedWSURL != "" {
+		return providedWSURL
+	}
+	parts := strings.Split(ticket, ".")
+	if len(parts) >= 2 {
+		seg := parts[1]
+		if l := len(seg)%4; l > 0 {
+			seg += strings.Repeat("=", 4-l)
+		}
+		payloadBytes, err := base64.URLEncoding.DecodeString(seg)
+		if err == nil {
+			var claims struct {
+				Chn string `json:"chn"`
+			}
+			if err := json.Unmarshal(payloadBytes, &claims); err == nil && claims.Chn != "" {
+				chnNum := strings.TrimPrefix(claims.Chn, "c")
+				if chnNum != "" && chnNum != "1" {
+					return fmt.Sprintf("wss://play%s.tibidle.com/", chnNum)
+				}
+			}
+		}
+	}
+	return "wss://play.tibidle.com/"
 }
 
 func NewBot(cfg AccountConfig) *Bot {
@@ -53,18 +86,21 @@ func NewBot(cfg AccountConfig) *Bot {
 		config:        cfg,
 		status:        NewSafeStatus(cfg.ID),
 		sessionClient: client.NewSessionClient(),
-		ticketChan:    make(chan string, 10),
+		ticketChan:    make(chan TicketSubmission, 10),
 		currentHuntID: huntID,
 	}
 }
 
-func (b *Bot) SupplyTicket(ticket string) {
+func (b *Bot) SupplyTicket(ticket, wsURL string) {
+	if wsURL == "" {
+		wsURL = ResolveWSURL(ticket, "")
+	}
 	b.mu.Lock()
 	b.config.Ticket = ticket
 	b.mu.Unlock()
-	b.status.AddLog("Ticket recebido externamente! Conectando...")
+	b.status.AddLog(fmt.Sprintf("Ticket recebido externamente (WS: %s)! Conectando...", wsURL))
 	select {
-	case b.ticketChan <- ticket:
+	case b.ticketChan <- TicketSubmission{Ticket: ticket, WSURL: wsURL}:
 	default:
 	}
 }
@@ -138,7 +174,7 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 	b.mu.Lock()
 	ticket := b.config.Ticket
 	b.mu.Unlock()
-	wsURL := "wss://play.tibidle.com/"
+	wsURL := ""
 
 	if ticket == "" {
 		var err error
@@ -152,8 +188,9 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 			select {
 			case <-ctx.Done():
 				return ctx.Err()
-			case t := <-b.ticketChan:
-				ticket = t
+			case sub := <-b.ticketChan:
+				ticket = sub.Ticket
+				wsURL = sub.WSURL
 			case <-time.After(30 * time.Second):
 				return fmt.Errorf("aguardando ticket: %w", err)
 			}
@@ -165,9 +202,7 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 	b.config.Ticket = ""
 	b.mu.Unlock()
 
-	if wsURL == "" {
-		wsURL = "wss://play.tibidle.com/"
-	}
+	wsURL = ResolveWSURL(ticket, wsURL)
 
 	b.status.Update(func(st *AccountStatus) {
 		st.Status = "Conectando ao WebSocket..."
@@ -201,8 +236,7 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 	actionTicker := time.NewTicker(3 * time.Second)
 	defer actionTicker.Stop()
 
-	// Pedir snapshot inicial
-	_ = sock.Send("party_get_snapshot", map[string]any{})
+	// Pedir status de eventos inicial
 	_ = sock.Send("eventos_get", map[string]any{"requestId": fmt.Sprintf("req-%d", time.Now().UnixNano())})
 
 	for {
@@ -220,6 +254,9 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 }
 
 func (b *Bot) handleMessage(msg protocol.InboundMessage) {
+	if msg.Type != "frame" && msg.Type != "keepalive" {
+		log.Printf("[%s] INBOUND: type=%s data=%s", b.config.ID, msg.Type, string(msg.Data))
+	}
 	switch msg.Type {
 	case "frame":
 		var fp protocol.FramePayload
@@ -297,9 +334,29 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			st.UpdatedAt = time.Now().UnixMilli()
 		})
 
-	case "eventos_state", "eventos_result":
-		// Resposta de eventos diários
-		b.claimDailyEvents()
+	case "error":
+		var errData struct {
+			Code   string `json:"code"`
+			Key    string `json:"key"`
+			Params struct {
+				Min   int `json:"min"`
+				Nivel int `json:"nivel"`
+			} `json:"params"`
+		}
+		if err := json.Unmarshal(msg.Data, &errData); err == nil {
+			if errData.Code == "level_too_low" {
+				log.Printf("[%s] Nível insuficiente (%d < %d). Alternando para Daramian Minotaur Pyramid (ID 26)...", b.config.ID, errData.Params.Nivel, errData.Params.Min)
+				b.mu.Lock()
+				b.currentHuntID = 26
+				b.isHunting = false
+				b.lastActionTime = time.Time{} // Forçar início imediato
+				b.mu.Unlock()
+				b.status.AddLog("Nível baixo para hunt anterior. Ajustado para Daramian Minotaur Pyramid (ID 26)")
+			}
+		}
+
+	case "eventos_state":
+		// Apenas estado informativo de eventos
 	}
 }
 
