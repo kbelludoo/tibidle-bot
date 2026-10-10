@@ -295,6 +295,9 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			huntTitle := ps.Status
 			if name, ok := ps.Title.Params["name"].(string); ok && name != "" {
 				huntTitle = name
+				if def := protocol.FindHuntByName(name); def != nil {
+					b.currentHuntID = def.ID
+				}
 			}
 			b.mu.Unlock()
 
@@ -345,13 +348,22 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 		}
 		if err := json.Unmarshal(msg.Data, &errData); err == nil {
 			if errData.Code == "level_too_low" {
-				log.Printf("[%s] Nível insuficiente (%d < %d). Alternando para Daramian Minotaur Pyramid (ID 26)...", b.config.ID, errData.Params.Nivel, errData.Params.Min)
+				log.Printf("[%s] Nível insuficiente (%d < %d). Alternando hunt fallback...", b.config.ID, errData.Params.Nivel, errData.Params.Min)
 				b.mu.Lock()
-				b.currentHuntID = 26
+				if b.config.HuntID == 140 {
+					b.config.HuntID = 32
+					b.config.HuntName = "Elfs Shadowthorn"
+					b.config.Lure = 3
+				} else if b.config.HuntID != 26 {
+					b.config.HuntID = 26
+					b.config.HuntName = "Daramian Minotaur Pyramid"
+					b.config.Lure = 2
+				}
+				b.currentHuntID = b.config.HuntID
 				b.isHunting = false
-				b.lastActionTime = time.Time{} // Forçar início imediato
+				b.lastActionTime = time.Time{}
 				b.mu.Unlock()
-				b.status.AddLog("Nível baixo para hunt anterior. Ajustado para Daramian Minotaur Pyramid (ID 26)")
+				b.status.AddLog(fmt.Sprintf("Nível baixo para hunt anterior. Alternado automaticamente para %s (ID %d)", b.config.HuntName, b.config.HuntID))
 			}
 		}
 
@@ -393,7 +405,8 @@ func (b *Bot) performPeriodicActions() {
 	b.mu.Lock()
 	sock := b.socket
 	isHunting := b.isHunting
-	huntID := b.currentHuntID
+	currentHuntID := b.currentHuntID
+	cfgHuntID := b.config.HuntID
 	lure := b.config.Lure
 	b.mu.Unlock()
 
@@ -401,13 +414,31 @@ func (b *Bot) performPeriodicActions() {
 		return
 	}
 
+	targetHuntID := cfgHuntID
+	if targetHuntID == 0 {
+		targetHuntID = currentHuntID
+	}
+	if targetHuntID == 0 {
+		targetHuntID = 26
+	}
+
+	// Se está caçando uma hunt diferente da configurada, solicita parada para transicionar
+	if isHunting && cfgHuntID > 0 && currentHuntID > 0 && currentHuntID != cfgHuntID {
+		if time.Since(b.lastActionTime) > 8*time.Second {
+			b.lastActionTime = time.Now()
+			b.status.AddLog(fmt.Sprintf("Transição de hunt: encerrando hunt %d para iniciar hunt configurada (%d)...", currentHuntID, cfgHuntID))
+			_ = sock.Send("stop", protocol.StopPayload{Intent: "manual"})
+		}
+		return
+	}
+
 	// 1. Auto-Hunt se estiver idle
-	if !isHunting && time.Since(b.lastActionTime) > 6*time.Second {
+	if !isHunting && time.Since(b.lastActionTime) > 5*time.Second {
 		b.lastActionTime = time.Now()
-		b.status.AddLog(fmt.Sprintf("Iniciando caçada (Hunt ID: %d, Lure: %d)...", huntID, lure))
+		b.status.AddLog(fmt.Sprintf("Iniciando caçada (Hunt ID: %d, Lure: %d)...", targetHuntID, lure))
 
 		huntPayload := protocol.StartHuntPayload{
-			HuntID:   huntID,
+			HuntID:   targetHuntID,
 			Lure:     lure,
 			AutoBoss: true,
 		}

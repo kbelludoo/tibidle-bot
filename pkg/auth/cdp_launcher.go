@@ -96,8 +96,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		"--disable-default-apps",
 		"--disable-extensions",
 		"--disable-sync",
-		"--window-position=-3000,-3000",
-		"--window-size=800,600",
+		"--window-size=960,720",
 	}
 
 	if runtime.GOOS != "windows" {
@@ -228,11 +227,11 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 				const t = (b.innerText || '').toUpperCase();
 				return t.includes('ENTER') || t.includes('ENTRAR') || t.includes('JOGO') || (b.classList && b.classList.contains('s-party-cta'));
 			});
-			if (btn) {
+			if (btn && !btn.disabled) {
 				console.log("AUTO_CLICKED_LOBBY_BTN");
 				btn.click();
 			}
-		}, 1000);
+		}, 3000);
 	`
 
 	sendCDP("Page.addScriptToEvaluateOnNewDocument", map[string]any{
