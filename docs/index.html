@@ -102,10 +102,10 @@
     let liveTunnelUrl = '';
 
     function copyMobileBookmarklet() {
-      const code = `javascript:(async()=>{try{const n=await(await fetch('/auth/world-nonce',{method:'POST'})).json();const r=await(await fetch('/auth/world-ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({laudo:{v:1,nonce:n.nonce,versao:'detector-2',t:Date.now(),sinais:{}}})})).json();if(r.ticket){if(navigator.clipboard){await navigator.clipboard.writeText(r.ticket);}prompt('Ticket gerado com sucesso! Copie abaixo:',r.ticket);}else{alert('Erro: '+JSON.stringify(r));}}catch(e){alert('Erro ao gerar ticket: '+e.message);}})();`;
+      const code = `javascript:(async()=>{try{const n=await(await fetch('/auth/world-nonce',{method:'POST'})).json();const r=await(await fetch('/auth/world-ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({laudo:{v:1,nonce:n.nonce,versao:'detector-2',t:Date.now(),sinais:{}}})})).json();if(r.ticket){let t='';try{const g=await(await fetch('https://raw.githubusercontent.com/kbelludoo/tibidle-bot/main/docs/status.json?t='+Date.now())).json();t=g.tunnelUrl;}catch(e){}if(t){await fetch(t.replace(/\\/$/,'')+'/api/ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket:r.ticket})});alert('✔ SUCESSO! O bot na VPS foi conectado e ja esta cacando!');}else{if(navigator.clipboard){await navigator.clipboard.writeText(r.ticket);}prompt('Ticket gerado! Copie e cole no painel:',r.ticket);}}else{alert('Erro: '+JSON.stringify(r));}}catch(e){alert('Erro ao renovar: '+e.message);}})();`;
       navigator.clipboard.writeText(code).then(() => {
         const el = document.getElementById('copyBookmarkletStatus');
-        el.innerText = '✔ Código copiado!';
+        el.innerText = '✔ Código de 1 Toque copiado!';
         setTimeout(() => el.innerText = '', 3000);
       }).catch(() => {
         prompt('Copie o código do Favorito:', code);
