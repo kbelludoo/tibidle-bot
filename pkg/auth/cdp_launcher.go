@@ -40,6 +40,7 @@ func FindBrowserExecutable() string {
 
 	if runtime.GOOS == "windows" {
 		candidates := []string{
+			`C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`,
 			`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`,
 			`C:\Program Files\Microsoft\Edge\Application\msedge.exe`,
 			`C:\Program Files\Google\Chrome\Application\chrome.exe`,
@@ -231,7 +232,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 				console.log("AUTO_CLICKED_LOBBY_BTN");
 				btn.click();
 			}
-		}, 3000);
+		}, 1000);
 	`
 
 	sendCDP("Page.addScriptToEvaluateOnNewDocument", map[string]any{
@@ -246,6 +247,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 			sendCDP("Network.setCookie", map[string]any{
 				"name":     kv[0],
 				"value":    kv[1],
+				"url":      "https://play.tibidle.com",
 				"domain":   ".tibidle.com",
 				"path":     "/",
 				"secure":   true,
@@ -305,7 +307,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	case res := <-ticketChan:
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
-	case <-time.After(45 * time.Second):
-		return nil, fmt.Errorf("ticket capture timed out after 45s")
+	case <-time.After(90 * time.Second):
+		return nil, fmt.Errorf("ticket capture timed out after 90s")
 	}
 }

@@ -86,9 +86,16 @@ func main() {
 		log.Printf("[TicketGenerator] Enviando ticket com segurança via SSH para %s ...", *sshTarget)
 		remoteCmd := fmt.Sprintf(`curl -s -X POST http://127.0.0.1:3001/api/ticket -H 'Content-Type: application/json' -d '{"ticket":"%s","wsUrl":"%s"}'`, ticket, wsURL)
 
+		keyPath := *sshKey
+		if _, err := os.Stat(keyPath); err != nil {
+			if _, err := os.Stat("ssh-key-2026-10-06.key"); err == nil {
+				keyPath = "ssh-key-2026-10-06.key"
+			}
+		}
+
 		var cmd *exec.Cmd
-		if *sshKey != "" {
-			cmd = exec.Command("ssh", "-i", *sshKey, "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=no", *sshTarget, remoteCmd)
+		if keyPath != "" {
+			cmd = exec.Command("ssh", "-i", keyPath, "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=no", *sshTarget, remoteCmd)
 		} else {
 			cmd = exec.Command("ssh", "-o", "BatchMode=yes", "-o", "StrictHostKeyChecking=no", *sshTarget, remoteCmd)
 		}
