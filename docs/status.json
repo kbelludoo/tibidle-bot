@@ -11,13 +11,13 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
       "currentHunt": "Scarabs Cave",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791758281082,
+      "updatedAt": 1791758391974,
       "recentLogs": [
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.05682373046875,
+  "ramAllocMB": 1.0136184692382812,
   "ramSysMB": 17.166282653808594,
-  "uptime": "1h38m47s",
+  "uptime": "1h40m47s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
