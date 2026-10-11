@@ -17,11 +17,8 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791755274264,
+      "updatedAt": 1791755395728,
       "recentLogs": [
-        "Bot iniciado para ID: kbelludoo",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -33,13 +30,16 @@
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.4317855834960938,
+  "ramAllocMB": 1.049163818359375,
   "ramSysMB": 17.166282653808594,
-  "uptime": "48m47s",
+  "uptime": "50m47s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
