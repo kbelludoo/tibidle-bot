@@ -17,13 +17,13 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791792696945,
+      "updatedAt": 1791792818303,
       "recentLogs": [
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.0408935546875,
+  "ramAllocMB": 1.0319366455078125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "7h47m24s",
+  "uptime": "7h49m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
