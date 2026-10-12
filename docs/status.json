@@ -17,7 +17,7 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791779401485,
+      "updatedAt": 1791779501401,
       "recentLogs": [
         "Bot iniciado para ID: kbelludoo",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -33,8 +33,8 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.0900497436523438,
+  "ramAllocMB": 1.373870849609375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "4h5m24s",
+  "uptime": "4h7m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
