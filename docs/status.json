@@ -17,9 +17,8 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791792332679,
+      "updatedAt": 1791792454060,
       "recentLogs": [
-        "Bot iniciado para ID: kbelludoo",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -31,13 +30,16 @@
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1483917236328125,
+  "ramAllocMB": 1.0419387817382812,
   "ramSysMB": 13.349861145019531,
-  "uptime": "7h41m24s",
+  "uptime": "7h43m25s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
