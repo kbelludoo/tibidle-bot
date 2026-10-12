@@ -17,7 +17,7 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791764157833,
+      "updatedAt": 1791764277835,
       "recentLogs": [
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
         "Caçada finalizada! Preparando próxima caçada...",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.7098617553710938,
+  "ramAllocMB": 1.8905029296875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "16m26s",
+  "uptime": "18m26s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
