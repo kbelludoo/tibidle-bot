@@ -12,14 +12,15 @@
       "gold": 0,
       "xp": "",
       "status": "hunting",
-      "currentHunt": "Scarabs Cave",
+      "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791763557838,
+      "updatedAt": 1791763677858,
       "recentLogs": [
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
+        "Caçada finalizada! Preparando próxima caçada...",
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
         "Caçada finalizada! Preparando próxima caçada...",
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
@@ -27,19 +28,18 @@
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
         "Caçada finalizada! Preparando próxima caçada...",
         "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
-        "Caçada finalizada! Preparando próxima caçada...",
-        "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
-        "Caçada finalizada! Preparando próxima caçada...",
-        "Iniciando caçada (Hunt ID: 140, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 140, Lure: 2)..."
+        "Nível baixo para hunt anterior. Alternado automaticamente para Elfs Shadowthorn (ID 32)",
+        "Iniciando caçada (Hunt ID: 32, Lure: 3)...",
+        "Nível baixo para hunt anterior. Alternado automaticamente para Daramian Minotaur Pyramid (ID 26)",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)..."
       ]
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.6795196533203125,
+  "ramAllocMB": 2.0756988525390625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "6m26s",
+  "uptime": "8m25s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
