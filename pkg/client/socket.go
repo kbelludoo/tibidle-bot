@@ -121,19 +121,20 @@ func (s *SocketClient) readLoop() {
 }
 
 func (s *SocketClient) keepaliveLoop() {
-	ticker := time.NewTicker(8 * time.Second)
+	ticker := time.NewTicker(20 * time.Second)
 	defer ticker.Stop()
 
 	for range ticker.C {
 		s.mu.Lock()
 		closed := s.isClosed
+		conn := s.conn
 		s.mu.Unlock()
-		if closed {
+		if closed || conn == nil {
 			return
 		}
 
-		// Keepalive packet & snapshot request to guarantee anti-idle
-		_ = s.Send("keepalive", map[string]any{})
+		// Standard RFC 6455 WebSocket Ping frame (avoids invalid_message error)
+		_ = conn.WriteControl(websocket.PingMessage, []byte{}, time.Now().Add(5*time.Second))
 		_ = s.Send("party_get_snapshot", map[string]any{})
 	}
 }

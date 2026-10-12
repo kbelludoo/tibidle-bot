@@ -36,6 +36,38 @@ type Bot struct {
 	lastDailyCheck   time.Time
 	lastBlessingBuy  time.Time
 	lastSellTime     time.Time
+	benchmarks       map[int]*HuntBenchmark
+	consecutiveFails int
+}
+
+// HuntTier defines the recommended progression hunt for level brackets
+type HuntTier struct {
+	MinLevel int
+	HuntID   int
+	HuntName string
+	Lure     int
+}
+
+// RecommendedProgressionTiers contains the optimal party progression order
+var RecommendedProgressionTiers = []HuntTier{
+	{MinLevel: 1, HuntID: 26, HuntName: "Daramian Minotaur Pyramid", Lure: 2}, // Lure 2 (safe, high spawn)
+	{MinLevel: 30, HuntID: 32, HuntName: "Elfs Shadowthorn", Lure: 3},          // Lure 3 (Elf Scout, bow loot, fast exp)
+	{MinLevel: 45, HuntID: 140, HuntName: "Scarabs Cave", Lure: 2},             // Lure 2 (Scarabs, safe at 45+)
+	{MinLevel: 60, HuntID: 46, HuntName: "Dragon Lair", Lure: 3},               // Lure 3 (Dragons, high exp & rares)
+	{MinLevel: 75, HuntID: 106, HuntName: "Hero Fortress Entrance", Lure: 3},   // Lure 3 (Bonebeast, Necro, Squire)
+	{MinLevel: 90, HuntID: 49, HuntName: "Pits of Inferno Entrance", Lure: 3},  // Lure 3 (DLs, massive exp)
+	{MinLevel: 110, HuntID: 192, HuntName: "Draken Walls", Lure: 3},            // Lure 3 (Drakens)
+	{MinLevel: 130, HuntID: 148, HuntName: "Warzone - Lava Lurkers", Lure: 4},  // Lure 4 (Top tier exp)
+}
+
+func GetProgressionHuntForLevel(level int) HuntTier {
+	chosen := RecommendedProgressionTiers[0]
+	for _, tier := range RecommendedProgressionTiers {
+		if level >= tier.MinLevel {
+			chosen = tier
+		}
+	}
+	return chosen
 }
 
 func ResolveWSURL(ticket string, providedWSURL string) string {
@@ -72,7 +104,7 @@ func NewBot(cfg AccountConfig) *Bot {
 		}
 	}
 	if huntID == 0 {
-		huntID = 1 // default hunt if none specified
+		huntID = 26 // default Daramian Minotaurs
 	}
 
 	lure := cfg.Lure
@@ -88,6 +120,7 @@ func NewBot(cfg AccountConfig) *Bot {
 		sessionClient: client.NewSessionClient(),
 		ticketChan:    make(chan TicketSubmission, 10),
 		currentHuntID: huntID,
+		benchmarks:    make(map[int]*HuntBenchmark),
 	}
 }
 
@@ -299,13 +332,53 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 					b.currentHuntID = def.ID
 				}
 			}
+
+			// Descobrir nível mais alto ou médio da party
+			maxLevel := 0
+			var leaderVocation string
+			for _, m := range ps.Members {
+				if m.Level > maxLevel {
+					maxLevel = m.Level
+				}
+				if m.IsLeader {
+					leaderVocation = m.Vocation
+				}
+			}
+			autoProg := b.config.AutoProgress
 			b.mu.Unlock()
 
 			b.status.Update(func(st *AccountStatus) {
 				st.Status = ps.Status
 				st.CurrentHunt = huntTitle
+				if maxLevel > 0 {
+					st.Level = maxLevel
+				}
+				if leaderVocation != "" {
+					st.Vocation = leaderVocation
+				}
+				if ps.ElapsedSec > 0 {
+					st.DurationSec = ps.ElapsedSec
+				}
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
+
+			// Se AutoProgress estiver ativo e temos nível da party, verificar se devemos progredir
+			if autoProg && maxLevel > 0 {
+				rec := GetProgressionHuntForLevel(maxLevel)
+				b.mu.Lock()
+				// Se ainda não falhamos repetidamente nessa hunt recomendada
+				if b.consecutiveFails < 2 && b.config.HuntID != rec.HuntID {
+					oldHunt := b.config.HuntName
+					b.config.HuntID = rec.HuntID
+					b.config.HuntName = rec.HuntName
+					b.config.Lure = rec.Lure
+					b.status.AddLog(fmt.Sprintf("⭐ Auto-Progresso (Lv. %d): alternando de '%s' para '%s' (Lure: %d)", maxLevel, oldHunt, rec.HuntName, rec.Lure))
+				}
+				b.status.Update(func(st *AccountStatus) {
+					st.TargetHunt = rec.HuntName
+				})
+				b.mu.Unlock()
+			}
 		}
 
 	case "resume":
@@ -328,12 +401,105 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 		}
 
 	case "ended":
+		var endPayload struct {
+			Summary struct {
+				HuntID     int     `json:"huntId"`
+				Title      struct {
+					Key    string         `json:"key"`
+					Params map[string]any `json:"params"`
+				} `json:"title"`
+				Reason     string  `json:"reason"` // "death", "manual", "duration"
+				ElapsedSec int     `json:"elapsedSec"`
+				XpPerHour  float64 `json:"xpPerHour"`
+				KillsTotal int     `json:"killsTotal"`
+				LootGold   int     `json:"lootGold"`
+				Deaths     int     `json:"deaths"`
+				Level      struct {
+					Start int `json:"start"`
+					End   int `json:"end"`
+				} `json:"level"`
+			} `json:"summary"`
+		}
+		_ = json.Unmarshal(msg.Data, &endPayload)
+
 		b.mu.Lock()
 		b.isHunting = false
+		sum := endPayload.Summary
+		huntID := sum.HuntID
+		if huntID == 0 {
+			huntID = b.currentHuntID
+		}
+
+		huntName := "Hunt"
+		if name, ok := sum.Title.Params["name"].(string); ok && name != "" {
+			huntName = name
+		} else if def := protocol.FindHuntByID(huntID); def != nil {
+			huntName = def.Title
+		}
+
+		// Gravar / Atualizar métricas de benchmark
+		if huntID > 0 {
+			bm, exists := b.benchmarks[huntID]
+			if !exists {
+				bm = &HuntBenchmark{
+					HuntID:   huntID,
+					HuntName: huntName,
+				}
+				b.benchmarks[huntID] = bm
+			}
+			bm.Runs++
+			bm.LastDuration = sum.ElapsedSec
+			if sum.Deaths > 0 {
+				bm.Deaths += sum.Deaths
+			}
+			if sum.XpPerHour > bm.BestXpPerHour {
+				bm.BestXpPerHour = sum.XpPerHour
+			}
+		}
+
+		// Lista de benchmarks para o AccountStatus
+		var bmList []HuntBenchmark
+		for _, v := range b.benchmarks {
+			bmList = append(bmList, *v)
+		}
+
+		// Tratar mortes ou falhas
+		if sum.Reason == "death" {
+			b.consecutiveFails++
+			log.Printf("[%s] Morte na hunt %s (ID %d). Falhas consecutivas: %d", b.config.ID, huntName, huntID, b.consecutiveFails)
+			b.status.AddLog(fmt.Sprintf("⚠️ Morte na hunt '%s' após %ds! Falhas consecutivas: %d", huntName, sum.ElapsedSec, b.consecutiveFails))
+
+			// Se morrer 2x ou mais na hunt atual, regride temporariamente para uma hunt mais segura
+			if b.consecutiveFails >= 2 {
+				fallback := RecommendedProgressionTiers[0] // Daramian Minotaurs
+				if huntID == 140 { // Se morreu nos Scarabs, regride para Elfs
+					fallback = RecommendedProgressionTiers[1]
+				} else if huntID == 46 { // Se morreu nos Dragons, regride para Scarabs
+					fallback = RecommendedProgressionTiers[2]
+				}
+				b.config.HuntID = fallback.HuntID
+				b.config.HuntName = fallback.HuntName
+				b.config.Lure = fallback.Lure
+				b.currentHuntID = fallback.HuntID
+				b.status.AddLog(fmt.Sprintf("🛡️ Segurança: Recuando temporariamente para '%s' (Lure: %d) para evitar novas mortes.", fallback.HuntName, fallback.Lure))
+			}
+		} else {
+			// Caçada bem sucedida ou parada manual
+			b.consecutiveFails = 0
+			if sum.XpPerHour > 0 {
+				b.status.AddLog(fmt.Sprintf("📊 Hunt '%s' concluída: %.0f XP/h (Duração: %ds, Kills: %d)", huntName, sum.XpPerHour, sum.ElapsedSec, sum.KillsTotal))
+			} else {
+				b.status.AddLog(fmt.Sprintf("Caçada '%s' finalizada! Preparando próxima...", huntName))
+			}
+		}
 		b.mu.Unlock()
-		b.status.AddLog("Caçada finalizada! Preparando próxima caçada...")
+
 		b.status.Update(func(st *AccountStatus) {
 			st.Status = "idle"
+			st.Benchmarks = bmList
+			if sum.XpPerHour > 0 {
+				st.ExpPerHour = sum.XpPerHour
+			}
 			st.UpdatedAt = time.Now().UnixMilli()
 		})
 
@@ -350,18 +516,17 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			if errData.Code == "level_too_low" {
 				log.Printf("[%s] Nível insuficiente (%d < %d). Alternando hunt fallback...", b.config.ID, errData.Params.Nivel, errData.Params.Min)
 				b.mu.Lock()
-				if b.config.HuntID == 140 {
-					b.config.HuntID = 32
-					b.config.HuntName = "Elfs Shadowthorn"
-					b.config.Lure = 3
-				} else if b.config.HuntID != 26 {
-					b.config.HuntID = 26
-					b.config.HuntName = "Daramian Minotaur Pyramid"
-					b.config.Lure = 2
+				fallback := RecommendedProgressionTiers[0]
+				if errData.Params.Nivel >= 30 {
+					fallback = RecommendedProgressionTiers[1] // Elfs
 				}
-				b.currentHuntID = b.config.HuntID
+				b.config.HuntID = fallback.HuntID
+				b.config.HuntName = fallback.HuntName
+				b.config.Lure = fallback.Lure
+				b.currentHuntID = fallback.HuntID
 				b.isHunting = false
 				b.lastActionTime = time.Time{}
+				b.consecutiveFails++
 				b.mu.Unlock()
 				b.status.AddLog(fmt.Sprintf("Nível baixo para hunt anterior. Alternado automaticamente para %s (ID %d)", b.config.HuntName, b.config.HuntID))
 			}

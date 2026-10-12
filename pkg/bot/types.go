@@ -17,6 +17,16 @@ type AccountConfig struct {
 	AutoSell      bool   `json:"autoSell"`
 	AutoBlessings bool   `json:"autoBlessings"`
 	AutoDaily     bool   `json:"autoDaily"`
+	AutoProgress  bool   `json:"autoProgress"`
+}
+
+type HuntBenchmark struct {
+	HuntID      int     `json:"huntId"`
+	HuntName    string  `json:"huntName"`
+	BestXpPerHour float64 `json:"bestXpPerHour"`
+	LastDuration int     `json:"lastDuration"`
+	Deaths       int     `json:"deaths"`
+	Runs         int     `json:"runs"`
 }
 
 type AccountStatus struct {
@@ -36,6 +46,8 @@ type AccountStatus struct {
 	ExpPerHour  float64  `json:"expPerHour"`
 	GoldPerHour float64  `json:"goldPerHour"`
 	DurationSec int      `json:"durationSec"`
+	TargetHunt  string   `json:"targetHunt,omitempty"`
+	Benchmarks  []HuntBenchmark `json:"benchmarks,omitempty"`
 	UpdatedAt   int64    `json:"updatedAt"`
 	RecentLogs  []string `json:"recentLogs"`
 }

@@ -114,10 +114,36 @@
 
               <div class="grid-info">
                 <div class="info-item"><div class="info-val">${a.currentHunt || '—'}</div><div class="info-label">Caçada Atual</div></div>
+                <div class="info-item"><div class="info-val">${a.targetHunt ? a.targetHunt : 'Auto'}</div><div class="info-label">Próxima Meta (Auto)</div></div>
                 <div class="info-item"><div class="info-val">${a.gold ? a.gold.toLocaleString() + ' gp' : '0 gp'}</div><div class="info-label">Ouro</div></div>
-                <div class="info-item"><div class="info-val">${a.kills || 0}</div><div class="info-label">Abates (Kills)</div></div>
                 <div class="info-item"><div class="info-val">${a.expPerHour ? Math.round(a.expPerHour).toLocaleString() + '/h' : '—'}</div><div class="info-label">EXP/Hora</div></div>
               </div>
+
+              ${a.benchmarks && a.benchmarks.length > 0 ? `
+                <div style="margin-top: 15px; background: #0a0d14; border: 1px solid #1e293b; border-radius: 6px; padding: 10px;">
+                  <div style="font-size: 11px; color: #94a3b8; text-transform: uppercase; margin-bottom: 6px; font-weight: bold;">⭐ Desempenho de Caçadas (XP/Hora & Sobrevivência)</div>
+                  <table style="width: 100%; font-size: 12px; border-collapse: collapse; text-align: left;">
+                    <thead>
+                      <tr style="color: #64748b; border-bottom: 1px solid #1e293b;">
+                        <th style="padding: 4px;">Hunt</th>
+                        <th style="padding: 4px; text-align: right;">Melhor EXP/h</th>
+                        <th style="padding: 4px; text-align: right;">Runs</th>
+                        <th style="padding: 4px; text-align: right;">Mortes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${a.benchmarks.map(b => `
+                        <tr style="border-bottom: 1px solid #131a2a; color: #cbd5e1;">
+                          <td style="padding: 4px; color: #38bdf8;">${b.huntName}</td>
+                          <td style="padding: 4px; text-align: right; color: #34d399; font-weight: bold;">${b.bestXpPerHour ? Math.round(b.bestXpPerHour).toLocaleString() + '/h' : '—'}</td>
+                          <td style="padding: 4px; text-align: right;">${b.runs}</td>
+                          <td style="padding: 4px; text-align: right; color: ${b.deaths > 0 ? '#ef4444' : '#94a3b8'};">${b.deaths}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              ` : ''}
 
               ${a.recentLogs && a.recentLogs.length > 0 ? `
                 <div class="logs">

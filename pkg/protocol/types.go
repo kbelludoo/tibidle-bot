@@ -118,14 +118,28 @@ type FramePayload struct {
 	Analyzer AnalyzerStats `json:"analyzer"`
 }
 
+// PartyMember represents a member in the party snapshot
+type PartyMember struct {
+	CharacterID string `json:"characterId"`
+	Name        string `json:"name"`
+	Vocation    string `json:"vocation"`
+	Level       int    `json:"level"`
+	HP          int    `json:"hp"`
+	MaxHP       int    `json:"maxHp"`
+	Mana        int    `json:"mana"`
+	MaxMana     int    `json:"maxMana"`
+	IsLeader    bool   `json:"isLeader"`
+}
+
 // PartySnapshotPayload contains hunt title and status
 type PartySnapshotPayload struct {
-	Status string `json:"status"` // "hunting", "training", "idle", etc.
-	Title  struct {
+	Status     string        `json:"status"` // "hunting", "training", "idle", etc.
+	Title      struct {
 		Key    string         `json:"key"`
 		Params map[string]any `json:"params"`
 	} `json:"title"`
-	ElapsedSec int `json:"elapsedSec"`
+	ElapsedSec int           `json:"elapsedSec"`
+	Members    []PartyMember `json:"members"`
 }
 
 // ResumePayload received when continuing an ongoing hunt
