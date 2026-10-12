@@ -17,11 +17,8 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791792454060,
+      "updatedAt": 1791792575551,
       "recentLogs": [
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -33,13 +30,16 @@
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.0419387817382812,
+  "ramAllocMB": 1.0334320068359375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "7h43m25s",
+  "uptime": "7h45m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
