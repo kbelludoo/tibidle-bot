@@ -17,18 +17,21 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791764759086,
+      "updatedAt": 1791764880580,
       "recentLogs": [
         "Bot iniciado para ID: kbelludoo",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 2.0238800048828125,
-  "ramSysMB": 12.537361145019531,
-  "uptime": "1m25s",
+  "goroutines": 9,
+  "ramAllocMB": 1.0163650512695312,
+  "ramSysMB": 12.849861145019531,
+  "uptime": "3m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
