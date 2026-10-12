@@ -11,13 +11,13 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791829080192,
+      "updatedAt": 1791829171523,
       "recentLogs": [
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.06903076171875,
+  "ramAllocMB": 1.07562255859375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "17h53m24s",
+  "uptime": "17h55m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
