@@ -17,16 +17,17 @@
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791896383134,
+      "updatedAt": 1791896484246,
       "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 0.9398193359375,
+  "ramAllocMB": 0.8549652099609375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2m9s"
+  "uptime": "4m4s"
 }
