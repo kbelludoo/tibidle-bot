@@ -1,0 +1,66 @@
+name: ticket-relay
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "probe = so testa a captura | push = envia o ticket pro bot"
+        required: false
+        default: "probe"
+      push_url:
+        description: "URL base do bot (ex: https://xxx.trycloudflare.com)"
+        required: false
+        default: ""
+concurrency:
+  group: ticket-relay
+  cancel-in-progress: false
+jobs:
+  ticket:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Login + capturar ticket via Chrome real (xvfb)
+        env:
+          TIBIDLE_EMAIL: ${{ secrets.TIBIDLE_EMAIL }}
+          TIBIDLE_PASSWORD: ${{ secrets.TIBIDLE_PASSWORD }}
+          MODE: ${{ inputs.mode }}
+          PUSH_URL: ${{ inputs.push_url }}
+        run: |
+          set -euo pipefail
+          COOKIE=$(python3 - <<'PY'
+          import json, os, urllib.request
+          body = json.dumps({"email": os.environ["TIBIDLE_EMAIL"], "password": os.environ["TIBIDLE_PASSWORD"]}).encode()
+          req = urllib.request.Request(
+              "https://play.tibidle.com/auth/password/login",
+              data=body,
+              headers={"Content-Type": "application/json",
+                       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"},
+          )
+          r = urllib.request.urlopen(req, timeout=20)
+          print("; ".join(c.split(";")[0] for c in r.headers.get_all("Set-Cookie")))
+          PY
+          )
+          echo "cookie de sessao obtido (${#COOKIE} chars)"
+          OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
+          TICKET=$(printf '%s' "$OUT" | grep -o 'FRESH_TICKET:.*' | head -1 | cut -d: -f2-)
+          WSURL=$(printf '%s' "$OUT" | grep -o 'WS_URL:.*' | head -1 | cut -d: -f2-)
+          if [ -z "$TICKET" ]; then
+            echo "::error::ticket nao capturado (Turnstile falhou no runner)"
+            exit 1
+          fi
+          echo "ticket capturado ($(printf '%s' "$TICKET" | wc -c) chars)"
+          if [ "$MODE" = "push" ]; then
+            if [ -z "$PUSH_URL" ]; then
+              echo "::error::mode=push exige push_url"
+              exit 1
+            fi
+            curl -fsS -m 15 -X POST "$PUSH_URL/api/ticket" \
+              -H 'Content-Type: application/json' \
+              -d "{\"ticket\":\"$TICKET\",\"wsUrl\":\"$WSURL\"}"
+            echo
+            echo "ticket enviado pro bot em $PUSH_URL"
+          fi
+
