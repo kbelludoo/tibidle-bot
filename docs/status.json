@@ -11,13 +11,13 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Autenticado. Obtendo ticket de jogo...",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791852360408,
+      "updatedAt": 1791852481581,
       "recentLogs": [
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -37,9 +37,9 @@
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.03228759765625,
+  "goroutines": 9,
+  "ramAllocMB": 1.0172271728515625,
   "ramSysMB": 13.349861145019531,
-  "uptime": "24h21m24s",
+  "uptime": "24h23m24s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
