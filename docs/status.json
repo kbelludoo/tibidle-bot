@@ -11,19 +11,14 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791861225493,
+      "updatedAt": 1791861360003,
       "recentLogs": [
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
@@ -33,13 +28,18 @@
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Caçada finalizada! Preparando próxima caçada...",
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 0.929962158203125,
+  "goroutines": 8,
+  "ramAllocMB": 2.5885543823242188,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h1m46s",
+  "uptime": "2h3m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
