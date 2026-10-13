@@ -22,16 +22,17 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791896889080,
+      "updatedAt": 1791896989897,
       "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.0176773071289062,
+  "ramAllocMB": 1.2131805419921875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "10m11s"
+  "uptime": "12m6s"
 }
