@@ -17,15 +17,16 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791868637846,
+      "updatedAt": 1791868738380,
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.9560165405273438,
-  "ramSysMB": 16.27954864501953,
-  "uptime": "55s"
+  "ramAllocMB": 0.8632278442382812,
+  "ramSysMB": 16.84986114501953,
+  "uptime": "2m50s"
 }
