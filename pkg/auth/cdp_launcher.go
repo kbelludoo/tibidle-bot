@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -292,6 +293,9 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	}
 
 	cmd := exec.Command(browserPath, args...)
+	var chromeOut bytes.Buffer
+	cmd.Stdout = &chromeOut
+	cmd.Stderr = &chromeOut
 	if err := cmd.Start(); err != nil {
 		return nil, fmt.Errorf("failed to start auth browser (%s): %w", browserPath, err)
 	}
@@ -305,7 +309,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 
 	var wsURL string
 	startTime := time.Now()
-	for time.Since(startTime) < 8*time.Second {
+	for time.Since(startTime) < 20*time.Second {
 		resp, err := http.Get(fmt.Sprintf("http://127.0.0.1:%d/json/list", port))
 		if err == nil {
 			var targets []CDPTarget
@@ -335,7 +339,9 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	}
 
 	if wsURL == "" {
-		return nil, fmt.Errorf("could not connect to browser CDP (%s) within timeout", browserPath)
+		_ = cmd.Process.Kill()
+		_ = cmd.Wait()
+		return nil, fmt.Errorf("could not connect to browser CDP (%s) within timeout [chrome: %s]", browserPath, strings.TrimSpace(chromeOut.String()))
 	}
 
 	conn, _, err := websocket.DefaultDialer.Dial(wsURL, nil)
