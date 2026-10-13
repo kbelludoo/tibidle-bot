@@ -67,52 +67,61 @@
     </div>
   </div>
 
-  <!-- Card de Conexão / Renovação (Desktop e Celular) -->
+  <!-- Card de Conexão / Renovação Prática pelo Celular e Desktop -->
   <div class="stat-card" style="margin-bottom: 25px; border-color: #3b82f6; background: #131d33;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-      <div style="font-size: 15px; font-weight: bold; color: #60a5fa; text-transform: uppercase; display: flex; align-items: center; gap: 6px;">
-        <span>⚡</span> Renovar / Conectar o Bot (Desktop e Celular)
+      <div style="font-size: 16px; font-weight: bold; color: #60a5fa; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
+        <span>📱</span> Conectar / Renovar pelo Celular (Prático & Fácil)
       </div>
       <a id="tunnelDirectLink" href="#" target="_blank" style="font-size: 12px; color: #34d399; text-decoration: none; background: rgba(16, 185, 129, 0.15); padding: 5px 12px; border-radius: 6px; border: 1px solid #059669; display: none; font-weight: bold;">
-        🌐 Abrir Painel Direto na VPS (HTTPS) ↗
+        🌐 Acessar Painel Direto na VPS ↗
       </a>
     </div>
 
-    <!-- Seção PC / Desktop -->
-    <div style="background: #0a0d14; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
-      <b style="color: #38bdf8; font-size: 13px;">💻 No Computador (Desktop / PC):</b>
-      <div style="margin-top: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <a id="desktopBookmarklet" href="javascript:(async()=>{try{const n=await(await fetch('/auth/world-nonce',{method:'POST'})).json();const r=await(await fetch('/auth/world-ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({laudo:{v:1,nonce:n.nonce,versao:'detector-2',t:Date.now(),sinais:{}}})})).json();if(r.ticket){let t='';try{const g=await(await fetch('https://raw.githubusercontent.com/kbelludoo/tibidle-bot/main/docs/status.json?t='+Date.now())).json();t=g.tunnelUrl;}catch(e){}if(t){await fetch(t.replace(/\/$/,'')+'/api/ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket:r.ticket})});alert('✔ SUCESSO! O bot na VPS foi conectado e ja esta cacando!');}else{if(navigator.clipboard){await navigator.clipboard.writeText(r.ticket);}prompt('Ticket gerado! Copie:',r.ticket);}}else{alert('Erro: '+JSON.stringify(r));}}catch(e){alert('Erro ao renovar: '+e.message);}})();" draggable="true" style="display: inline-flex; align-items: center; gap: 6px; background: #2563eb; color: #fff; padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: bold; text-decoration: none; border: 2px dashed #93c5fd; box-shadow: 0 4px 12px rgba(37,99,235,0.4); cursor: grab;">
-          🖱️ Arraste para a Barra de Favoritos: [⚡ Renovar Bot Tibidle]
-        </a>
-        <span style="font-size: 12px; color: #94a3b8;">
-          💡 <b>Dica:</b> No Chrome/Brave/Edge, pressione <kbd style="background:#1e293b; padding:2px 6px; border-radius:4px;">Ctrl + Shift + B</kbd> para exibir a barra de favoritos e <b>arraste o botão azul para ela</b>!
-        </span>
+    <!-- Guia Prático Mobile -->
+    <div style="background: #0a0d14; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+      <div style="color: #fbbf24; font-size: 14px; font-weight: bold; margin-bottom: 8px;">
+        Opção 1: O método mais fácil no Celular (Favorito de 1 Toque)
       </div>
-      <div style="margin-top: 8px; font-size: 12px; color: #64748b;">
-        Ou no PC: basta dar dois cliques no arquivo <code style="color:#fbbf24;">CONECTAR-BOT.bat</code> na pasta de Downloads.
-      </div>
-    </div>
+      <ol style="margin-left: 20px; font-size: 13px; line-height: 1.6; color: #cbd5e1;">
+        <li>Abra o navegador no seu celular (Chrome, Safari, Brave ou Edge).</li>
+        <li>Toque no botão azul abaixo para <b>copiar o código automático</b>.</li>
+        <li>No navegador do celular, salve qualquer página como <b>Favorito</b> (ex: com o nome <code style="color:#38bdf8;">⚡ Conectar Bot</code>).</li>
+        <li>Vá em <i>Favoritos &gt; Editar</i> e <b>cole o código copiado</b> no campo da <b>URL / Endereço</b>!</li>
+        <li><b>Pronto!</b> Toda vez que o bot pedir renovação: abra o <b>play.tibidle.com</b> e simplesmente <b>toque nesse favorito</b>. O celular enviará o ticket sozinho para o bot na VPS!</li>
+      </ol>
 
-    <!-- Seção Celular / Mobile -->
-    <div style="background: #0a0d14; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
-      <b style="color: #fbbf24; font-size: 13px;">📱 No Celular (Mobile):</b>
-      <div style="margin-top: 8px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-        <button onclick="copyMobileBookmarklet()" style="background: #1e293b; color: #38bdf8; border: 1px solid #334155; padding: 9px 16px; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: bold;">
-          📋 Copiar Código para o Celular
+      <div style="margin-top: 12px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <button onclick="copyMobileBookmarklet()" style="background: #2563eb; color: #fff; border: none; padding: 10px 18px; border-radius: 8px; font-size: 13px; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 12px rgba(37,99,235,0.4);">
+          📋 1. Copiar Código do Favorito
         </button>
         <span id="copyBookmarkletStatus" style="color: #34d399; font-weight: bold; font-size: 12px;"></span>
       </div>
-      <div style="margin-top: 6px; font-size: 12px; color: #94a3b8;">
-        Toque no botão para copiar o código, salve nos Favoritos do celular e clique nele quando estiver na página do jogo.
-      </div>
     </div>
 
-    <!-- Envio manual de ticket -->
-    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-      <input type="text" id="mobileTicketInput" placeholder="Ou cole o Ticket aqui manualmente..." style="flex: 1; min-width: 260px; padding: 10px 14px; background: #0a0d14; border: 1px solid #1f293d; border-radius: 6px; color: #fff; font-family: monospace; font-size: 13px;">
-      <button onclick="submitMobileTicket()" style="padding: 10px 20px; background: #f59e0b; color: #000; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s;">Conectar no Bot</button>
-      <span id="mobileTicketStatus" style="font-size: 13px; font-weight: bold;"></span>
+    <!-- Opção 2: Extensão / Tampermonkey no Celular -->
+    <div style="background: #0a0d14; border: 1px solid #1e293b; border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+      <div style="color: #34d399; font-size: 14px; font-weight: bold; margin-bottom: 8px;">
+        Opção 2: 100% Automático via Kiwi Browser ou Firefox Mobile
+      </div>
+      <p style="font-size: 13px; color: #cbd5e1; line-height: 1.5; margin-bottom: 8px;">
+        Se você usa <b>Kiwi Browser</b>, <b>Firefox</b> ou <b>Brave</b> com suporte a extensões no celular, pode instalar a extensão <b>Tampermonkey</b>. Com ela, um botão flutuante dourado <i>"⚡ Renovar Bot VPS"</i> aparece automaticamente direto dentro da tela do Tibidle!
+      </p>
+      <a href="tibidle-auto-renew.user.js" target="_blank" style="display: inline-block; background: #059669; color: #fff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; font-weight: bold;">
+        📥 Instalar Script Automático (.user.js)
+      </a>
+    </div>
+
+    <!-- Opção 3: Envio direto / colar ticket -->
+    <div style="background: #0a0d14; border: 1px solid #1e293b; border-radius: 8px; padding: 14px;">
+      <div style="color: #94a3b8; font-size: 13px; font-weight: bold; margin-bottom: 8px;">
+        Opção 3: Colar Ticket Manualmente (se tiver gerado pelo console)
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+        <input type="text" id="mobileTicketInput" placeholder="Cole o ticket aqui..." style="flex: 1; min-width: 240px; padding: 10px 14px; background: #131a2a; border: 1px solid #1f293d; border-radius: 6px; color: #fff; font-family: monospace; font-size: 13px;">
+        <button onclick="submitMobileTicket()" style="padding: 10px 20px; background: #f59e0b; color: #000; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; transition: 0.2s;">Conectar Bot</button>
+        <span id="mobileTicketStatus" style="font-size: 13px; font-weight: bold;"></span>
+      </div>
     </div>
   </div>
 
@@ -122,19 +131,12 @@
     let customApiUrl = '';
     let liveTunnelUrl = '';
 
-    function showBookmarkGuide(e) {
-      // Se clicado normalmente (não toque longo), avisa como salvar
-      if (e) e.preventDefault();
-      copyMobileBookmarklet();
-      alert("⭐ CÓDIGO COPIADO!\n\nNo celular:\n1. Vá no Tibidle e crie um Favorito chamado '⚡ Renovar Bot'\n2. Edite o favorito e cole esse código no lugar do link!\n\nQuando o bot pedir ticket, basta clicar nesse favorito no jogo!");
-    }
-
     function copyMobileBookmarklet() {
-      const code = `javascript:(async()=>{try{const n=await(await fetch('/auth/world-nonce',{method:'POST'})).json();const r=await(await fetch('/auth/world-ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({laudo:{v:1,nonce:n.nonce,versao:'detector-2',t:Date.now(),sinais:{}}})})).json();if(r.ticket){let t='';try{const g=await(await fetch('https://raw.githubusercontent.com/kbelludoo/tibidle-bot/main/docs/status.json?t='+Date.now())).json();t=g.tunnelUrl;}catch(e){}if(t){await fetch(t.replace(/\\/$/,'')+'/api/ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket:r.ticket})});alert('✔ SUCESSO! O bot na VPS foi conectado e ja esta cacando!');}else{if(navigator.clipboard){await navigator.clipboard.writeText(r.ticket);}prompt('Ticket gerado! Copie e cole no painel:',r.ticket);}}else{alert('Erro: '+JSON.stringify(r));}}catch(e){alert('Erro ao renovar: '+e.message);}})();`;
+      const code = `javascript:(async()=>{try{const n=await(await fetch('/auth/world-nonce',{method:'POST'})).json();const r=await(await fetch('/auth/world-ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({laudo:{v:1,nonce:n.nonce,versao:'detector-2',t:Date.now(),sinais:{}}})})).json();if(r.ticket){let t='';try{const g=await(await fetch('https://raw.githubusercontent.com/kbelludoo/tibidle-bot/main/docs/status.json?t='+Date.now())).json();t=g.tunnelUrl;}catch(e){}if(t){await fetch(t.replace(/\\/$/,'')+'/api/ticket',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({ticket:r.ticket})});alert('✔ SUCESSO! O bot na VPS foi conectado e ja esta cacando!');}else{if(navigator.clipboard){await navigator.clipboard.writeText(r.ticket);}prompt('Ticket gerado! Copie e cole no painel:',r.ticket);}}else{alert('Erro ao obter ticket: '+JSON.stringify(r));}}catch(e){alert('Erro: '+e.message);}})();`;
       navigator.clipboard.writeText(code).then(() => {
         const el = document.getElementById('copyBookmarkletStatus');
-        el.innerText = '✔ Código de 1 Toque copiado!';
-        setTimeout(() => el.innerText = '', 3000);
+        el.innerText = '✔ Código copiado! Agora cole no seu Favorito.';
+        setTimeout(() => el.innerText = '', 4000);
       }).catch(() => {
         prompt('Copie o código do Favorito:', code);
       });

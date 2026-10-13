@@ -587,13 +587,8 @@ func (b *Bot) performPeriodicActions() {
 		targetHuntID = 26
 	}
 
-	// Se está caçando uma hunt diferente da configurada, solicita parada para transicionar
-	if isHunting && cfgHuntID > 0 && currentHuntID > 0 && currentHuntID != cfgHuntID {
-		if time.Since(b.lastActionTime) > 8*time.Second {
-			b.lastActionTime = time.Now()
-			b.status.AddLog(fmt.Sprintf("Transição de hunt: encerrando hunt %d para iniciar hunt configurada (%d)...", currentHuntID, cfgHuntID))
-			_ = sock.Send("stop", protocol.StopPayload{Intent: "manual"})
-		}
+	// Se está caçando, atualiza target para a hunt em andamento até ela finalizar naturalmente
+	if isHunting {
 		return
 	}
 
