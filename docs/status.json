@@ -1274,16 +1274,22 @@
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 4401)",
+        "Sessão marcada como inválida pelo servidor. Renovando via login...",
+        "Sessão renovada via login automático.",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791901305844,
+      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
+      "updatedAt": 1791901442079,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.2972030639648438,
-  "ramSysMB": 16.52954864501953,
-  "uptime": "23s"
+  "goroutines": 7,
+  "ramAllocMB": 1.0770034790039062,
+  "ramSysMB": 17.09986114501953,
+  "uptime": "2m26s"
 }
