@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": "acc-1",
+      "id": "kbelludoo",
       "name": "Conta #1",
       "vocation": "",
       "level": 0,
@@ -11,34 +11,35 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864265482,
+      "updatedAt": 1791864275975,
       "recentLogs": [
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)",
-        "Conectado como Conta #1 (Conta #usuario@privado.com)"
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 0.9811019897460938,
+  "goroutines": 9,
+  "ramAllocMB": 1.03289794921875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h52m20s"
+  "uptime": "2h52m23s",
+  "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
