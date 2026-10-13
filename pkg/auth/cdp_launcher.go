@@ -115,6 +115,7 @@ func (c *cdpClient) readLoop() {
 			ID     *int            `json:"id"`
 			Method string          `json:"method"`
 			Params json.RawMessage `json:"params"`
+			Result json.RawMessage `json:"result"`
 		}
 		if json.Unmarshal(msg, &env) != nil {
 			continue
@@ -125,7 +126,11 @@ func (c *cdpClient) readLoop() {
 			delete(c.pending, *env.ID)
 			c.mu.Unlock()
 			if ch != nil {
-				ch <- env.Params
+				if len(env.Result) > 0 {
+					ch <- env.Result
+				} else {
+					ch <- env.Params
+				}
 			}
 			continue
 		}
@@ -454,7 +459,10 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
 	case <-time.After(90 * time.Second):
-		dump, _ := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
+		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
+		if derr != nil {
+			dump = "evalJS falhou: " + derr.Error()
+		}
 		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s]", dump)
 	}
 }
