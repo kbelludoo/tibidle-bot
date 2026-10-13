@@ -16,25 +16,16 @@
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791897191056,
+      "updatedAt": 1791897341880,
       "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.0620269775390625,
-  "ramSysMB": 13.099861145019531,
-  "uptime": "16m5s"
+  "ramAllocMB": 1.960052490234375,
+  "ramSysMB": 16.52954864501953,
+  "uptime": "28s"
 }
