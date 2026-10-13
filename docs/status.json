@@ -11,16 +11,15 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
+      "status": "hunting",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791865800718,
+      "updatedAt": 1791865918723,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -33,12 +32,13 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.1091384887695312,
+  "goroutines": 10,
+  "ramAllocMB": 2.73455810546875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h17m52s"
+  "uptime": "3h19m54s"
 }
