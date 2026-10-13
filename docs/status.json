@@ -17,7 +17,7 @@
       "expPerHour": 14752,
       "goldPerHour": 0,
       "durationSec": 9448,
-      "updatedAt": 1791867717504,
+      "updatedAt": 1791867837461,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -38,7 +38,7 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.2089157104492188,
+  "ramAllocMB": 3.049163818359375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h49m56s"
+  "uptime": "3h51m53s"
 }
