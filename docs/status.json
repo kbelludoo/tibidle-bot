@@ -18,9 +18,8 @@
       "goldPerHour": 0,
       "durationSec": 16322,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791873683943,
+      "updatedAt": 1791873784659,
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
@@ -34,12 +33,13 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ]
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 1.2109375,
+  "goroutines": 8,
+  "ramAllocMB": 1.1526870727539062,
   "ramSysMB": 17.34986114501953,
-  "uptime": "1h24m55s"
+  "uptime": "1h26m51s"
 }
