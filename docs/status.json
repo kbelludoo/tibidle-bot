@@ -18,7 +18,7 @@
       "goldPerHour": 0,
       "durationSec": 16322,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791877002292,
+      "updatedAt": 1791877203581,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -39,7 +39,7 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 0.9728317260742188,
+  "ramAllocMB": 1.073455810546875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "2h20m49s"
+  "uptime": "2h22m49s"
 }
