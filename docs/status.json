@@ -2,7 +2,7 @@
   "accounts": [
     {
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 39301,
+      "durationSec": 39421,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
@@ -33,13 +33,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791896039859,
+      "updatedAt": 1791896159840,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.0573959350585938,
+  "goroutines": 10,
+  "ramAllocMB": 1.5168685913085938,
   "ramSysMB": 17.34986114501953,
-  "uptime": "7h36m49s"
+  "uptime": "7h38m49s"
 }
