@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": "kbelludoo",
+      "id": "Conta #1",
       "name": "Conta #1",
       "vocation": "",
       "level": 0,
@@ -17,7 +17,7 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864356895,
+      "updatedAt": 1791864397356,
       "recentLogs": [
         "Conectado como Conta #1 (usuario@privado.com)",
         "Conectado como Conta #1 (usuario@privado.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1251907348632812,
+  "ramAllocMB": 1.026336669921875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h53m46s",
+  "uptime": "2h54m33s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
