@@ -17,9 +17,9 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791861835980,
+      "updatedAt": 1791861957682,
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1671371459960938,
+  "ramAllocMB": 1.1434783935546875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h11m47s",
+  "uptime": "2h13m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
