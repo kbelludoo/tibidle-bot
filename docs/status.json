@@ -17,12 +17,12 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791854745532,
+      "updatedAt": 1791854865495,
       "recentLogs": [
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conexão WebSocket estabelecida com sucesso!",
+        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
+        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
+        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
+        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 2.7139968872070312,
+  "ramAllocMB": 1.488250732421875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "13m47s",
+  "uptime": "15m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
