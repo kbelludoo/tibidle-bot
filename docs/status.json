@@ -17,15 +17,15 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791865568067,
+      "updatedAt": 1791865689879,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -38,7 +38,7 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1510391235351562,
+  "ramAllocMB": 1.1478729248046875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h13m53s"
+  "uptime": "3h15m57s"
 }
