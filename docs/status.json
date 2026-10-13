@@ -17,7 +17,7 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791855465856,
+      "updatedAt": 1791855585518,
       "recentLogs": [
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 3.2033615112304688,
+  "ramAllocMB": 3.0180130004882812,
   "ramSysMB": 13.099861145019531,
-  "uptime": "25m47s",
+  "uptime": "27m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
