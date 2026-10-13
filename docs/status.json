@@ -1,45 +1,31 @@
 {
   "accounts": [
     {
-      "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 39421,
+      "currentHunt": "",
+      "durationSec": 0,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 38,
+      "level": 0,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
-      "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791896159840,
-      "vocation": "KNIGHT",
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1791896282628,
+      "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.5168685913085938,
-  "ramSysMB": 17.34986114501953,
-  "uptime": "7h38m49s"
+  "goroutines": 8,
+  "ramAllocMB": 1.794342041015625,
+  "ramSysMB": 12.529548645019531,
+  "uptime": "4s"
 }
