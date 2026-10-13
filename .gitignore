@@ -19,6 +19,9 @@ temp/
 Tibidle_files/
 Tibidle.html
 
+# Data directory
+data/
+
 # OS artifacts
 .DS_Store
 Thumbs.db

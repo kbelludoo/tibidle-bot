@@ -1,0 +1,113 @@
+26 | Lure: 2 | Daramian Minotaur Pyramid | [Minotaur] | tibidle_island
+28 | Lure: 1 | Tarpit Tomb First Floor | [Skeleton Skeleton Warrior] | tibidle_island
+30 | Lure: 1 | Coryms Lair | [Corym Charlatan Corym Skirmisher] | tibidle_island
+32 | Lure: 3 | Elfs Shadowthorn | [Elf Scout] | tibidle_island
+34 | Lure: 1 | Orc Fortress | [Orc Berserker Orc Leader Orc Shaman] | tibidle_island
+38 | Lure: 1 | Cyclops Mistrock | [Cyclops Drone Cyclops Smith] | yalahar
+43 | Lure: 2 | Cults Goroma | [Adept of the Cult Acolyte of the Cult Enlightened of the Cult] | tibidle_island
+45 | Lure: 1 | Foreign Quarter | [Mutated Rat Mutated Tiger] | yalahar
+46 | Lure: 4 | Dragon Lair | [Dragon Hatchling Dragon] | tibidle_island
+49 | Lure: 4 | Pits of Inferno Entrance | [Dragon Lord Dragon Lord Hatchling] | pits_of_inferno
+50 | Lure: 1 | Vampire hell | [Vampire Demon Skeleton] | tibidle_island
+53 | Lure: 4 | Frozen Hell | [Ice Golem Frost Dragon] | zao
+62 | Lure: 4 | Lizard City | [Lizard High Guard Lizard Dragon Priest Lizard Noble] | zao
+65 | Lure: 2 | Warzone III - Crystal Caves | [Cliff Strider Ironblight Orewalker] | warzone
+99 | Lure: 3 | Mintwallin | [Minotaur Mage Minotaur Guard Minotaur Archer] | tibidle_island
+101 | Lure: 1 | Pirates Yalahar | [Pirate Skeleton Pirate Marauder] | yalahar
+102 | Lure: 1 | Mutated Humans | [Mutated Human Slime] | yalahar
+103 | Lure: 3 | Nargor Pirate island | [Pirate Corsair Pirate Buccaneer] | tibidle_island
+105 | Lure: 4 | Giant Spiders POH | [Giant Spider Poison Spider] | tibidle_island
+106 | Lure: 4 | Hero Fortress Entrance | [Bonebeast Necromancer Vicious Squire] | tibidle_island
+107 | Lure: 4 | Lizard Chosen's Dojo | [Lizard Chosen Lizard Snakecharmer] | zao
+109 | Lure: 2 | Gargoyles Meriana | [Gargoyle] | tibidle_island
+110 | Lure: 2 | Tortoise Meriana | [Tortoise Thornback Tortoise] | tibidle_island
+111 | Lure: 4 | Hellspawns yalahar | [Hellspawn Gozzler] | yalahar
+119 | Lure: 2 | Dwarf Bridge | [Dwarf Soldier] | tibidle_island
+123 | Lure: 4 | The Hive Entrance | [Crawler Swarmer Waspoid] | gray_island
+124 | Lure: 2 | Orcs Edron Cave | [Orc Orc Warrior Orc Spearman] | tibidle_island
+125 | Lure: 2 | Goblins Femor Hills | [Goblin] | tibidle_island
+126 | Lure: 2 | Rotworms Darashia | [Rotworm] | tibidle_island
+128 | Lure: 2 | Larva Ankrahmuns | [Larva] | tibidle_island
+131 | Lure: 2 | Dwarven Mines | [Dwarf] | tibidle_island
+132 | Lure: 2 | Elfs Yalahar | [Elf] | yalahar
+134 | Lure: 3 | Dworcs Port Hope | [Dworc Fleshhunter Dworc Venomsniper] | tibidle_island
+135 | Lure: 1 | Chakoyas Svargrond | [Chakoya Toolshaper Chakoya Tribewarden] | tibidle_island
+138 | Lure: 1 | Terramites Ankrahmun | [Terramite] | tibidle_island
+139 | Lure: 3 | Crocodiles Port Hope | [Crocodile] | tibidle_island
+140 | Lure: 2 | Scarabs Cave | [Scarab] | tibidle_island
+141 | Lure: 1 | Cyclops Thais | [Cyclops] | tibidle_island
+142 | Lure: 3 | Barbarian Camp | [Barbarian Headsplitter Barbarian Brutetamer] | tibidle_island
+143 | Lure: 1 | Water Elementals Cavern | [Water Elemental] | tibidle_island
+144 | Lure: 1 | Zombies Yalahar Cemetery Quarter | [Zombie] | yalahar
+146 | Lure: 2 | Djinns Marid Territory | [Blue Djinn] | yalahar
+148 | Lure: 4 | Warzone - Lava Lurkers | [Lava Lurker] | warzone
+149 | Lure: 4 | Ice Witch Tower | [Ice Witch] | tibidle_island
+151 | Lure: 4 | Bog Raiders Yalahar | [Bog Raider] | yalahar
+155 | Lure: 3 | Stonerefiners Cavern | [Stonerefiner] | tibidle_island
+156 | Lure: 4 | Souleater's Canyon | [Souleater Lancer Beetle] | zao
+157 | Lure: 2 | Killer Caiman Caverns | [Killer Caiman Corcodile] | zao
+161 | Lure: 4 | Yalahar Worker Golem | [Worker Golem] | yalahar
+162 | Lure: 4 | Werebadgers Nest | [Werebadger] | tibidle_island
+163 | Lure: 4 | Feyrist Surface | [Pixie Swan Maiden Nymph] | tibidle_island
+165 | Lure: 4 | Zao Caverns | [Brimstone Bug Wailing Widow] | zao
+166 | Lure: 2 | Cults Carlin | [Cult Believer Cult Enforcer] | tibidle_island
+170 | Lure: 2 | Wolves Den | [Wolf] | tibidle_island
+175 | Lure: 2 | Carlin Raids | [Wild Warrior] | tibidle_island
+176 | Lure: 2 | Wasps Dungeons | [Wasp] | tibidle_island
+178 | Lure: 2 | Salamander Cave | [Dawnfly Salamander Marsh Stalker] | tibidle_island
+180 | Lure: 1 | Amazon Camp | [Amazon Valkyrie] | tibidle_island
+182 | Lure: 4 | Return of the beholder | [Old Beholder Elder Bonelord] | tibidle_island
+183 | Lure: 4 | Thunderscar Peak | [Wyrm Energy Elemental] | tibidle_island
+184 | Lure: 4 | Petrified Hollow | [Wyvern Massive Earth Elemental] | tibidle_island
+186 | Lure: 4 | Zao Entrance | [Lizard Templar Lizard Legionnaire Lizard Sentinel] | zao
+187 | Lure: 1 | The Banshee Quest | [Banshee] | tibidle_island
+188 | Lure: 1 | The Behemoth Quest | [Behemoth Ogre Brute] | tibidle_island
+189 | Lure: 1 | Gladiators Arena Yalahar | [Gladiator] | yalahar
+190 | Lure: 3 | Quara's entrance Yalahar | [Quara Constrictor Scout Quara Hydromancer Scout Quara Mantassin] | yalahar
+191 | Lure: 4 | Quara's Domain Yalahar | [Quara Pincher Quara Predator Quara Hydromancer] | yalahar
+192 | Lure: 4 | Draken Walls | [Draken Spellweaver Draken Warmaster] | zao
+193 | Lure: 2 | Fiehonja Stairway | [Deepling Scout Deepling Guard Deepling Brawler] | gray_island
+194 | Lure: 1 | Desert Quest | [Fire Devil Scorpion] | tibidle_island
+195 | Lure: 1 | Mad Mage Room | [demon skelleton Skelleton Baby Drogon Pioson Spider beholder] | tibidle_island
+196 | Lure: 4 | Deepling Library | [Deepling Elite Deepling Warrior] | gray_island
+197 | Lure: 4 | Bottom of the Ocean | [Deepling Tyrant Deepling Spellsinger] | gray_island
+198 | Lure: 4 | Hive Tower | [Spitter Insectoid Worker Spidris] | gray_island
+199 | Lure: 4 | Hive Queen Chamber | [Kollos Wiggler Hive Larva] | gray_island
+200 | Lure: 4 | Throne of Verminor | [Defiler Plaguesmith Son of Verminor Blightwalker] | pits_of_inferno
+201 | Lure: 4 | Throne of Infernatil | [Hellfire Fighter Hellhound Raging Fire] | pits_of_inferno
+202 | Lure: 4 | Throne of Tafariel | [Dark Torturer Lost Soul] | pits_of_inferno
+203 | Lure: 1 | Throne of Apocalypse | [Destroyer Fury Juggernaut] | pits_of_inferno
+204 | Lure: 4 | Throne of Pumin | [Spectre Betrayed Wraith Hand of Cursed Fate] | pits_of_inferno
+205 | Lure: 4 | Throne of Ashfalor | [Lich Undead Dragon] | pits_of_inferno
+206 | Lure: 1 | Throne of Bazir | [Nightmare Phantasm] | pits_of_inferno
+207 | Lure: 1 | Ushuriel Seal | [Behemoth Juggernaut] | the_inquisition
+208 | Lure: 1 | Zugurosh Seal | [Crystal Spider Spectre Ice Golem Hand of Cursed Fate] | the_inquisition
+209 | Lure: 1 | Madareth Seal | [Dark Torturer Lost Soul] | the_inquisition
+210 | Lure: 1 | Latrivan & Golgordan Seal | [Plaguesmith Defiler Blightwalker] | the_inquisition
+211 | Lure: 1 | Annihilon Seal | [Warlock Undead Dragon Diabolic Imp] | the_inquisition
+212 | Lure: 1 | Hellgorak Seal | [Demon Juggernaut Hellhound Fire Elemental] | the_inquisition
+214 | Lure: 1 | Warzone I - Fungus | [Hideous Fungus Humongous Fungus] | warzone
+215 | Lure: 1 | Warzone II - Magma Dungeon | [Lava Golem Magma Crawler] | warzone
+217 | Lure: 1 | Black Knight Quest | [Bonelord Brittle Skeleton] | tibidle_island
+220 | Lure: 1 | Inquisition Warlocks | [Warlock Stone Golem Hero Priestess] | tibidle_island
+221 | Lure: 1 | Inquisition Entrance | [Hellfire Fighter Fire Devil Massive Fire Elemental] | tibidle_island
+222 | Lure: 4 | Shadow Nexus | [Fury Juggernaut Hellhound Demon Undead Dragon Angry Demon] | the_inquisition
+223 | Lure: 4 | Death Portal | [Renegade Knight Undead Gladiator Vile Grandmaster] | forgotten_knowledge
+224 | Lure: 4 | Earth Portal | [Orclops Doomhauler Orclops Ravager] | forgotten_knowledge
+225 | Lure: 4 | Energy Portal | [Diamond Servant Replica Golden Servant Replica Iron Servant Replica] | forgotten_knowledge
+226 | Lure: 1 | Fire Portal | [Lizard Chosen] | forgotten_knowledge
+227 | Lure: 4 | Ice Portal | [Juggernaut Destroyer Nightmare] | forgotten_knowledge
+228 | Lure: 4 | Holy Portal | [Broken Shaper Shaper Matriarch Twisted Shaper] | forgotten_knowledge
+229 | Lure: 2 | Otherworld Kazordoon | [Instable Breach Brood Instable Sparkion] | otherworld
+230 | Lure: 4 | Otherworld Edron | [Stabilizing Dread Intruder Stabilizing Reality Reaver] | otherworld
+231 | Lure: 1 | Otherworld Ankrahmun | [Breach Brood Dread Intruder Sparkion] | otherworld
+232 | Lure: 1 | Otherworld Svargrond | [Breach Brood Dread Intruder Sparkion] | otherworld
+233 | Lure: 4 | Otherworld Zao | [Reality Reaver Dread Intruder Breach Brood Sparkion] | otherworld
+234 | Lure: 4 | Lower Spikes | [Lost Basher Lost Husher Lost Thrower Drillworm] | tibidle_island
+235 | Lure: 4 | Upper Spikes | [Lost Basher Dragon Lord Gnome Trooper] | tibidle_island
+236 | Lure: 4 | Middle Spikes | [Vulcongra Gnome Trooper Nightmare Scion Drillworm] | tibidle_island
+237 | Lure: 4 | Crystal Keeper | [Crystalcrusher Massive Earth Elemental Enraged Crystal Golem] | warzone
+238 | Lure: 1 | Warzone I - Montanhas Rochosas | [stone-eater Armadile] | warzone
+239 | Lure: 4 | Warzone II - Ninho de Parasitas | [Weeper Lost Berserker] | warzone
+240 | Lure: 4 | Mushroom Gardens | [Crystal Spider Giant Spider Crystalcrusher] | warzone
+241 | Lure: 4 | Lava Hot Spot | [Dragon Lord Massive Fire Elemental Vulcongra] | warzone

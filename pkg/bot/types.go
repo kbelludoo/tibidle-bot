@@ -55,10 +55,13 @@ type AccountStatus struct {
 	GoldPerHour float64  `json:"goldPerHour"`
 	DurationSec int      `json:"durationSec"`
 	TargetHunt  string   `json:"targetHunt,omitempty"`
-	Benchmarks  []HuntBenchmark `json:"benchmarks,omitempty"`
-	Bestiary    []MonsterKillStat `json:"bestiary,omitempty"`
-	UpdatedAt   int64    `json:"updatedAt"`
-	RecentLogs  []string `json:"recentLogs"`
+	Benchmarks        []HuntBenchmark   `json:"benchmarks,omitempty"`
+	Bestiary          []MonsterKillStat `json:"bestiary,omitempty"`
+	BestiaryCompleted int               `json:"bestiaryCompleted"`
+	BestiaryTotal     int               `json:"bestiaryTotal"`
+	BestiaryTarget    string            `json:"bestiaryTarget,omitempty"`
+	UpdatedAt         int64             `json:"updatedAt"`
+	RecentLogs        []string          `json:"recentLogs"`
 }
 
 type SafeStatus struct {

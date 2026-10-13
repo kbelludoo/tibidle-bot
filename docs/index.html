@@ -729,7 +729,11 @@
         kills: src.kills,
         expPerHour: src.expPerHour,
         status: src.status,
-        recentLogs: src.recentLogs || src.logs
+        recentLogs: src.recentLogs || src.logs,
+        bestiaryCompleted: src.bestiaryCompleted,
+        bestiaryTotal: src.bestiaryTotal,
+        bestiaryTarget: src.bestiaryTarget,
+        bestiary: src.bestiary
       };
     }
 
@@ -768,6 +772,15 @@
           const voc = missing(a.vocation) ? '—' : esc(String(a.vocation).toUpperCase());
           const level = missing(a.level) ? '—' : esc(a.level);
           const status = missing(a.status) ? '—' : esc(a.status);
+          const bestiaryLine = (a.bestiaryTotal > 0 || (a.bestiary && a.bestiary.length > 0)) ? (
+            '<div style="margin-top:10px;padding:8px 10px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:6px;font-size:0.75rem;">' +
+              '<div style="display:flex;justify-content:space-between;color:var(--gold);font-weight:700;margin-bottom:3px;">' +
+                '<span>📖 Bestiário Completo</span>' +
+                '<span>' + (a.bestiaryCompleted || 0) + ' / ' + (a.bestiaryTotal || (a.bestiary ? a.bestiary.length : 209)) + '</span>' +
+              '</div>' +
+              '<div style="color:var(--text-muted);font-size:0.7rem;">🎯 Meta: <span style="color:var(--accent);">' + esc(a.bestiaryTarget || 'Auto') + '</span></div>' +
+            '</div>'
+          ) : '';
           return '<div class="acc-card"><div><div class="acc-top"><div class="acc-title-group"><h3><span>🛡️</span><span>Conta #' + (idx + 1) + '</span></h3>' +
             '<div class="acc-vocation-tag">Nv. ' + level + ' • ' + voc + '</div></div><span class="badge-online">' + status + '</span></div>' +
             '<div class="bar-group">' + bar('HP', a.hp, a.maxHp, 'fill-hp', '#f87171') + bar('MANA', a.mana, a.maxMana, 'fill-mana', '#38bdf8') + '</div>' +
@@ -776,7 +789,7 @@
               stat('Hunt', missing(a.currentHunt) ? '—' : esc(a.currentHunt)) +
               stat('Kills', missing(a.kills) ? '—' : formatNumber(a.kills), 'var(--green)') +
               stat('EXP/hora', formatNumber(a.expPerHour), 'var(--accent)') +
-            '</div></div>' + logsHtml(a.recentLogs) + '</div>';
+            '</div>' + bestiaryLine + '</div>' + logsHtml(a.recentLogs) + '</div>';
         }).join('');
       }
       document.getElementById('footerUpdated').textContent = 'Atualizado ' + new Date().toLocaleTimeString('pt-BR') + ' • somente leitura';

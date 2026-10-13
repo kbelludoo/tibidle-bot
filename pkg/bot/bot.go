@@ -44,6 +44,7 @@ type Bot struct {
 	lastSellTime     time.Time
 	benchmarks       map[int]*HuntBenchmark
 	bestiaryKills    map[string]int
+	knownMinLevels   map[int]int
 	consecutiveFails int
 }
 
@@ -58,24 +59,8 @@ type HuntTier struct {
 // Default bestiary target per creature tier (e.g. 500 kills)
 const BestiaryTargetKills = 500
 
-// BestiaryEligibleHunts lists hunts suitable for bestiary completion by level
-var BestiaryEligibleHunts = []HuntTier{
-	{MinLevel: 1, HuntID: 26, HuntName: "Daramian Minotaur Pyramid", Lure: 2}, // Minotaur
-	{MinLevel: 1, HuntID: 170, HuntName: "Wolves Den", Lure: 2},                 // Wolf
-	{MinLevel: 1, HuntID: 176, HuntName: "Wasps Dungeons", Lure: 2},             // Wasp
-	{MinLevel: 1, HuntID: 125, HuntName: "Goblins Femor Hills", Lure: 2},        // Goblin
-	{MinLevel: 1, HuntID: 126, HuntName: "Rotworms Darashia", Lure: 2},          // Rotworm
-	{MinLevel: 10, HuntID: 131, HuntName: "Dwarven Mines", Lure: 2},            // Dwarf
-	{MinLevel: 15, HuntID: 128, HuntName: "Larva Ankrahmuns", Lure: 2},          // Larva
-	{MinLevel: 20, HuntID: 139, HuntName: "Crocodiles Port Hope", Lure: 2},      // Crocodile
-	{MinLevel: 20, HuntID: 180, HuntName: "Amazon Camp", Lure: 1},               // Amazon, Valkyrie
-	{MinLevel: 25, HuntID: 32, HuntName: "Elfs Shadowthorn", Lure: 3},           // Elf Scout
-	{MinLevel: 30, HuntID: 134, HuntName: "Dworcs Port Hope", Lure: 3},          // Dworcs
-	{MinLevel: 35, HuntID: 141, HuntName: "Cyclops Thais", Lure: 1},             // Cyclops
-	{MinLevel: 45, HuntID: 140, HuntName: "Scarabs Cave", Lure: 2},              // Scarabs
-	{MinLevel: 50, HuntID: 43, HuntName: "Cults Goroma", Lure: 2},               // Cultists
-	{MinLevel: 60, HuntID: 46, HuntName: "Dragon Lair", Lure: 3},                // Dragons
-}
+// BestiaryEligibleHunts points to all 113 hunts defined in bestiary.go
+var BestiaryEligibleHunts = AllBestiaryHunts
 
 // RecommendedProgressionTiers contains the optimal party progression order for pure XP
 var RecommendedProgressionTiers = []HuntTier{
@@ -143,15 +128,26 @@ func NewBot(cfg AccountConfig) *Bot {
 	cfg.Lure = lure
 	cfg.HuntID = huntID
 
-	return &Bot{
-		config:        cfg,
-		status:        NewSafeStatus(cfg.ID),
-		sessionClient: client.NewSessionClient(),
-		ticketChan:    make(chan TicketSubmission, 10),
-		currentHuntID: huntID,
-		benchmarks:    make(map[int]*HuntBenchmark),
-		bestiaryKills: make(map[string]int),
+	kills, minLevels := LoadBestiary(cfg.ID)
+	b := &Bot{
+		config:         cfg,
+		status:         NewSafeStatus(cfg.ID),
+		sessionClient:  client.NewSessionClient(),
+		ticketChan:     make(chan TicketSubmission, 10),
+		currentHuntID:  huntID,
+		benchmarks:     make(map[int]*HuntBenchmark),
+		bestiaryKills:  kills,
+		knownMinLevels: minLevels,
 	}
+
+	bList, doneCnt, totalCnt := BuildBestiaryStatus(kills)
+	b.status.Update(func(st *AccountStatus) {
+		st.Bestiary = bList
+		st.BestiaryCompleted = doneCnt
+		st.BestiaryTotal = totalCnt
+	})
+
+	return b
 }
 
 func (b *Bot) SupplyTicket(ticket, wsURL string) {
@@ -498,11 +494,39 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
 
-			// Se AutoProgress estiver ativo e temos nível da party, verificar se devemos progredir
-			if autoProg && maxLevel > 0 {
+			// Se BestiaryMode estiver ativo, priorizar a meta do bestiário para o nível atual
+			if b.config.BestiaryMode && maxLevel > 0 {
+				b.mu.Lock()
+				bestiaryTier := PickNextBestiaryHunt(maxLevel, b.bestiaryKills, b.knownMinLevels)
+				if bestiaryTier != nil {
+					if b.consecutiveFails < 2 && b.config.HuntID != bestiaryTier.HuntID {
+						oldHunt := b.config.HuntName
+						b.config.HuntID = bestiaryTier.HuntID
+						b.config.HuntName = bestiaryTier.HuntName
+						b.config.Lure = bestiaryTier.Lure
+						b.status.AddLog(fmt.Sprintf("📖 Foco Bestiário (Lv. %d): alternando de '%s' para '%s' (Lure: %d)", maxLevel, oldHunt, bestiaryTier.HuntName, bestiaryTier.Lure))
+					}
+					b.status.Update(func(st *AccountStatus) {
+						st.TargetHunt = bestiaryTier.HuntName
+						st.BestiaryTarget = bestiaryTier.HuntName
+					})
+				} else {
+					// Todos os monstros do nível atual concluídos -> farmar melhor XP
+					rec := GetProgressionHuntForLevel(maxLevel)
+					if b.consecutiveFails < 2 && b.config.HuntID != rec.HuntID {
+						b.config.HuntID = rec.HuntID
+						b.config.HuntName = rec.HuntName
+						b.config.Lure = rec.Lure
+					}
+					b.status.Update(func(st *AccountStatus) {
+						st.TargetHunt = rec.HuntName
+						st.BestiaryTarget = "Nível atual concluído (Farmando EXP)"
+					})
+				}
+				b.mu.Unlock()
+			} else if autoProg && maxLevel > 0 {
 				rec := GetProgressionHuntForLevel(maxLevel)
 				b.mu.Lock()
-				// Se ainda não falhamos repetidamente nessa hunt recomendada
 				if b.consecutiveFails < 2 && b.config.HuntID != rec.HuntID {
 					oldHunt := b.config.HuntName
 					b.config.HuntID = rec.HuntID
@@ -594,23 +618,16 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			}
 		}
 
-		// Acumular abates de monstros para o Bestiário
+		// Acumular abates de monstros para o Bestiário e persistir em disco
 		for monster, count := range sum.Kills {
 			if count > 0 {
 				b.bestiaryKills[monster] += count
 			}
 		}
+		SaveBestiary(b.config.ID, b.bestiaryKills, b.knownMinLevels)
 
-		// Construir lista de Bestiário
-		var bestiaryList []MonsterKillStat
-		for monster, count := range b.bestiaryKills {
-			bestiaryList = append(bestiaryList, MonsterKillStat{
-				Name:      monster,
-				Kills:     count,
-				Target:    BestiaryTargetKills,
-				Completed: count >= BestiaryTargetKills,
-			})
-		}
+		// Construir lista e métricas de Bestiário completo
+		bestiaryList, completedCount, totalCount := BuildBestiaryStatus(b.bestiaryKills)
 
 		// Lista de benchmarks para o AccountStatus
 		var bmList []HuntBenchmark
@@ -618,8 +635,14 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			bmList = append(bmList, *v)
 		}
 
-		// Se BestiaryMode estiver ativo, verificar se monstros desta hunt já foram concluídos
+		// Rotação inteligente do Modo Bestiário Completo
+		var bestiaryTargetName string
 		if b.config.BestiaryMode {
+			currLvl := b.status.Get().Level
+			if currLvl <= 0 {
+				currLvl = 1
+			}
+
 			def := protocol.FindHuntByID(huntID)
 			if def != nil && len(def.Monsters) > 0 {
 				allDone := true
@@ -630,28 +653,29 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 					}
 				}
 				if allDone {
-					b.status.AddLog(fmt.Sprintf("🏆 Bestiário de '%s' CONCLUÍDO! Procurando próxima hunt pendente...", huntName))
-					// Encontra próxima hunt de bestiário elegível que ainda tenha monstro pendente
-					for _, h := range BestiaryEligibleHunts {
-						hDef := protocol.FindHuntByID(h.HuntID)
-						if hDef == nil {
-							continue
-						}
-						hasPending := false
-						for _, m := range hDef.Monsters {
-							if b.bestiaryKills[m] < BestiaryTargetKills {
-								hasPending = true
-								break
-							}
-						}
-						if hasPending {
-							b.config.HuntID = h.HuntID
-							b.config.HuntName = h.HuntName
-							b.config.Lure = h.Lure
-							b.status.AddLog(fmt.Sprintf("🎯 Bestiário rotacionado para '%s' (Lure: %d) para farmar novos monstros!", h.HuntName, h.Lure))
-							break
-						}
-					}
+					b.status.AddLog(fmt.Sprintf("🏆 Bestiário de '%s' CONCLUÍDO (500+ abates)! Progresso geral: %d/%d monstros.", huntName, completedCount, totalCount))
+				}
+			}
+
+			// Encontra próxima caçada do catálogo com criaturas pendentes para o nível
+			nextTier := PickNextBestiaryHunt(currLvl, b.bestiaryKills, b.knownMinLevels)
+			if nextTier != nil {
+				bestiaryTargetName = nextTier.HuntName
+				if b.config.HuntID != nextTier.HuntID {
+					b.config.HuntID = nextTier.HuntID
+					b.config.HuntName = nextTier.HuntName
+					b.config.Lure = nextTier.Lure
+					b.status.AddLog(fmt.Sprintf("🎯 Bestiário avançou para '%s' (Lure: %d) para abater novas criaturas!", nextTier.HuntName, nextTier.Lure))
+				}
+			} else {
+				// Todas as caçadas desbloqueadas para o nível atual foram completadas!
+				fallback := GetProgressionHuntForLevel(currLvl)
+				bestiaryTargetName = "Nível atual concluído (Farmando EXP)"
+				if b.config.HuntID != fallback.HuntID {
+					b.config.HuntID = fallback.HuntID
+					b.config.HuntName = fallback.HuntName
+					b.config.Lure = fallback.Lure
+					b.status.AddLog(fmt.Sprintf("⚡ Todos os monstros de nível %d concluídos! Focando XP máxima em '%s' até subir de nível.", currLvl, fallback.HuntName))
 				}
 			}
 		}
@@ -691,6 +715,12 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			st.Status = "idle"
 			st.Benchmarks = bmList
 			st.Bestiary = bestiaryList
+			st.BestiaryCompleted = completedCount
+			st.BestiaryTotal = totalCount
+			if bestiaryTargetName != "" {
+				st.BestiaryTarget = bestiaryTargetName
+				st.TargetHunt = bestiaryTargetName
+			}
 			if sum.XpPerHour > 0 {
 				st.ExpPerHour = sum.XpPerHour
 			}
@@ -708,11 +738,22 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 		}
 		if err := json.Unmarshal(msg.Data, &errData); err == nil {
 			if errData.Code == "level_too_low" {
-				log.Printf("[%s] Nível insuficiente (%d < %d). Alternando hunt fallback...", b.config.ID, errData.Params.Nivel, errData.Params.Min)
+				log.Printf("[%s] Nível insuficiente (%d < %d) para hunt ID %d.", b.config.ID, errData.Params.Nivel, errData.Params.Min, b.currentHuntID)
 				b.mu.Lock()
-				fallback := RecommendedProgressionTiers[0]
-				if errData.Params.Nivel >= 30 {
-					fallback = RecommendedProgressionTiers[1] // Elfs
+				if b.knownMinLevels == nil {
+					b.knownMinLevels = make(map[int]int)
+				}
+				b.knownMinLevels[b.currentHuntID] = errData.Params.Min
+				SaveBestiary(b.config.ID, b.bestiaryKills, b.knownMinLevels)
+
+				partyLevel := errData.Params.Nivel
+				var fallback *HuntTier
+				if b.config.BestiaryMode {
+					fallback = PickNextBestiaryHunt(partyLevel, b.bestiaryKills, b.knownMinLevels)
+				}
+				if fallback == nil {
+					rec := GetProgressionHuntForLevel(partyLevel)
+					fallback = &rec
 				}
 				b.config.HuntID = fallback.HuntID
 				b.config.HuntName = fallback.HuntName
@@ -722,7 +763,7 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				b.lastActionTime = time.Time{}
 				b.consecutiveFails++
 				b.mu.Unlock()
-				b.status.AddLog(fmt.Sprintf("Nível baixo para hunt anterior. Alternado automaticamente para %s (ID %d)", b.config.HuntName, b.config.HuntID))
+				b.status.AddLog(fmt.Sprintf("Nível insuficiente (%d < %d). Alternado automaticamente para '%s' (ID %d)", errData.Params.Nivel, errData.Params.Min, fallback.HuntName, fallback.HuntID))
 			}
 		}
 
@@ -780,6 +821,23 @@ func (b *Bot) performPeriodicActions() {
 	if targetHuntID == 0 {
 		targetHuntID = 26
 	}
+
+	b.mu.Lock()
+	if b.config.BestiaryMode {
+		lvl := b.status.Get().Level
+		if lvl <= 0 {
+			lvl = 1
+		}
+		tier := PickNextBestiaryHunt(lvl, b.bestiaryKills, b.knownMinLevels)
+		if tier != nil {
+			targetHuntID = tier.HuntID
+			lure = tier.Lure
+			b.config.HuntID = tier.HuntID
+			b.config.HuntName = tier.HuntName
+			b.config.Lure = tier.Lure
+		}
+	}
+	b.mu.Unlock()
 
 	// Se está caçando, atualiza target para a hunt em andamento até ela finalizar naturalmente
 	if isHunting {
