@@ -26,6 +26,7 @@ jobs:
         env:
           TIBIDLE_EMAIL: ${{ secrets.TIBIDLE_EMAIL }}
           TIBIDLE_PASSWORD: ${{ secrets.TIBIDLE_PASSWORD }}
+          TIBIDLE_DID: ${{ secrets.TIBIDLE_DID }}
           MODE: ${{ inputs.mode }}
           PUSH_URL: ${{ inputs.push_url }}
         run: |
@@ -43,6 +44,9 @@ jobs:
           print("; ".join(c.split(";")[0] for c in r.headers.get_all("Set-Cookie")))
           PY
           )
+          if [ -n "$TIBIDLE_DID" ]; then
+            COOKIE="$TIBIDLE_DID; $COOKIE"
+          fi
           echo "cookie de sessao obtido (${#COOKIE} chars)"
           OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
           TICKET=$(printf '%s' "$OUT" | grep -o 'FRESH_TICKET:.*' | head -1 | cut -d: -f2-)
