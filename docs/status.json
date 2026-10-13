@@ -17,12 +17,12 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791861714480,
+      "updatedAt": 1791861835980,
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
@@ -38,8 +38,8 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1444549560546875,
+  "ramAllocMB": 1.1671371459960938,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h9m46s",
+  "uptime": "2h11m47s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
