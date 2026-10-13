@@ -264,6 +264,18 @@ const exprAcharTexto = `(() => {
 	return '';
 })()`
 
+// exprExecutarTurnstile: força a execução do widget quando o overlay aparece mas
+// o iframe do desafio não foi renderizado.
+const exprExecutarTurnstile = `(() => { try {
+	if (typeof window.turnstile === 'undefined') return 'sem-turnstile';
+	const ov = document.querySelector('[data-testid="session-captcha-overlay"]');
+	if (!ov) return 'sem-overlay';
+	const inp = document.querySelector('input[name="cf-turnstile-response"]');
+	if (inp && inp.value) return 'ja-resolvido';
+	const r = window.turnstile.execute();
+	return 'executado:' + (typeof r);
+} catch (e) { return 'erro:' + e.message; } })()`
+
 // alvoDesafio: prioridade iframe (piercing shadow DOM) > host do desafio > texto.
 func alvoDesafio(c *cdpClient) (x, y, w, h float64, metodo string, ok bool) {
 	if raw, err := c.evalJS(exprAlvo); err == nil && raw != "" {
@@ -397,6 +409,20 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	ticketChan := make(chan TicketResult, 1)
 
 	cdp := newCDPClient(conn, func(method string, params json.RawMessage) {
+		if method == "Runtime.exceptionThrown" {
+			var ex struct {
+				ExceptionDetails struct {
+					Text      string `json:"text"`
+					Exception struct {
+						Description string `json:"description"`
+					} `json:"exception"`
+				} `json:"exceptionDetails"`
+			}
+			if json.Unmarshal(params, &ex) == nil {
+				log.Printf("[Browser Exception] %s %s", ex.ExceptionDetails.Text, ex.ExceptionDetails.Exception.Description)
+			}
+			return
+		}
 		if method != "Runtime.consoleAPICalled" {
 			return
 		}
@@ -410,7 +436,9 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 			return
 		}
 		for _, arg := range ev.Args {
-			if strings.Contains(arg.Value, "AUTO_CLICKED") || strings.Contains(arg.Value, "BLOCKED_BROWSER_WS") {
+			low := strings.ToLower(arg.Value)
+			if strings.Contains(arg.Value, "AUTO_CLICKED") || strings.Contains(arg.Value, "BLOCKED_BROWSER_WS") ||
+				strings.Contains(low, "turnstile") || strings.Contains(low, "challenge") || strings.Contains(low, "captcha") {
 				log.Printf("[Browser Console] %s", arg.Value)
 			}
 			if strings.HasPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:") {
@@ -465,7 +493,18 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 				this.readyState = 3;
 			}
 		}
-		window.WebSocket = DummyWebSocket;
+		const RealWebSocket = window.WebSocket;
+		window.WebSocket = function (url, protocols) {
+			const u = String(url === undefined ? '' : url);
+			if (/cloudflare|challenges\./i.test(u)) {
+				return protocols === undefined ? new RealWebSocket(url) : new RealWebSocket(url, protocols);
+			}
+			return new DummyWebSocket(url, protocols);
+		};
+		window.WebSocket.CONNECTING = 0;
+		window.WebSocket.OPEN = 1;
+		window.WebSocket.CLOSING = 2;
+		window.WebSocket.CLOSED = 3;
 
 		// Automatically click "ENTER THE GAME" button when party lobby renders
 		setInterval(() => {
@@ -510,6 +549,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	// Auto-clique no desafio interativo do Turnstile (iframe challenges.cloudflare.com)
 	stopClicks := make(chan struct{})
 	defer close(stopClicks)
+	execTentativas, lastExec := 0, time.Time{}
 	go func() {
 		ticker := time.NewTicker(1500 * time.Millisecond)
 		defer ticker.Stop()
@@ -518,6 +558,16 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 			case <-stopClicks:
 				return
 			case <-ticker.C:
+				now := time.Now()
+				if execTentativas < 4 && now.Sub(lastExec) >= 6*time.Second {
+					lastExec = now
+					execTentativas++
+					r, err := cdp.evalJS(exprExecutarTurnstile)
+					if err != nil {
+						r = "eval-erro: " + err.Error()
+					}
+					log.Printf("[AuthHelper] turnstile.execute tentativa %d -> %s", execTentativas, r)
+				}
 				x, y, w, h, metodo, ok := alvoDesafio(cdp)
 				if !ok {
 					continue
