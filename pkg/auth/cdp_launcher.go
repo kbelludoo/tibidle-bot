@@ -537,11 +537,18 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
 	case <-time.After(90 * time.Second):
-		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
+		dump, derr := cdp.evalJS(`JSON.stringify({
+			url: location.href,
+			text: document.body ? document.body.innerText.slice(0, 250) : '',
+			probe: (() => { try { const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); let n; while ((n = w.nextNode())) { if (/not a robot/i.test(n.nodeValue || '')) { let el = n.parentElement, up = el; for (let i = 0; i < 4 && up.parentElement; i++) up = up.parentElement; return up.outerHTML.slice(0, 600); } } return 'texto-nao-achado'; } catch (e) { return 'err:' + e.message; } })(),
+			iframes: Array.from(document.querySelectorAll('iframe')).map(f => (f.src || 'nosrc').slice(0, 90) + '#' + Math.round(f.getBoundingClientRect().width) + 'x' + Math.round(f.getBoundingClientRect().height)).join(' || '),
+			turnstile: typeof window.turnstile,
+			sitekeys: Array.from(document.querySelectorAll('[data-sitekey]')).map(e => e.getAttribute('data-sitekey').slice(0, 20) + ':' + e.className).join(' || '),
+			ultimoScript: Array.from(document.scripts).map(s => (s.src || 'inline').slice(-70)).slice(-10).join(' | ')
+		})`)
 		if derr != nil {
 			dump = "evalJS falhou: " + derr.Error()
 		}
-		alvos, _ := cdp.evalJS(exprAlvo)
-		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s | alvos=%s]", dump, alvos)
+		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s]", dump)
 	}
 }
