@@ -1,6 +1,1264 @@
 {
   "accounts": [
     {
+      "bestiary": [
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Acolyte of the Cult",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Adept of the Cult",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Amazon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Angry Demon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Armadile",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Baby Drogon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Banshee",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Barbarian Brutetamer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Barbarian Headsplitter",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Behemoth",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Betrayed Wraith",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Blightwalker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Blue Djinn",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Bog Raider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Bonebeast",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Bonelord",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Breach Brood",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Brimstone Bug",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Brittle Skeleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Broken Shaper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Chakoya Toolshaper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Chakoya Tribewarden",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cliff Strider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Corcodile",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Corym Charlatan",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Corym Skirmisher",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Crawler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Crocodile",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Crystal Spider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Crystalcrusher",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cult Believer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cult Enforcer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cyclops",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cyclops Drone",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Cyclops Smith",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dark Torturer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dawnfly",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Brawler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Elite",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Guard",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Scout",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Spellsinger",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Tyrant",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Deepling Warrior",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Defiler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Demon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Demon Skeleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Destroyer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Diabolic Imp",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Diamond Servant Replica",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dragon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dragon Hatchling",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dragon Lord",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dragon Lord Hatchling",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Draken Spellweaver",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Draken Warmaster",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dread Intruder",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Drillworm",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dwarf",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dwarf Soldier",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dworc Fleshhunter",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Dworc Venomsniper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Elder Bonelord",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Elf",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Elf Scout",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Energy Elemental",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Enlightened of the Cult",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Enraged Crystal Golem",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Fire Devil",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Fire Elemental",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Frost Dragon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Fury",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Gargoyle",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Giant Spider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Gladiator",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Gnome Trooper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Goblin",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Golden Servant Replica",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Gozzler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hand of Cursed Fate",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hellfire Fighter",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hellhound",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hellspawn",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hero",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hideous Fungus",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Hive Larva",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Humongous Fungus",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Ice Golem",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Ice Witch",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Insectoid Worker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Instable Breach Brood",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Instable Sparkion",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Iron Servant Replica",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Ironblight",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Juggernaut",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Killer Caiman",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Kollos",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lancer Beetle",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Larva",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lava Golem",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lava Lurker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lich",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Chosen",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Dragon Priest",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard High Guard",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Legionnaire",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Noble",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Sentinel",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Snakecharmer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lizard Templar",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lost Basher",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lost Berserker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lost Husher",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lost Soul",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Lost Thrower",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Magma Crawler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Marsh Stalker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Massive Earth Elemental",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Massive Fire Elemental",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Minotaur",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Minotaur Archer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Minotaur Guard",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Minotaur Mage",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Mutated Human",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Mutated Rat",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Mutated Tiger",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Necromancer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Nightmare",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Nightmare Scion",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Nymph",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Ogre Brute",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Old Beholder",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc Berserker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc Leader",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc Shaman",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc Spearman",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orc Warrior",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orclops Doomhauler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orclops Ravager",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Orewalker",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Phantasm",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pioson Spider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pirate Buccaneer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pirate Corsair",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pirate Marauder",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pirate Skeleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Pixie",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Plaguesmith",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Poison Spider",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Priestess",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Constrictor Scout",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Hydromancer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Hydromancer Scout",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Mantassin",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Pincher",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Quara Predator",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Raging Fire",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Reality Reaver",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Renegade Knight",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Rotworm",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Salamander",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Scarab",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Scorpion",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Shaper Matriarch",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Skeleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Skeleton Warrior",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Skelleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Slime",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Son of Verminor",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Souleater",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Sparkion",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Spectre",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Spidris",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Spitter",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Stabilizing Dread Intruder",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Stabilizing Reality Reaver",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Stone Golem",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Stonerefiner",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Swan Maiden",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Swarmer",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Terramite",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Thornback Tortoise",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Tortoise",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Twisted Shaper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Undead Dragon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Undead Gladiator",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Valkyrie",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Vampire",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Vicious Squire",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Vile Grandmaster",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Vulcongra",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wailing Widow",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Warlock",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wasp",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Waspoid",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Water Elemental",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Weeper",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Werebadger",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wiggler",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wild Warrior",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wolf",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Worker Golem",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wyrm",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Wyvern",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "Zombie",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "beholder",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "demon skelleton",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 0,
+          "name": "stone-eater",
+          "target": 500
+        }
+      ],
+      "bestiaryCompleted": 0,
+      "bestiaryTotal": 209,
       "currentHunt": "",
       "durationSec": 0,
       "expPerHour": 0,
@@ -16,17 +1274,16 @@
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791897442424,
+      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
+      "updatedAt": 1791897724735,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 0.8687362670898438,
-  "ramSysMB": 16.84986114501953,
-  "uptime": "2m25s"
+  "goroutines": 7,
+  "ramAllocMB": 2.1354522705078125,
+  "ramSysMB": 16.595970153808594,
+  "uptime": "1m32s"
 }
