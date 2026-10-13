@@ -10,6 +10,7 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -52,7 +53,6 @@ func FindBrowserExecutable() string {
 			}
 		}
 	} else {
-		// Linux VPS
 		home, _ := os.UserHomeDir()
 		candidates := []string{
 			"/usr/bin/google-chrome-stable",
@@ -63,7 +63,6 @@ func FindBrowserExecutable() string {
 			"/snap/bin/chromium",
 		}
 
-		// Also check any puppeteer chrome installation dynamically
 		matches, _ := filepath.Glob(filepath.Join(home, ".cache/puppeteer/chrome/*/chrome-linux64/chrome"))
 		candidates = append(matches, candidates...)
 
@@ -76,8 +75,154 @@ func FindBrowserExecutable() string {
 	return ""
 }
 
-// FetchTicketViaBrowser launches a browser for ~4 seconds, extracts a live WebSocket ticket,
-// and terminates the browser immediately to keep VPS memory footprint minimal (~15MB RAM).
+// cdpClient: cliente CDP com correlação id->resposta (request/notify) e eventos.
+type cdpClient struct {
+	conn    *websocket.Conn
+	writeMu sync.Mutex
+
+	mu      sync.Mutex
+	nextID  int
+	pending map[int]chan json.RawMessage
+
+	onEvent func(method string, params json.RawMessage)
+	closed  bool
+}
+
+func newCDPClient(conn *websocket.Conn, onEvent func(string, json.RawMessage)) *cdpClient {
+	c := &cdpClient{
+		conn:    conn,
+		pending: make(map[int]chan json.RawMessage),
+		onEvent: onEvent,
+	}
+	go c.readLoop()
+	return c
+}
+
+func (c *cdpClient) readLoop() {
+	for {
+		_, msg, err := c.conn.ReadMessage()
+		if err != nil {
+			c.mu.Lock()
+			c.closed = true
+			for id, ch := range c.pending {
+				close(ch)
+				delete(c.pending, id)
+			}
+			c.mu.Unlock()
+			return
+		}
+		var env struct {
+			ID     *int            `json:"id"`
+			Method string          `json:"method"`
+			Params json.RawMessage `json:"params"`
+		}
+		if json.Unmarshal(msg, &env) != nil {
+			continue
+		}
+		if env.ID != nil && env.Method == "" {
+			c.mu.Lock()
+			ch := c.pending[*env.ID]
+			delete(c.pending, *env.ID)
+			c.mu.Unlock()
+			if ch != nil {
+				ch <- env.Params
+			}
+			continue
+		}
+		if env.Method != "" && c.onEvent != nil {
+			c.onEvent(env.Method, env.Params)
+		}
+	}
+}
+
+func (c *cdpClient) notify(method string, params map[string]any) {
+	b, _ := json.Marshal(map[string]any{"id": 0, "method": method, "params": params})
+	c.writeMu.Lock()
+	_ = c.conn.WriteMessage(websocket.TextMessage, b)
+	c.writeMu.Unlock()
+}
+
+func (c *cdpClient) request(method string, params map[string]any) (json.RawMessage, error) {
+	c.mu.Lock()
+	if c.closed {
+		c.mu.Unlock()
+		return nil, fmt.Errorf("cdp fechado")
+	}
+	c.nextID++
+	id := c.nextID
+	ch := make(chan json.RawMessage, 1)
+	c.pending[id] = ch
+	c.mu.Unlock()
+
+	b, _ := json.Marshal(map[string]any{"id": id, "method": method, "params": params})
+	c.writeMu.Lock()
+	err := c.conn.WriteMessage(websocket.TextMessage, b)
+	c.writeMu.Unlock()
+	if err != nil {
+		c.mu.Lock()
+		delete(c.pending, id)
+		c.mu.Unlock()
+		return nil, err
+	}
+
+	select {
+	case res, ok := <-ch:
+		if !ok || res == nil {
+			return nil, fmt.Errorf("cdp fechado aguardando %s", method)
+		}
+		return res, nil
+	case <-time.After(5 * time.Second):
+		c.mu.Lock()
+		delete(c.pending, id)
+		c.mu.Unlock()
+		return nil, fmt.Errorf("timeout cdp em %s", method)
+	}
+}
+
+func (c *cdpClient) evalJS(expr string) (string, error) {
+	raw, err := c.request("Runtime.evaluate", map[string]any{
+		"expression":    expr,
+		"returnByValue": true,
+	})
+	if err != nil {
+		return "", err
+	}
+	var out struct {
+		Result struct {
+			Result struct {
+				Value json.RawMessage `json:"value"`
+			} `json:"result"`
+		} `json:"result"`
+	}
+	if err := json.Unmarshal(raw, &out); err != nil {
+		return "", err
+	}
+	var s string
+	if len(out.Result.Result.Value) == 0 || string(out.Result.Result.Value) == "null" {
+		return "", nil
+	}
+	if err := json.Unmarshal(out.Result.Result.Value, &s); err != nil {
+		return "", nil
+	}
+	return s, nil
+}
+
+func (c *cdpClient) clickXY(x, y float64) {
+	c.notify("Input.dispatchMouseEvent", map[string]any{"type": "mouseMoved", "x": x, "y": y})
+	c.notify("Input.dispatchMouseEvent", map[string]any{"type": "mousePressed", "x": x, "y": y, "button": "left", "clickCount": 1})
+	c.notify("Input.dispatchMouseEvent", map[string]any{"type": "mouseReleased", "x": x, "y": y, "button": "left", "clickCount": 1})
+}
+
+// exprAcharWidget: localiza o iframe do Turnstile visível na tela e devolve "x,y,w,h".
+const exprAcharWidget = `(() => {
+	const f = document.querySelector('iframe[src*="challenges.cloudflare.com"]');
+	if (!f) return '';
+	const r = f.getBoundingClientRect();
+	if (r.width < 50 || r.height < 20 || r.bottom < 1 || r.top > window.innerHeight - 1) return '';
+	return Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+})()`
+
+// FetchTicketViaBrowser launches a browser, resolves the challenge and captures a live ticket.
 func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	browserPath := FindBrowserExecutable()
 	if browserPath == "" {
@@ -118,7 +263,6 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		return nil, fmt.Errorf("failed to start auth browser (%s): %w", browserPath, err)
 	}
 
-	// Always ensure the browser process is killed when this function returns
 	defer func() {
 		if cmd.Process != nil {
 			_ = cmd.Process.Kill()
@@ -126,7 +270,6 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		}
 	}()
 
-	// Wait for CDP port to respond (up to 8s)
 	var wsURL string
 	startTime := time.Now()
 	for time.Since(startTime) < 8*time.Second {
@@ -168,23 +311,43 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	}
 	defer conn.Close()
 
-	msgID := 1
-	sendCDP := func(method string, params map[string]any) {
-		id := msgID
-		msgID++
-		b, _ := json.Marshal(map[string]any{
-			"id":     id,
-			"method": method,
-			"params": params,
-		})
-		_ = conn.WriteMessage(websocket.TextMessage, b)
-	}
+	ticketChan := make(chan TicketResult, 1)
 
-	sendCDP("Network.enable", nil)
-	sendCDP("Page.enable", nil)
-	sendCDP("Runtime.enable", nil)
+	cdp := newCDPClient(conn, func(method string, params json.RawMessage) {
+		if method != "Runtime.consoleAPICalled" {
+			return
+		}
+		var ev struct {
+			Args []struct {
+				Type  string `json:"type"`
+				Value string `json:"value"`
+			} `json:"args"`
+		}
+		if json.Unmarshal(params, &ev) != nil {
+			return
+		}
+		for _, arg := range ev.Args {
+			if strings.Contains(arg.Value, "AUTO_CLICKED") || strings.Contains(arg.Value, "BLOCKED_BROWSER_WS") {
+				log.Printf("[Browser Console] %s", arg.Value)
+			}
+			if strings.HasPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:") {
+				jsonPayload := strings.TrimPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:")
+				var res TicketResult
+				if err := json.Unmarshal([]byte(jsonPayload), &res); err == nil && res.Ticket != "" {
+					select {
+					case ticketChan <- res:
+					default:
+					}
+				}
+			}
+		}
+	})
 
-	// Inject early hook to capture ticket and BLOCK browser WebSocket so ticket stays 100% UNUSED!
+	cdp.notify("Network.enable", nil)
+	cdp.notify("Page.enable", nil)
+	cdp.notify("Runtime.enable", nil)
+
+	// Inject early hook to capture ticket and BLOCK browser WebSocket so ticket stays UNUSED
 	hookScript := `
 		const originalFetch = window.fetch;
 		window.fetch = async function(...args) {
@@ -235,16 +398,15 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		}, 1000);
 	`
 
-	sendCDP("Page.addScriptToEvaluateOnNewDocument", map[string]any{
+	cdp.notify("Page.addScriptToEvaluateOnNewDocument", map[string]any{
 		"source": hookScript,
 	})
 
-	// Inject cookies
 	cookieParts := strings.Split(cookieString, ";")
 	for _, part := range cookieParts {
 		kv := strings.SplitN(strings.TrimSpace(part), "=", 2)
 		if len(kv) == 2 {
-			sendCDP("Network.setCookie", map[string]any{
+			cdp.notify("Network.setCookie", map[string]any{
 				"name":     kv[0],
 				"value":    kv[1],
 				"url":      "https://play.tibidle.com",
@@ -258,47 +420,31 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 
 	time.Sleep(200 * time.Millisecond)
 	log.Println("[AuthHelper] Injected session cookies, navigating to play.tibidle.com...")
-	sendCDP("Page.navigate", map[string]any{
+	cdp.notify("Page.navigate", map[string]any{
 		"url": "https://play.tibidle.com/",
 	})
 
-	ticketChan := make(chan TicketResult, 1)
-
+	// Auto-clique no desafio interativo do Turnstile (iframe challenges.cloudflare.com)
+	stopClicks := make(chan struct{})
+	defer close(stopClicks)
 	go func() {
+		ticker := time.NewTicker(1500 * time.Millisecond)
+		defer ticker.Stop()
 		for {
-			_, msg, err := conn.ReadMessage()
-			if err != nil {
+			select {
+			case <-stopClicks:
 				return
-			}
-			var ev struct {
-				Method string `json:"method"`
-				Params struct {
-					Type string `json:"type"`
-					Args []struct {
-						Type  string `json:"type"`
-						Value string `json:"value"`
-					} `json:"args"`
-					Text string `json:"text"`
-				} `json:"params"`
-			}
-			if err := json.Unmarshal(msg, &ev); err != nil {
-				continue
-			}
-
-			if ev.Method == "Runtime.consoleAPICalled" {
-				for _, arg := range ev.Params.Args {
-					if strings.Contains(arg.Value, "AUTO_CLICKED") || strings.Contains(arg.Value, "BLOCKED_BROWSER_WS") {
-						log.Printf("[Browser Console] %s", arg.Value)
-					}
-					if strings.HasPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:") {
-						jsonPayload := strings.TrimPrefix(arg.Value, "INTERCEPTED_TICKET_DATA:")
-						var res TicketResult
-						if err := json.Unmarshal([]byte(jsonPayload), &res); err == nil && res.Ticket != "" {
-							ticketChan <- res
-							return
-						}
-					}
+			case <-ticker.C:
+				v, err := cdp.evalJS(exprAcharWidget)
+				if err != nil || v == "" {
+					continue
 				}
+				var x, y, w, h float64
+				if n, _ := fmt.Sscanf(v, "%f,%f,%f,%f", &x, &y, &w, &h); n != 4 {
+					continue
+				}
+				log.Printf("[AuthHelper] widget Turnstile visível %s — clicando no desafio", v)
+				cdp.clickXY(x+30, y+h/2)
 			}
 		}
 	}()
@@ -308,6 +454,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
 	case <-time.After(90 * time.Second):
-		return nil, fmt.Errorf("ticket capture timed out after 90s")
+		dump, _ := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
+		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s]", dump)
 	}
 }
