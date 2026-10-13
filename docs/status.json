@@ -1,7 +1,7 @@
 {
   "accounts": [
     {
-      "id": "Conta #1",
+      "id": "acc-1",
       "name": "Conta #1",
       "vocation": "",
       "level": 0,
@@ -17,29 +17,28 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864539048,
+      "updatedAt": 1791864559052,
       "recentLogs": [
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (Conta #usuario@privado.com)",
         "Conexão WebSocket estabelecida com sucesso!"
       ]
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.10113525390625,
+  "ramAllocMB": 3.32958984375,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h57m1s",
-  "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
+  "uptime": "2h57m17s"
 }
