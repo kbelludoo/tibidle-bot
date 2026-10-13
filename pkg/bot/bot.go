@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -12,6 +13,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/gorilla/websocket"
+
 	"tibidle-bot/pkg/client"
 	"tibidle-bot/pkg/protocol"
 )
@@ -19,6 +22,7 @@ import (
 type TicketSubmission struct {
 	Ticket string
 	WSURL  string
+	At     time.Time
 }
 
 type Bot struct {
@@ -30,6 +34,8 @@ type Bot struct {
 
 	mu               sync.Mutex
 	ticketChan       chan TicketSubmission
+	sessionDirty     bool
+	configPath       string
 	currentHuntID    int
 	isHunting        bool
 	lastActionTime   time.Time
@@ -37,6 +43,7 @@ type Bot struct {
 	lastBlessingBuy  time.Time
 	lastSellTime     time.Time
 	benchmarks       map[int]*HuntBenchmark
+	bestiaryKills    map[string]int
 	consecutiveFails int
 }
 
@@ -48,16 +55,38 @@ type HuntTier struct {
 	Lure     int
 }
 
-// RecommendedProgressionTiers contains the optimal party progression order
+// Default bestiary target per creature tier (e.g. 500 kills)
+const BestiaryTargetKills = 500
+
+// BestiaryEligibleHunts lists hunts suitable for bestiary completion by level
+var BestiaryEligibleHunts = []HuntTier{
+	{MinLevel: 1, HuntID: 26, HuntName: "Daramian Minotaur Pyramid", Lure: 2}, // Minotaur
+	{MinLevel: 1, HuntID: 170, HuntName: "Wolves Den", Lure: 2},                 // Wolf
+	{MinLevel: 1, HuntID: 176, HuntName: "Wasps Dungeons", Lure: 2},             // Wasp
+	{MinLevel: 1, HuntID: 125, HuntName: "Goblins Femor Hills", Lure: 2},        // Goblin
+	{MinLevel: 1, HuntID: 126, HuntName: "Rotworms Darashia", Lure: 2},          // Rotworm
+	{MinLevel: 10, HuntID: 131, HuntName: "Dwarven Mines", Lure: 2},            // Dwarf
+	{MinLevel: 15, HuntID: 128, HuntName: "Larva Ankrahmuns", Lure: 2},          // Larva
+	{MinLevel: 20, HuntID: 139, HuntName: "Crocodiles Port Hope", Lure: 2},      // Crocodile
+	{MinLevel: 20, HuntID: 180, HuntName: "Amazon Camp", Lure: 1},               // Amazon, Valkyrie
+	{MinLevel: 25, HuntID: 32, HuntName: "Elfs Shadowthorn", Lure: 3},           // Elf Scout
+	{MinLevel: 30, HuntID: 134, HuntName: "Dworcs Port Hope", Lure: 3},          // Dworcs
+	{MinLevel: 35, HuntID: 141, HuntName: "Cyclops Thais", Lure: 1},             // Cyclops
+	{MinLevel: 45, HuntID: 140, HuntName: "Scarabs Cave", Lure: 2},              // Scarabs
+	{MinLevel: 50, HuntID: 43, HuntName: "Cults Goroma", Lure: 2},               // Cultists
+	{MinLevel: 60, HuntID: 46, HuntName: "Dragon Lair", Lure: 3},                // Dragons
+}
+
+// RecommendedProgressionTiers contains the optimal party progression order for pure XP
 var RecommendedProgressionTiers = []HuntTier{
 	{MinLevel: 1, HuntID: 26, HuntName: "Daramian Minotaur Pyramid", Lure: 2}, // Lure 2 (safe, high spawn)
-	{MinLevel: 30, HuntID: 32, HuntName: "Elfs Shadowthorn", Lure: 3},          // Lure 3 (Elf Scout, bow loot, fast exp)
-	{MinLevel: 45, HuntID: 140, HuntName: "Scarabs Cave", Lure: 2},             // Lure 2 (Scarabs, safe at 45+)
-	{MinLevel: 60, HuntID: 46, HuntName: "Dragon Lair", Lure: 3},               // Lure 3 (Dragons, high exp & rares)
-	{MinLevel: 75, HuntID: 106, HuntName: "Hero Fortress Entrance", Lure: 3},   // Lure 3 (Bonebeast, Necro, Squire)
-	{MinLevel: 90, HuntID: 49, HuntName: "Pits of Inferno Entrance", Lure: 3},  // Lure 3 (DLs, massive exp)
-	{MinLevel: 110, HuntID: 192, HuntName: "Draken Walls", Lure: 3},            // Lure 3 (Drakens)
-	{MinLevel: 130, HuntID: 148, HuntName: "Warzone - Lava Lurkers", Lure: 4},  // Lure 4 (Top tier exp)
+	{MinLevel: 30, HuntID: 32, HuntName: "Elfs Shadowthorn", Lure: 3},         // Lure 3 (Elf Scout, bow loot, fast exp)
+	{MinLevel: 45, HuntID: 140, HuntName: "Scarabs Cave", Lure: 2},            // Lure 2 (Scarabs, safe at 45+)
+	{MinLevel: 60, HuntID: 46, HuntName: "Dragon Lair", Lure: 3},              // Lure 3 (Dragons, high exp & rares)
+	{MinLevel: 75, HuntID: 106, HuntName: "Hero Fortress Entrance", Lure: 3},  // Lure 3 (Bonebeast, Necro, Squire)
+	{MinLevel: 90, HuntID: 49, HuntName: "Pits of Inferno Entrance", Lure: 3}, // Lure 3 (DLs, massive exp)
+	{MinLevel: 110, HuntID: 192, HuntName: "Draken Walls", Lure: 3},           // Lure 3 (Drakens)
+	{MinLevel: 130, HuntID: 148, HuntName: "Warzone - Lava Lurkers", Lure: 4}, // Lure 4 (Top tier exp)
 }
 
 func GetProgressionHuntForLevel(level int) HuntTier {
@@ -77,7 +106,7 @@ func ResolveWSURL(ticket string, providedWSURL string) string {
 	parts := strings.Split(ticket, ".")
 	if len(parts) >= 2 {
 		seg := parts[1]
-		if l := len(seg)%4; l > 0 {
+		if l := len(seg) % 4; l > 0 {
 			seg += strings.Repeat("=", 4-l)
 		}
 		payloadBytes, err := base64.URLEncoding.DecodeString(seg)
@@ -121,6 +150,7 @@ func NewBot(cfg AccountConfig) *Bot {
 		ticketChan:    make(chan TicketSubmission, 10),
 		currentHuntID: huntID,
 		benchmarks:    make(map[int]*HuntBenchmark),
+		bestiaryKills: make(map[string]int),
 	}
 }
 
@@ -133,9 +163,58 @@ func (b *Bot) SupplyTicket(ticket, wsURL string) {
 	b.mu.Unlock()
 	b.status.AddLog(fmt.Sprintf("Ticket recebido externamente (WS: %s)! Conectando...", wsURL))
 	select {
-	case b.ticketChan <- TicketSubmission{Ticket: ticket, WSURL: wsURL}:
+	case b.ticketChan <- TicketSubmission{Ticket: ticket, WSURL: wsURL, At: time.Now()}:
 	default:
 	}
+}
+
+// SetConfigPath define o arquivo accounts.json desta conta para persistir
+// cookies renovados (login automático) de volta em disco.
+func (b *Bot) SetConfigPath(path string) {
+	b.configPath = path
+}
+
+func (b *Bot) saveSessionCookie() {
+	if b.configPath == "" {
+		return
+	}
+	content, err := os.ReadFile(b.configPath)
+	if err != nil {
+		return
+	}
+	var arr []AccountConfig
+	if err := json.Unmarshal(content, &arr); err == nil {
+		found := false
+		for i := range arr {
+			if arr[i].ID == b.config.ID || (len(arr) == 1 && arr[i].ID == "") {
+				arr[i].SessionCookie = b.config.SessionCookie
+				arr[i].SessionProof = b.config.SessionProof
+				found = true
+			}
+		}
+		if !found {
+			return
+		}
+		if out, err := json.MarshalIndent(arr, "", "  "); err == nil {
+			_ = os.WriteFile(b.configPath, out, 0644)
+		}
+		return
+	}
+	var single AccountConfig
+	if err := json.Unmarshal(content, &single); err == nil && single.ID == b.config.ID {
+		single.SessionCookie = b.config.SessionCookie
+		single.SessionProof = b.config.SessionProof
+		if out, err := json.MarshalIndent(single, "", "  "); err == nil {
+			_ = os.WriteFile(b.configPath, out, 0644)
+		}
+	}
+}
+
+// forceRelogin marca a sessão como suja para o próximo ciclo de conexão.
+func (b *Bot) forceRelogin() {
+	b.mu.Lock()
+	b.sessionDirty = true
+	b.mu.Unlock()
 }
 
 func (b *Bot) GetStatus() AccountStatus {
@@ -190,10 +269,43 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 		return fmt.Errorf("nenhum cookie de sessão ou credenciais configuradas")
 	}
 
-	// 2. Validar conta
+	// 2. Validar conta; se sessão morreu (401) ou foi invalidada pelo servidor,
+	// renova automaticamente via login de senha antes de desistir.
+	b.mu.Lock()
+	dirty := b.sessionDirty
+	b.sessionDirty = false
+	b.mu.Unlock()
+
+	if dirty {
+		b.status.AddLog("Sessão marcada como inválida pelo servidor. Renovando via login...")
+		if newCookies, _, err := b.sessionClient.LoginWithEmailPassword(b.config.Email, b.config.Password); err == nil {
+			cookies = newCookies
+			b.config.SessionCookie = newCookies
+			b.saveSessionCookie()
+			b.status.AddLog("Sessão renovada via login automático.")
+		} else {
+			log.Printf("[%s] Falha ao renovar sessão: %v", b.config.ID, err)
+		}
+	}
+
 	acc, err := b.sessionClient.ValidateSession(cookies)
 	if err != nil {
-		return fmt.Errorf("sessão inválida: %w", err)
+		if b.config.Email == "" || b.config.Password == "" {
+			return fmt.Errorf("sessão inválida: %w", err)
+		}
+		b.status.AddLog("Sessão expirou. Fazendo login automático...")
+		newCookies, _, lerr := b.sessionClient.LoginWithEmailPassword(b.config.Email, b.config.Password)
+		if lerr != nil {
+			return fmt.Errorf("sessão inválida e login falhou: %v (original: %w)", lerr, err)
+		}
+		cookies = newCookies
+		b.config.SessionCookie = newCookies
+		b.saveSessionCookie()
+		b.status.AddLog("Login automático OK. Nova sessão salva.")
+		acc, err = b.sessionClient.ValidateSession(cookies)
+		if err != nil {
+			return fmt.Errorf("sessão inválida mesmo após login: %w", err)
+		}
 	}
 
 	b.status.Update(func(st *AccountStatus) {
@@ -210,22 +322,32 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 	wsURL := ""
 
 	if ticket == "" {
-		var err error
-		ticket, wsURL, err = b.sessionClient.GetGameTicket(cookies, b.config.SessionProof)
-		if err != nil {
-			log.Printf("[%s] %v. Aguardando ticket via POST /api/ticket ou accounts.json...", b.config.ID, err)
+		var terr error
+		ticket, wsURL, terr = b.sessionClient.GetGameTicket(cookies, b.config.SessionProof)
+		if terr != nil {
+			log.Printf("[%s] %v. Aguardando ticket via POST /api/ticket (relay automático ou Web)...", b.config.ID, terr)
 			b.status.Update(func(st *AccountStatus) {
 				st.Status = "Aguardando Ticket (envie via push ou Web)"
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
-			select {
-			case <-ctx.Done():
-				return ctx.Err()
-			case sub := <-b.ticketChan:
-				ticket = sub.Ticket
-				wsURL = sub.WSURL
-			case <-time.After(30 * time.Second):
-				return fmt.Errorf("aguardando ticket: %w", err)
+			// Relay de PC leva até ~45s (poll + geração no navegador + push).
+			// Ticket TTL é 60s, então descarta qualquer ticket com mais de 45s.
+			deadline := time.After(90 * time.Second)
+		waitTicket:
+			for {
+				select {
+				case <-ctx.Done():
+					return ctx.Err()
+				case sub := <-b.ticketChan:
+					if sub.At.IsZero() || time.Since(sub.At) <= 45*time.Second {
+						ticket = sub.Ticket
+						wsURL = sub.WSURL
+						break waitTicket
+					}
+					b.status.AddLog("Ticket expirado descartado (>45s). Aguardando outro...")
+				case <-deadline:
+					return fmt.Errorf("aguardando ticket: %w", terr)
+				}
 			}
 		}
 	}
@@ -278,7 +400,21 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 			sock.Close()
 			return nil
 		case err := <-disconnectChan:
-			return fmt.Errorf("websocket desconectou: %v", err)
+			if err != nil {
+				var ce *websocket.CloseError
+				if errors.As(err, &ce) {
+					log.Printf("[%s] WebSocket fechado pelo servidor: code=%d reason=%q", b.config.ID, ce.Code, ce.Text)
+					b.status.AddLog(fmt.Sprintf("Servidor fechou conexão (code %d)", ce.Code))
+					// 4401 unauthorized / 4403 session_replaced: força novo login no próximo ciclo
+					if ce.Code == 4401 || ce.Code == 4403 {
+						b.forceRelogin()
+					}
+				} else {
+					log.Printf("[%s] WebSocket desconectou: %v", b.config.ID, err)
+				}
+				return fmt.Errorf("websocket desconectou: %v", err)
+			}
+			return fmt.Errorf("websocket desconectou: conexão fechada sem código")
 		case <-actionTicker.C:
 			b.performPeriodicActions()
 			b.persistStatus()
@@ -403,17 +539,18 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 	case "ended":
 		var endPayload struct {
 			Summary struct {
-				HuntID     int     `json:"huntId"`
-				Title      struct {
+				HuntID int `json:"huntId"`
+				Title  struct {
 					Key    string         `json:"key"`
 					Params map[string]any `json:"params"`
 				} `json:"title"`
-				Reason     string  `json:"reason"` // "death", "manual", "duration"
-				ElapsedSec int     `json:"elapsedSec"`
-				XpPerHour  float64 `json:"xpPerHour"`
-				KillsTotal int     `json:"killsTotal"`
-				LootGold   int     `json:"lootGold"`
-				Deaths     int     `json:"deaths"`
+				Reason     string         `json:"reason"` // "death", "manual", "duration"
+				ElapsedSec int            `json:"elapsedSec"`
+				XpPerHour  float64        `json:"xpPerHour"`
+				Kills      map[string]int `json:"kills"`
+				KillsTotal int            `json:"killsTotal"`
+				LootGold   int            `json:"lootGold"`
+				Deaths     int            `json:"deaths"`
 				Level      struct {
 					Start int `json:"start"`
 					End   int `json:"end"`
@@ -457,10 +594,66 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			}
 		}
 
+		// Acumular abates de monstros para o Bestiário
+		for monster, count := range sum.Kills {
+			if count > 0 {
+				b.bestiaryKills[monster] += count
+			}
+		}
+
+		// Construir lista de Bestiário
+		var bestiaryList []MonsterKillStat
+		for monster, count := range b.bestiaryKills {
+			bestiaryList = append(bestiaryList, MonsterKillStat{
+				Name:      monster,
+				Kills:     count,
+				Target:    BestiaryTargetKills,
+				Completed: count >= BestiaryTargetKills,
+			})
+		}
+
 		// Lista de benchmarks para o AccountStatus
 		var bmList []HuntBenchmark
 		for _, v := range b.benchmarks {
 			bmList = append(bmList, *v)
+		}
+
+		// Se BestiaryMode estiver ativo, verificar se monstros desta hunt já foram concluídos
+		if b.config.BestiaryMode {
+			def := protocol.FindHuntByID(huntID)
+			if def != nil && len(def.Monsters) > 0 {
+				allDone := true
+				for _, m := range def.Monsters {
+					if b.bestiaryKills[m] < BestiaryTargetKills {
+						allDone = false
+						break
+					}
+				}
+				if allDone {
+					b.status.AddLog(fmt.Sprintf("🏆 Bestiário de '%s' CONCLUÍDO! Procurando próxima hunt pendente...", huntName))
+					// Encontra próxima hunt de bestiário elegível que ainda tenha monstro pendente
+					for _, h := range BestiaryEligibleHunts {
+						hDef := protocol.FindHuntByID(h.HuntID)
+						if hDef == nil {
+							continue
+						}
+						hasPending := false
+						for _, m := range hDef.Monsters {
+							if b.bestiaryKills[m] < BestiaryTargetKills {
+								hasPending = true
+								break
+							}
+						}
+						if hasPending {
+							b.config.HuntID = h.HuntID
+							b.config.HuntName = h.HuntName
+							b.config.Lure = h.Lure
+							b.status.AddLog(fmt.Sprintf("🎯 Bestiário rotacionado para '%s' (Lure: %d) para farmar novos monstros!", h.HuntName, h.Lure))
+							break
+						}
+					}
+				}
+			}
 		}
 
 		// Tratar mortes ou falhas
@@ -472,7 +665,7 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			// Se morrer 2x ou mais na hunt atual, regride temporariamente para uma hunt mais segura
 			if b.consecutiveFails >= 2 {
 				fallback := RecommendedProgressionTiers[0] // Daramian Minotaurs
-				if huntID == 140 { // Se morreu nos Scarabs, regride para Elfs
+				if huntID == 140 {                         // Se morreu nos Scarabs, regride para Elfs
 					fallback = RecommendedProgressionTiers[1]
 				} else if huntID == 46 { // Se morreu nos Dragons, regride para Scarabs
 					fallback = RecommendedProgressionTiers[2]
@@ -497,6 +690,7 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 		b.status.Update(func(st *AccountStatus) {
 			st.Status = "idle"
 			st.Benchmarks = bmList
+			st.Bestiary = bestiaryList
 			if sum.XpPerHour > 0 {
 				st.ExpPerHour = sum.XpPerHour
 			}

@@ -18,6 +18,7 @@ type AccountConfig struct {
 	AutoBlessings bool   `json:"autoBlessings"`
 	AutoDaily     bool   `json:"autoDaily"`
 	AutoProgress  bool   `json:"autoProgress"`
+	BestiaryMode  bool   `json:"bestiaryMode"`
 }
 
 type HuntBenchmark struct {
@@ -27,6 +28,13 @@ type HuntBenchmark struct {
 	LastDuration int     `json:"lastDuration"`
 	Deaths       int     `json:"deaths"`
 	Runs         int     `json:"runs"`
+}
+
+type MonsterKillStat struct {
+	Name      string `json:"name"`
+	Kills     int    `json:"kills"`
+	Target    int    `json:"target"`
+	Completed bool   `json:"completed"`
 }
 
 type AccountStatus struct {
@@ -48,6 +56,7 @@ type AccountStatus struct {
 	DurationSec int      `json:"durationSec"`
 	TargetHunt  string   `json:"targetHunt,omitempty"`
 	Benchmarks  []HuntBenchmark `json:"benchmarks,omitempty"`
+	Bestiary    []MonsterKillStat `json:"bestiary,omitempty"`
 	UpdatedAt   int64    `json:"updatedAt"`
 	RecentLogs  []string `json:"recentLogs"`
 }

@@ -145,6 +145,29 @@
                 </div>
               ` : ''}
 
+              ${a.bestiary && a.bestiary.length > 0 ? `
+                <div style="margin-top: 15px; background: #0a0d14; border: 1px solid #1e293b; border-radius: 6px; padding: 10px;">
+                  <div style="font-size: 11px; color: #f59e0b; text-transform: uppercase; margin-bottom: 6px; font-weight: bold;">📖 Progresso do Bestiário (Abates de Monstros)</div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px;">
+                    ${a.bestiary.map(m => {
+                      const pct = Math.min(100, Math.round((m.kills / m.target) * 100));
+                      return `
+                        <div style="background: #131a2a; padding: 8px; border-radius: 4px; border: 1px solid ${m.completed ? '#059669' : '#1e293b'};">
+                          <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: bold; color: ${m.completed ? '#34d399' : '#cbd5e1'};">
+                            <span>${m.name}</span>
+                            <span>${m.completed ? '✔ Concluído' : pct + '%'}</span>
+                          </div>
+                          <div style="background: #0f172a; height: 6px; border-radius: 3px; overflow: hidden; margin-top: 4px;">
+                            <div style="background: ${m.completed ? '#10b981' : '#38bdf8'}; width: ${pct}%; height: 100%;"></div>
+                          </div>
+                          <div style="font-size: 10px; color: #64748b; margin-top: 3px; text-align: right;">${m.kills} / ${m.target} kills</div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
               ${a.recentLogs && a.recentLogs.length > 0 ? `
                 <div class="logs">
                   ${a.recentLogs.map(l => '<div class="log-line">▸ ' + l + '</div>').join('')}
