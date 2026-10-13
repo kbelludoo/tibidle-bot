@@ -224,10 +224,10 @@ func (c *cdpClient) clickXY(x, y float64) {
 }
 
 // exprAlvo: varre documento + shadow roots; devolve JSON {ifr:[retangulos de
-// iframes visiveis], hosts:[tag#id.cls:retangulo de elementos do desafio]}.
+// iframes visiveis], hosts:[alvos do desafio com turnstile primeiro]}.
 const exprAlvo = `(() => {
-	const ifr = [], hosts = [], seen = new Set();
-	const cls = el => ((el.id ? '#' + el.id : '') + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().replace(/\s+/g, '.') : '')).slice(0, 50);
+	const ifr = [], hostsT = [], hostsC = [], seen = new Set();
+	const cls = el => ((el.id ? '#' + el.id : '') + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().replace(/\s+/g, '.') : '')).slice(0, 40);
 	const walk = (root, d) => {
 		if (d > 14) return;
 		for (const el of root.querySelectorAll('*')) {
@@ -235,14 +235,16 @@ const exprAlvo = `(() => {
 			if (el.tagName === 'IFRAME' && r.width >= 40 && r.height >= 15) {
 				ifr.push(Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height));
 			} else if (r.width > 40 && r.height > 15) {
-				const s = cls(el) + ' ' + (el.getAttribute('aria-label') || '');
-				if (/turnstile|challenge|captcha|cf-/i.test(s)) hosts.push(cls(el) + ':' + Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height));
+				const s = cls(el) + ' ' + (el.getAttribute('data-testid') || '') + ' ' + (el.getAttribute('aria-label') || '');
+				const ret = Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+				if (/turnstile|cf-/i.test(s)) hostsT.push((cls(el) || el.tagName) + ':' + ret);
+				else if (/challenge|captcha/i.test(s)) hostsC.push((cls(el) || el.tagName) + ':' + ret);
 			}
 			if (el.shadowRoot && !seen.has(el.shadowRoot)) { seen.add(el.shadowRoot); walk(el.shadowRoot, d + 1); }
 		}
 	};
 	walk(document, 0);
-	return JSON.stringify({ ifr: ifr, hosts: hosts.slice(0, 8) });
+	return JSON.stringify({ ifr: ifr, hosts: hostsT.concat(hostsC).slice(0, 8) });
 })()`
 
 // exprAcharTexto: fallback — acha o container do texto "not a robot" (desafio
