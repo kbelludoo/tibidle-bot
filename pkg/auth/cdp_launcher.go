@@ -223,18 +223,26 @@ func (c *cdpClient) clickXY(x, y float64) {
 	c.notify("Input.dispatchMouseEvent", map[string]any{"type": "mouseReleased", "x": x, "y": y, "button": "left", "clickCount": 1})
 }
 
-// exprAcharWidget: localiza o iframe do Turnstile visível e devolve "x,y,w,h".
-const exprAcharWidget = `(() => {
-	const sels = ['iframe[src*="challenges.cloudflare.com"]', 'iframe[src*="turnstile"]', 'iframe[src*="cloudflare"]'];
-	for (const s of sels) {
-		for (const f of document.querySelectorAll(s)) {
-			const r = f.getBoundingClientRect();
-			if (r.width >= 50 && r.height >= 20 && r.bottom >= 1 && r.top <= window.innerHeight - 1) {
-				return 'iframe:' + Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+// exprAlvo: varre documento + shadow roots; devolve JSON {ifr:[retangulos de
+// iframes visiveis], hosts:[tag#id.cls:retangulo de elementos do desafio]}.
+const exprAlvo = `(() => {
+	const ifr = [], hosts = [], seen = new Set();
+	const cls = el => ((el.id ? '#' + el.id : '') + (typeof el.className === 'string' && el.className ? '.' + el.className.trim().replace(/\s+/g, '.') : '')).slice(0, 50);
+	const walk = (root, d) => {
+		if (d > 14) return;
+		for (const el of root.querySelectorAll('*')) {
+			const r = el.getBoundingClientRect();
+			if (el.tagName === 'IFRAME' && r.width >= 40 && r.height >= 15) {
+				ifr.push(Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height));
+			} else if (r.width > 40 && r.height > 15) {
+				const s = cls(el) + ' ' + (el.getAttribute('aria-label') || '');
+				if (/turnstile|challenge|captcha|cf-/i.test(s)) hosts.push(cls(el) + ':' + Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height));
 			}
+			if (el.shadowRoot && !seen.has(el.shadowRoot)) { seen.add(el.shadowRoot); walk(el.shadowRoot, d + 1); }
 		}
-	}
-	return '';
+	};
+	walk(document, 0);
+	return JSON.stringify({ ifr: ifr, hosts: hosts.slice(0, 8) });
 })()`
 
 // exprAcharTexto: fallback — acha o container do texto "not a robot" (desafio
@@ -255,6 +263,42 @@ const exprAcharTexto = `(() => {
 	}
 	return '';
 })()`
+
+// alvoDesafio: prioridade iframe (piercing shadow DOM) > host do desafio > texto.
+func alvoDesafio(c *cdpClient) (x, y, w, h float64, metodo string, ok bool) {
+	if raw, err := c.evalJS(exprAlvo); err == nil && raw != "" {
+		var t struct {
+			Ifr   []string `json:"ifr"`
+			Hosts []string `json:"hosts"`
+		}
+		if json.Unmarshal([]byte(raw), &t) == nil {
+			if len(t.Ifr) > 0 {
+				if n, _ := fmt.Sscanf(t.Ifr[0], "%f,%f,%f,%f", &x, &y, &w, &h); n == 4 {
+					return x, y, w, h, "iframe", true
+				}
+			}
+			for _, hs := range t.Hosts {
+				cord := hs
+				if i := strings.IndexByte(hs, ':'); i >= 0 {
+					cord = hs[i+1:]
+				}
+				if n, _ := fmt.Sscanf(cord, "%f,%f,%f,%f", &x, &y, &w, &h); n == 4 {
+					return x, y, w, h, "host", true
+				}
+			}
+		}
+	}
+	if v, err := c.evalJS(exprAcharTexto); err == nil && v != "" {
+		cord := v
+		if i := strings.IndexByte(v, ':'); i >= 0 {
+			cord = v[i+1:]
+		}
+		if n, _ := fmt.Sscanf(cord, "%f,%f,%f,%f", &x, &y, &w, &h); n == 4 {
+			return x, y, w, h, "texto", true
+		}
+	}
+	return 0, 0, 0, 0, "", false
+}
 
 // FetchTicketViaBrowser launches a browser, resolves the challenge and captures a live ticket.
 func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
@@ -474,28 +518,16 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 			case <-stopClicks:
 				return
 			case <-ticker.C:
-				v, err := cdp.evalJS(exprAcharWidget)
-				metodo := "iframe"
-				if err != nil || v == "" {
-					if v2, err2 := cdp.evalJS(exprAcharTexto); err2 == nil && v2 != "" {
-						v = v2
-						metodo = "texto"
-						err = nil
-					}
-				}
-				if err != nil || v == "" {
+				x, y, w, h, metodo, ok := alvoDesafio(cdp)
+				if !ok {
 					continue
 				}
-				cord := v
-				if i := strings.IndexByte(v, ':'); i >= 0 {
-					cord = v[i+1:]
+				log.Printf("[AuthHelper] desafio Turnstile visivel via %s %d,%d,%d,%d — clicando", metodo, int(x), int(y), int(w), int(h))
+				dx := 30.0
+				if w < 70 {
+					dx = w / 2
 				}
-				var x, y, w, h float64
-				if n, _ := fmt.Sscanf(cord, "%f,%f,%f,%f", &x, &y, &w, &h); n != 4 {
-					continue
-				}
-				log.Printf("[AuthHelper] desafio Turnstile visivel via %s %s — clicando", metodo, cord)
-				cdp.clickXY(x+30, y+h/2)
+				cdp.clickXY(x+dx, y+h/2)
 			}
 		}
 	}()
@@ -505,10 +537,11 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
 	case <-time.After(90 * time.Second):
-		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):'',iframes:Array.from(document.querySelectorAll('iframe')).map(f=>(f.src||'nosrc').slice(0,110)).join(' || ')})`)
+		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
 		if derr != nil {
 			dump = "evalJS falhou: " + derr.Error()
 		}
-		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s]", dump)
+		alvos, _ := cdp.evalJS(exprAlvo)
+		return nil, fmt.Errorf("ticket capture timed out after 90s [page=%s | alvos=%s]", dump, alvos)
 	}
 }
