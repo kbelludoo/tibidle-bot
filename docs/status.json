@@ -17,7 +17,7 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864275975,
+      "updatedAt": 1791864356895,
       "recentLogs": [
         "Conectado como Conta #1 (usuario@privado.com)",
         "Conectado como Conta #1 (usuario@privado.com)",
@@ -37,9 +37,9 @@
       ]
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.03289794921875,
+  "goroutines": 8,
+  "ramAllocMB": 1.1251907348632812,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h52m23s",
+  "uptime": "2h53m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
