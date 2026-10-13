@@ -3,8 +3,8 @@
     {
       "id": "acc-1",
       "name": "Conta #1",
-      "vocation": "",
-      "level": 0,
+      "vocation": "KNIGHT",
+      "level": 37,
       "hp": 0,
       "maxHp": 0,
       "mana": 0,
@@ -16,8 +16,9 @@
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
-      "durationSec": 0,
-      "updatedAt": 1791869041009,
+      "durationSec": 12421,
+      "targetHunt": "Elfs Shadowthorn",
+      "updatedAt": 1791869160193,
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -26,12 +27,13 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "⭐ Auto-Progresso (Lv. 37): alternando de 'Daramian Minotaur Pyramid' para 'Elfs Shadowthorn' (Lure: 3)"
       ]
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.042236328125,
-  "ramSysMB": 16.84986114501953,
-  "uptime": "6m49s"
+  "goroutines": 9,
+  "ramAllocMB": 2.218658447265625,
+  "ramSysMB": 17.34986114501953,
+  "uptime": "8m50s"
 }
