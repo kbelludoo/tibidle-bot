@@ -11,13 +11,13 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864478333,
+      "updatedAt": 1791864539048,
       "recentLogs": [
         "Conectado como Conta #1 (usuario@privado.com)",
         "Conectado como Conta #1 (usuario@privado.com)",
@@ -31,15 +31,15 @@
         "Conectado como Conta #1 (usuario@privado.com)",
         "Conectado como Conta #1 (usuario@privado.com)",
         "Conectado como Conta #1 (usuario@privado.com)",
+        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)",
-        "Conectado como Conta #1 (usuario@privado.com)"
+        "Conexão WebSocket estabelecida com sucesso!"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.1175384521484375,
+  "goroutines": 10,
+  "ramAllocMB": 2.10113525390625,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h55m47s",
+  "uptime": "2h57m1s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
