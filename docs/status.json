@@ -11,17 +11,14 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Autenticado. Obtendo ticket de jogo...",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791865325480,
+      "updatedAt": 1791865446451,
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -33,12 +30,15 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 3.237548828125,
+  "goroutines": 9,
+  "ramAllocMB": 1.16082763671875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h9m53s"
+  "uptime": "3h11m51s"
 }
