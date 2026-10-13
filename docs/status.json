@@ -1274,16 +1274,18 @@
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
-      "updatedAt": 1791897724735,
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1791897836142,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 2.1354522705078125,
-  "ramSysMB": 16.595970153808594,
-  "uptime": "1m32s"
+  "goroutines": 8,
+  "ramAllocMB": 1.2086410522460938,
+  "ramSysMB": 17.166282653808594,
+  "uptime": "3m32s"
 }
