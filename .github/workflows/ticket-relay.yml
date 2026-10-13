@@ -22,32 +22,24 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version-file: go.mod
-      - name: Login + capturar ticket via Chrome real (xvfb)
+      - name: Capturar ticket via Chrome real (xvfb)
         env:
-          TIBIDLE_EMAIL: ${{ secrets.TIBIDLE_EMAIL }}
-          TIBIDLE_PASSWORD: ${{ secrets.TIBIDLE_PASSWORD }}
+          TIBIDLE_SESSION: ${{ secrets.TIBIDLE_SESSION }}
           TIBIDLE_DID: ${{ secrets.TIBIDLE_DID }}
           MODE: ${{ inputs.mode }}
           PUSH_URL: ${{ inputs.push_url }}
         run: |
           set -euo pipefail
-          COOKIE=$(python3 - <<'PY'
-          import json, os, urllib.request
-          body = json.dumps({"email": os.environ["TIBIDLE_EMAIL"], "password": os.environ["TIBIDLE_PASSWORD"]}).encode()
-          req = urllib.request.Request(
-              "https://play.tibidle.com/auth/password/login",
-              data=body,
-              headers={"Content-Type": "application/json",
-                       "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"},
-          )
-          r = urllib.request.urlopen(req, timeout=20)
-          print("; ".join(c.split(";")[0] for c in r.headers.get_all("Set-Cookie")))
-          PY
-          )
-          if [ -n "$TIBIDLE_DID" ]; then
-            COOKIE="$TIBIDLE_DID; $COOKIE"
+          if [ -z "$TIBIDLE_SESSION" ]; then
+            echo "::error::secret TIBIDLE_SESSION vazio (sid da sessao da VPS)"
+            exit 1
           fi
-          echo "cookie de sessao obtido (${#COOKIE} chars)"
+          if [ -n "$TIBIDLE_DID" ]; then
+            COOKIE="$TIBIDLE_DID; $TIBIDLE_SESSION"
+          else
+            COOKIE="$TIBIDLE_SESSION"
+          fi
+          echo "cookie da sessao da VPS (${#COOKIE} chars)"
           OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
           TICKET=$(printf '%s' "$OUT" | grep -o 'FRESH_TICKET:.*' | head -1 | cut -d: -f2-)
           WSURL=$(printf '%s' "$OUT" | grep -o 'WS_URL:.*' | head -1 | cut -d: -f2-)
@@ -67,4 +59,5 @@ jobs:
             echo
             echo "ticket enviado pro bot em $PUSH_URL"
           fi
+
 
