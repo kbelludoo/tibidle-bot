@@ -18,7 +18,7 @@
       "goldPerHour": 0,
       "durationSec": 16322,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791873281220,
+      "updatedAt": 1791873482779,
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -32,12 +32,14 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket expirado descartado (>45s). Aguardando outro...",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.084716796875,
+  "goroutines": 9,
+  "ramAllocMB": 1.2155075073242188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "1h18m49s"
+  "uptime": "1h20m50s"
 }
