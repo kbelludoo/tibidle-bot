@@ -194,19 +194,23 @@ func (c *cdpClient) evalJS(expr string) (string, error) {
 	}
 	var out struct {
 		Result struct {
-			Result struct {
-				Value json.RawMessage `json:"value"`
-			} `json:"result"`
+			Value json.RawMessage `json:"value"`
 		} `json:"result"`
+		ExceptionDetails *struct {
+			Text string `json:"text"`
+		} `json:"exceptionDetails"`
 	}
 	if err := json.Unmarshal(raw, &out); err != nil {
 		return "", err
 	}
-	var s string
-	if len(out.Result.Result.Value) == 0 || string(out.Result.Result.Value) == "null" {
+	if out.ExceptionDetails != nil {
+		return "", fmt.Errorf("exceção JS: %s", out.ExceptionDetails.Text)
+	}
+	if len(out.Result.Value) == 0 || string(out.Result.Value) == "null" {
 		return "", nil
 	}
-	if err := json.Unmarshal(out.Result.Result.Value, &s); err != nil {
+	var s string
+	if err := json.Unmarshal(out.Result.Value, &s); err != nil {
 		return "", nil
 	}
 	return s, nil
