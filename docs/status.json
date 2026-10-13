@@ -4,21 +4,21 @@
       "id": "acc-1",
       "name": "Conta #1",
       "vocation": "KNIGHT",
-      "level": 37,
+      "level": 38,
       "hp": 0,
       "maxHp": 0,
       "mana": 0,
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
-      "durationSec": 16322,
+      "durationSec": 38461,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791895005870,
+      "updatedAt": 1791895199910,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -33,13 +33,13 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.0031814575195312,
+  "goroutines": 9,
+  "ramAllocMB": 1.85882568359375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "7h20m50s"
+  "uptime": "7h22m51s"
 }
