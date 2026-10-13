@@ -11,17 +11,14 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Conectando ao WebSocket...",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791865265451,
+      "updatedAt": 1791865325480,
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -33,12 +30,15 @@
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 3.132720947265625,
+  "ramAllocMB": 3.237548828125,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h8m56s"
+  "uptime": "3h9m53s"
 }
