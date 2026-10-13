@@ -222,13 +222,37 @@ func (c *cdpClient) clickXY(x, y float64) {
 	c.notify("Input.dispatchMouseEvent", map[string]any{"type": "mouseReleased", "x": x, "y": y, "button": "left", "clickCount": 1})
 }
 
-// exprAcharWidget: localiza o iframe do Turnstile visível na tela e devolve "x,y,w,h".
+// exprAcharWidget: localiza o iframe do Turnstile visível e devolve "x,y,w,h".
 const exprAcharWidget = `(() => {
-	const f = document.querySelector('iframe[src*="challenges.cloudflare.com"]');
-	if (!f) return '';
-	const r = f.getBoundingClientRect();
-	if (r.width < 50 || r.height < 20 || r.bottom < 1 || r.top > window.innerHeight - 1) return '';
-	return Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+	const sels = ['iframe[src*="challenges.cloudflare.com"]', 'iframe[src*="turnstile"]', 'iframe[src*="cloudflare"]'];
+	for (const s of sels) {
+		for (const f of document.querySelectorAll(s)) {
+			const r = f.getBoundingClientRect();
+			if (r.width >= 50 && r.height >= 20 && r.bottom >= 1 && r.top <= window.innerHeight - 1) {
+				return 'iframe:' + Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+			}
+		}
+	}
+	return '';
+})()`
+
+// exprAcharTexto: fallback — acha o container do texto "not a robot" (desafio
+// gerenciado sem iframe visível) e devolve "texto:x,y,w,h".
+const exprAcharTexto = `(() => {
+	const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+	let node;
+	while ((node = walk.nextNode())) {
+		if (/not a robot|não é um robô|nao e um robo/i.test(node.nodeValue || '')) {
+			let el = node.parentElement;
+			for (let i = 0; el && i < 6; i++, el = el.parentElement) {
+				const r = el.getBoundingClientRect();
+				if (r.width > 80 && r.height > 20 && r.top >= 0 && r.bottom <= window.innerHeight + 50) {
+					return 'texto:' + Math.round(r.x) + ',' + Math.round(r.y) + ',' + Math.round(r.width) + ',' + Math.round(r.height);
+				}
+			}
+		}
+	}
+	return '';
 })()`
 
 // FetchTicketViaBrowser launches a browser, resolves the challenge and captures a live ticket.
@@ -445,14 +469,26 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 				return
 			case <-ticker.C:
 				v, err := cdp.evalJS(exprAcharWidget)
+				metodo := "iframe"
+				if err != nil || v == "" {
+					if v2, err2 := cdp.evalJS(exprAcharTexto); err2 == nil && v2 != "" {
+						v = v2
+						metodo = "texto"
+						err = nil
+					}
+				}
 				if err != nil || v == "" {
 					continue
 				}
+				cord := v
+				if i := strings.IndexByte(v, ':'); i >= 0 {
+					cord = v[i+1:]
+				}
 				var x, y, w, h float64
-				if n, _ := fmt.Sscanf(v, "%f,%f,%f,%f", &x, &y, &w, &h); n != 4 {
+				if n, _ := fmt.Sscanf(cord, "%f,%f,%f,%f", &x, &y, &w, &h); n != 4 {
 					continue
 				}
-				log.Printf("[AuthHelper] widget Turnstile visível %s — clicando no desafio", v)
+				log.Printf("[AuthHelper] desafio Turnstile visivel via %s %s — clicando", metodo, cord)
 				cdp.clickXY(x+30, y+h/2)
 			}
 		}
@@ -463,7 +499,7 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
 		return &res, nil
 	case <-time.After(90 * time.Second):
-		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):''})`)
+		dump, derr := cdp.evalJS(`JSON.stringify({url:location.href,title:document.title,text:document.body?document.body.innerText.slice(0,300):'',iframes:Array.from(document.querySelectorAll('iframe')).map(f=>(f.src||'nosrc').slice(0,110)).join(' || ')})`)
 		if derr != nil {
 			dump = "evalJS falhou: " + derr.Error()
 		}
