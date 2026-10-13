@@ -11,14 +11,14 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 16322,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791878399574,
+      "updatedAt": 1791878510551,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -39,7 +39,7 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.2105331420898438,
+  "ramAllocMB": 1.2061920166015625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "2h42m49s"
+  "uptime": "2h44m48s"
 }
