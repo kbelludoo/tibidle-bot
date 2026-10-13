@@ -2,7 +2,7 @@
   "accounts": [
     {
       "id": "kbelludoo",
-      "name": "kbelludoo",
+      "name": "Conta #1",
       "vocation": "",
       "level": 0,
       "hp": 0,
@@ -17,29 +17,29 @@
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791864113826,
+      "updatedAt": 1791864235480,
       "recentLogs": [
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)",
-        "Conectado como kbelludoo (kbelludoo@gmail.com)"
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)",
+        "Conectado como Conta #1 (usuario@privado.com)"
       ]
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1076812744140625,
+  "ramAllocMB": 1.1063766479492188,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h49m46s",
+  "uptime": "2h51m47s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
