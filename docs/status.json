@@ -1289,14 +1289,14 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791899446356,
+      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
+      "updatedAt": 1791899636898,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 0.9493179321289062,
+  "goroutines": 7,
+  "ramAllocMB": 0.9864273071289062,
   "ramSysMB": 17.166282653808594,
-  "uptime": "31m33s"
+  "uptime": "33m33s"
 }
