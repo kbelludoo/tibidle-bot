@@ -16,9 +16,9 @@
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
-      "durationSec": 13141,
+      "durationSec": 13261,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791869880191,
+      "updatedAt": 1791870000191,
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -33,7 +33,7 @@
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 3.3224868774414062,
+  "ramAllocMB": 3.31353759765625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "20m49s"
+  "uptime": "22m50s"
 }
