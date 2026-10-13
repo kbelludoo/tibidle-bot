@@ -18,13 +18,13 @@
       "goldPerHour": 0,
       "durationSec": 16322,
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1791874086279,
+      "updatedAt": 1791874186720,
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
         "⭐ Auto-Progresso (Lv. 37): alternando de 'Daramian Minotaur Pyramid' para 'Elfs Shadowthorn' (Lure: 3)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket expirado descartado (>45s). Aguardando outro...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -39,7 +39,7 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1906585693359375,
+  "ramAllocMB": 1.1980667114257812,
   "ramSysMB": 17.34986114501953,
-  "uptime": "1h30m50s"
+  "uptime": "1h32m51s"
 }
