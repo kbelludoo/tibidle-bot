@@ -11,17 +11,14 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Autenticado. Obtendo ticket de jogo...",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791861360003,
+      "updatedAt": 1791861481280,
       "recentLogs": [
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
@@ -33,13 +30,16 @@
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
+        "Conectado como kbelludoo (kbelludoo@gmail.com)",
         "Conectado como kbelludoo (kbelludoo@gmail.com)"
       ]
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 2.5885543823242188,
+  "goroutines": 9,
+  "ramAllocMB": 1.15509033203125,
   "ramSysMB": 13.099861145019531,
-  "uptime": "2h3m46s",
+  "uptime": "2h5m46s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
