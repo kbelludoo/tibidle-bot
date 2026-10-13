@@ -1280,16 +1280,18 @@
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
-      "updatedAt": 1791901442079,
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1791901553302,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 1.0770034790039062,
-  "ramSysMB": 17.09986114501953,
-  "uptime": "2m26s"
+  "goroutines": 10,
+  "ramAllocMB": 1.3673324584960938,
+  "ramSysMB": 17.34986114501953,
+  "uptime": "4m21s"
 }
