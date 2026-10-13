@@ -11,18 +11,18 @@
       "maxMana": 0,
       "gold": 0,
       "xp": "",
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Reconectando (aguardando ticket: failed to obtain ticket: no browser executable found (install chromium or google-chrome))",
       "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791865689879,
+      "updatedAt": 1791865800718,
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -38,7 +38,7 @@
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.1478729248046875,
+  "ramAllocMB": 1.1091384887695312,
   "ramSysMB": 13.099861145019531,
-  "uptime": "3h15m57s"
+  "uptime": "3h17m52s"
 }
