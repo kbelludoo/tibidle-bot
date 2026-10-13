@@ -1276,16 +1276,17 @@
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1791897836142,
+      "updatedAt": 1791897936780,
       "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 8,
-  "ramAllocMB": 1.2086410522460938,
+  "ramAllocMB": 1.1776199340820312,
   "ramSysMB": 17.166282653808594,
-  "uptime": "3m32s"
+  "uptime": "5m32s"
 }
