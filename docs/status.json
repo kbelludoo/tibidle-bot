@@ -12,12 +12,12 @@
       "gold": 0,
       "xp": "",
       "status": "hunting",
-      "currentHunt": "Amazon Camp",
+      "currentHunt": "Daramian Minotaur Pyramid",
       "kills": 0,
       "expPerHour": 0,
       "goldPerHour": 0,
       "durationSec": 0,
-      "updatedAt": 1791856665501,
+      "updatedAt": 1791856785508,
       "recentLogs": [
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
@@ -31,15 +31,15 @@
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
         "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)...",
-        "Transição de hunt: encerrando hunt 180 para iniciar hunt configurada (26)..."
+        "Caçada finalizada! Preparando próxima caçada...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)..."
       ]
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 2.163787841796875,
+  "ramAllocMB": 2.7498779296875,
   "ramSysMB": 13.099861145019531,
-  "uptime": "45m46s",
+  "uptime": "47m47s",
   "tunnelUrl": "https://rough-jennifer-tried-green.trycloudflare.com"
 }
