@@ -1273,8 +1273,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
-        "Sessão renovada via login automático.",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1287,16 +1285,18 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792019323094,
+      "updatedAt": 1792019524456,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.4446182250976562,
+  "goroutines": 12,
+  "ramAllocMB": 1.6761322021484375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "32h48m22s"
+  "uptime": "32h50m20s"
 }
