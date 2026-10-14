@@ -1,6 +1,16 @@
 {
   "accounts": [
     {
+      "benchmarks": [
+        {
+          "bestXpPerHour": 14910,
+          "deaths": 0,
+          "huntId": 26,
+          "huntName": "Daramian Minotaur Pyramid",
+          "lastDuration": 43200,
+          "runs": 1
+        }
+      ],
       "bestiary": [
         {
           "completed": false,
@@ -719,12 +729,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Minotaur",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Minotaur Archer",
           "target": 500
         },
@@ -1255,19 +1259,26 @@
           "kills": 0,
           "name": "stone-eater",
           "target": 500
+        },
+        {
+          "completed": true,
+          "kills": 11928,
+          "name": "Minotaur",
+          "target": 500
         }
       ],
-      "bestiaryCompleted": 0,
+      "bestiaryCompleted": 1,
+      "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
-      "currentHunt": "",
-      "durationSec": 0,
-      "expPerHour": 0,
+      "currentHunt": "Wolves Den",
+      "durationSec": 97,
+      "expPerHour": 14910,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 0,
+      "level": 39,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
@@ -1280,23 +1291,24 @@
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 4401)",
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
-        "Sessão renovada via login automático.",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "🏆 Bestiário de 'Daramian Minotaur Pyramid' CONCLUÍDO (500+ abates)! Progresso geral: 1/209 monstros.",
+        "🎯 Bestiário avançou para 'Wolves Den' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 14910 XP/h (Duração: 43200s, Kills: 11928)",
+        "Iniciando caçada (Hunt ID: 170, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 170, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 170, Lure: 2)..."
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792021639279,
-      "vocation": "",
+      "status": "hunting",
+      "targetHunt": "Wolves Den",
+      "updatedAt": 1792021791729,
+      "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.3858184814453125,
+  "ramAllocMB": 1.1641921997070312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "33h26m20s"
+  "uptime": "33h28m22s"
 }
