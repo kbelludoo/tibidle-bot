@@ -1273,9 +1273,9 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Servidor fechou conexão (code 4401)",
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1289,14 +1289,14 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
-      "updatedAt": 1792020117807,
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1792020229365,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 1.34521484375,
+  "goroutines": 8,
+  "ramAllocMB": 1.3887939453125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "33h0m20s"
+  "uptime": "33h2m20s"
 }
