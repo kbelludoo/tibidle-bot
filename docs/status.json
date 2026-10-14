@@ -1273,9 +1273,12 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
+        "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1284,19 +1287,16 @@
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
-      "updatedAt": 1792007645808,
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1792007703370,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 1.343963623046875,
+  "goroutines": 9,
+  "ramAllocMB": 1.3304824829101562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "29h32m22s"
+  "uptime": "29h34m23s"
 }
