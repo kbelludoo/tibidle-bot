@@ -1273,13 +1273,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 4401)",
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
-        "Sessão renovada via login automático.",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
@@ -1287,16 +1280,23 @@
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 4401)",
+        "Sessão marcada como inválida pelo servidor. Renovando via login...",
+        "Sessão renovada via login automático.",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
-      "updatedAt": 1791968163222,
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1791968218912,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 7,
-  "ramAllocMB": 1.4118499755859375,
+  "goroutines": 9,
+  "ramAllocMB": 1.7613143920898438,
   "ramSysMB": 17.34986114501953,
-  "uptime": "18h34m21s"
+  "uptime": "18h36m21s"
 }
