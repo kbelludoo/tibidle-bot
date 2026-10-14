@@ -1273,7 +1273,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
@@ -1286,17 +1285,18 @@
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792003069837,
+      "updatedAt": 1792003170396,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 8,
-  "ramAllocMB": 1.3102798461914062,
+  "goroutines": 10,
+  "ramAllocMB": 1.5051116943359375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "28h16m20s"
+  "uptime": "28h18m23s"
 }
