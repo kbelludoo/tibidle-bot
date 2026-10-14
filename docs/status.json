@@ -1273,7 +1273,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
@@ -1287,16 +1286,17 @@
         "Servidor fechou conexão (code 4401)",
         "Sessão marcada como inválida pelo servidor. Renovando via login...",
         "Sessão renovada via login automático.",
+        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792007703370,
+      "updatedAt": 1792007803893,
       "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.3304824829101562,
+  "goroutines": 8,
+  "ramAllocMB": 1.3132705688476562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "29h34m23s"
+  "uptime": "29h36m20s"
 }
