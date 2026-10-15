@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 2493,
+      "durationSec": 2627,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1284,11 +1284,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 1001)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
@@ -1298,17 +1293,22 @@
         "📊 Hunt 'Wolves Den' concluída: 9303 XP/h (Duração: 43200s, Kills: 15948)",
         "Iniciando caçada (Hunt ID: 176, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 176, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 176, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 176, Lure: 2)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792067389742,
+      "updatedAt": 1792067524441,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.0995407104492188,
+  "goroutines": 12,
+  "ramAllocMB": 1.630035400390625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "11h27m41s"
+  "uptime": "11h29m40s"
 }
