@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 3068,
+      "durationSec": 3213,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1284,9 +1284,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "🏆 Bestiário de 'Wolves Den' CONCLUÍDO (500+ abates)! Progresso geral: 2/209 monstros.",
         "🎯 Bestiário avançou para 'Wasps Dungeons' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Wolves Den' concluída: 9303 XP/h (Duração: 43200s, Kills: 15948)",
@@ -1298,17 +1295,20 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792067978913,
+      "updatedAt": 1792068109598,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.2940292358398438,
+  "goroutines": 9,
+  "ramAllocMB": 3.1697235107421875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "11h37m40s"
+  "uptime": "11h39m40s"
 }
