@@ -1258,43 +1258,32 @@
         }
       ],
       "bestiaryCompleted": 1,
-      "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
-      "currentHunt": "Wolves Den",
-      "durationSec": 2971,
+      "currentHunt": "",
+      "durationSec": 0,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 39,
+      "level": 0,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 4403)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
-        "Sessão renovada via login automático.",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
-      "targetHunt": "Wolves Den",
-      "updatedAt": 1792024665511,
-      "vocation": "KNIGHT",
+      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
+      "updatedAt": 1792024799005,
+      "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 2.5710525512695312,
-  "ramSysMB": 17.416282653808594,
-  "uptime": "16m1s"
+  "ramAllocMB": 2.5977935791015625,
+  "ramSysMB": 16.52954864501953,
+  "uptime": "1m41s"
 }
