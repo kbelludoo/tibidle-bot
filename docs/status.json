@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 34054,
+      "durationSec": 34174,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792098950982,
+      "updatedAt": 1792099070980,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.0777969360351562,
+  "ramAllocMB": 2.7212371826171875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "20h13m40s"
+  "uptime": "20h15m41s"
 }
