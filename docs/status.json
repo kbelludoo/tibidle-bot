@@ -9,6 +9,14 @@
           "huntName": "Wolves Den",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 8876,
+          "deaths": 0,
+          "huntId": 176,
+          "huntName": "Wasps Dungeons",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -1173,12 +1181,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Wasp",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Waspoid",
           "target": 500
         },
@@ -1262,17 +1264,23 @@
         },
         {
           "completed": true,
+          "kills": 15216,
+          "name": "Wasp",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 11928,
           "name": "Minotaur",
           "target": 500
         }
       ],
-      "bestiaryCompleted": 2,
-      "bestiaryTarget": "Wasps Dungeons",
+      "bestiaryCompleted": 3,
+      "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
-      "currentHunt": "Wasps Dungeons",
-      "durationSec": 43159,
-      "expPerHour": 9303,
+      "currentHunt": "Goblins Femor Hills",
+      "durationSec": 76,
+      "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
@@ -1288,27 +1296,27 @@
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🏆 Bestiário de 'Wasps Dungeons' CONCLUÍDO (500+ abates)! Progresso geral: 3/209 monstros.",
+        "🎯 Bestiário avançou para 'Goblins Femor Hills' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Wasps Dungeons' concluída: 8876 XP/h (Duração: 43200s, Kills: 15216)",
+        "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 125, Lure: 2)..."
       ],
       "status": "hunting",
-      "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792108078493,
+      "targetHunt": "Goblins Femor Hills",
+      "updatedAt": 1792108198494,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 2.6689682006835938,
+  "ramAllocMB": 2.713714599609375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "22h45m40s"
+  "uptime": "22h47m40s"
 }
