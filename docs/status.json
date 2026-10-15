@@ -1302,13 +1302,13 @@
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792105666612,
+      "updatedAt": 1792105777563,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.39874267578125,
+  "ramAllocMB": 1.3871917724609375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "22h5m41s"
+  "uptime": "22h7m41s"
 }
