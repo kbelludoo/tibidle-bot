@@ -1261,7 +1261,7 @@
       "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
       "currentHunt": "Wolves Den",
-      "durationSec": 6454,
+      "durationSec": 6574,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
@@ -1282,13 +1282,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Wolves Den",
-      "updatedAt": 1792028149000,
+      "updatedAt": 1792028268913,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 3.5239028930664062,
+  "ramAllocMB": 1.847412109375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "33m41s"
+  "uptime": "35m40s"
 }
