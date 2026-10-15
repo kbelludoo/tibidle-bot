@@ -1,16 +1,6 @@
 {
   "accounts": [
     {
-      "benchmarks": [
-        {
-          "bestXpPerHour": 14910,
-          "deaths": 0,
-          "huntId": 26,
-          "huntName": "Daramian Minotaur Pyramid",
-          "lastDuration": 43200,
-          "runs": 1
-        }
-      ],
       "bestiary": [
         {
           "completed": false,
@@ -1268,47 +1258,32 @@
         }
       ],
       "bestiaryCompleted": 1,
-      "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
-      "currentHunt": "Wolves Den",
-      "durationSec": 1777,
-      "expPerHour": 14910,
+      "currentHunt": "",
+      "durationSec": 0,
+      "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 39,
+      "level": 0,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 4401)",
-        "Sessão marcada como inválida pelo servidor. Renovando via login...",
-        "Sessão renovada via login automático.",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket recebido externamente (WS: wss://play11.tibidle.com)! Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🏆 Bestiário de 'Daramian Minotaur Pyramid' CONCLUÍDO (500+ abates)! Progresso geral: 1/209 monstros.",
-        "🎯 Bestiário avançou para 'Wolves Den' (Lure: 2) para abater novas criaturas!",
-        "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 14910 XP/h (Duração: 43200s, Kills: 11928)",
-        "Iniciando caçada (Hunt ID: 170, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 170, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 170, Lure: 2)..."
+        "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
-      "targetHunt": "Wolves Den",
-      "updatedAt": 1792023471731,
-      "vocation": "KNIGHT",
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1792023724880,
+      "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 3.0259246826171875,
-  "ramSysMB": 17.34986114501953,
-  "uptime": "33h56m21s"
+  "goroutines": 10,
+  "ramAllocMB": 2.2001419067382812,
+  "ramSysMB": 16.595970153808594,
+  "uptime": "4s"
 }
