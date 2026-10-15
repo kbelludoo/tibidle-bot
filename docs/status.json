@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 31896,
+      "durationSec": 32013,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,15 +1300,15 @@
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:33462-\u003e104.21.12.42:443: read: connection reset by peer)",
+      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:60350-\u003e172.67.131.238:443: read: connection reset by peer)",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792096800426,
+      "updatedAt": 1792096925508,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 3.0010299682617188,
+  "goroutines": 10,
+  "ramAllocMB": 1.9199371337890625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "19h37m41s"
+  "uptime": "19h39m41s"
 }
