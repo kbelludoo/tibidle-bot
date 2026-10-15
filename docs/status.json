@@ -1,6 +1,16 @@
 {
   "accounts": [
     {
+      "benchmarks": [
+        {
+          "bestXpPerHour": 9303,
+          "deaths": 0,
+          "huntId": 170,
+          "huntName": "Wolves Den",
+          "lastDuration": 43200,
+          "runs": 1
+        }
+      ],
       "bestiary": [
         {
           "completed": false,
@@ -1205,12 +1215,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Wolf",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Worker Golem",
           "target": 500
         },
@@ -1252,17 +1256,23 @@
         },
         {
           "completed": true,
+          "kills": 15948,
+          "name": "Wolf",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 11928,
           "name": "Minotaur",
           "target": 500
         }
       ],
-      "bestiaryCompleted": 1,
-      "bestiaryTarget": "Wolves Den",
+      "bestiaryCompleted": 2,
+      "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
-      "currentHunt": "Wolves Den",
-      "durationSec": 43175,
-      "expPerHour": 0,
+      "currentHunt": "Wasps Dungeons",
+      "durationSec": 93,
+      "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
@@ -1274,12 +1284,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 1001)",
@@ -1288,17 +1292,23 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "🏆 Bestiário de 'Wolves Den' CONCLUÍDO (500+ abates)! Progresso geral: 2/209 monstros.",
+        "🎯 Bestiário avançou para 'Wasps Dungeons' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Wolves Den' concluída: 9303 XP/h (Duração: 43200s, Kills: 15948)",
+        "Iniciando caçada (Hunt ID: 176, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 176, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 176, Lure: 2)..."
       ],
       "status": "hunting",
-      "targetHunt": "Wolves Den",
-      "updatedAt": 1792064869744,
+      "targetHunt": "Wasps Dungeons",
+      "updatedAt": 1792064989743,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 1.9485931396484375,
+  "ramAllocMB": 3.511077880859375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "10h45m40s"
+  "uptime": "10h47m41s"
 }
