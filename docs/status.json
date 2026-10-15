@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 16770,
+      "durationSec": 16907,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1286,9 +1286,6 @@
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: Post \"https://play.tibidle.com/auth/world-nonce\": read tcp 10.0.0.191:40302-\u003e104.21.12.42:443: read: connection reset by peer) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
@@ -1298,17 +1295,20 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792081682932,
+      "updatedAt": 1792081803503,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 1.951873779296875,
+  "goroutines": 11,
+  "ramAllocMB": 2.3251800537109375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "15h25m40s"
+  "uptime": "15h27m41s"
 }
