@@ -1258,16 +1258,17 @@
         }
       ],
       "bestiaryCompleted": 1,
+      "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
-      "currentHunt": "",
-      "durationSec": 0,
+      "currentHunt": "Wolves Den",
+      "durationSec": 3355,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 0,
+      "level": 39,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
@@ -1276,16 +1277,20 @@
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792024910319,
-      "vocation": "",
+      "status": "hunting",
+      "targetHunt": "Wolves Den",
+      "updatedAt": 1792025050119,
+      "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.4715042114257812,
+  "goroutines": 9,
+  "ramAllocMB": 2.0571823120117188,
   "ramSysMB": 17.09986114501953,
-  "uptime": "3m48s"
+  "uptime": "5m42s"
 }
