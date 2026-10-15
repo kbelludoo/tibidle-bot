@@ -41,11 +41,37 @@ jobs:
               exit 1
             fi
             # get_ticket rouba o token Turnstile e ele mesmo faz POST /api/ticket
-            # (o valor do token nunca aparece no log do runner)
-            xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -push "$PUSH_URL"
+            # (o valor do token nunca aparece no log do runner).
+            # 2 tentativas: o chrome do runner flaka (~2 em N) com CDP timeout.
+            ok=0
+            for i in 1 2; do
+              if xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -push "$PUSH_URL"; then
+                ok=1
+                break
+              fi
+              echo "tentativa $i falhou (chrome flakou?), repetindo em 3s..."
+              sleep 3
+            done
+            if [ "$ok" != "1" ]; then
+              echo "::error::captura falhou nas 2 tentativas"
+              exit 1
+            fi
             echo "resultado enviado pro bot em $PUSH_URL"
           else
-            OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
+            OUT=""
+            ok=0
+            for i in 1 2; do
+              if OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr); then
+                ok=1
+                break
+              fi
+              echo "tentativa $i falhou, repetindo em 3s..."
+              sleep 3
+            done
+            if [ "$ok" != "1" ]; then
+              echo "::error::captura falhou nas 2 tentativas"
+              exit 1
+            fi
             if printf '%s' "$OUT" | grep -q 'TURNSTILE_TOKEN_LEN:'; then
               echo "token Turnstile capturado (runner so resolve; bot emite na VPS)"
             elif printf '%s' "$OUT" | grep -q 'FRESH_TICKET:'; then

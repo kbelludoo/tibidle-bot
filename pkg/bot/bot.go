@@ -198,11 +198,11 @@ var (
 var reTunnelURL = regexp.MustCompile(`https://[a-z0-9.-]+\.trycloudflare\.com`)
 
 // dispararSolverTicket dispara o workflow ticket-relay do GitHub Actions em
-// mode=push: o runner captura um ticket novo (Turnstile resolvido no navegador)
-// e faz POST em /api/ticket via tunnel. Cooldown de 3 min entre disparos.
+// mode=push: o runner rouba um token Turnstile novo e o bot emite o ticket
+// na VPS. Cooldown curto (45s) — run falhando não trava o resgate por 3min.
 func dispararSolverTicket(logID string) {
 	solverMu.Lock()
-	if time.Since(ultimoSolverKick) < 3*time.Minute {
+	if time.Since(ultimoSolverKick) < 45*time.Second {
 		solverMu.Unlock()
 		return
 	}
@@ -406,9 +406,11 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
 			go dispararSolverTicket(b.config.ID)
-			// Relay de PC leva até ~45s (poll + geração no navegador + push).
-			// Ticket TTL é 60s, então descarta qualquer ticket com mais de 45s.
-			deadline := time.After(90 * time.Second)
+			// Runner do Actions leva ~30-55s (boot + chrome + desafio + push).
+			// Token TTL é ~5min; deadline de 45s só encurta o ciclo morto —
+			// se o token chegar depois, o canal bufferizado segura e o
+			// próximo loop de espera consome na hora.
+			deadline := time.After(45 * time.Second)
 		waitTicket:
 			for {
 				select {
