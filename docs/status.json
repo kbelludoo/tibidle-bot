@@ -1261,7 +1261,7 @@
       "bestiaryTarget": "Wolves Den",
       "bestiaryTotal": 209,
       "currentHunt": "Wolves Den",
-      "durationSec": 32743,
+      "durationSec": 32803,
       "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
@@ -1282,17 +1282,22 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Wolves Den",
-      "updatedAt": 1792054437901,
+      "updatedAt": 1792054565980,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.1593704223632812,
+  "goroutines": 12,
+  "ramAllocMB": 2.1583480834960938,
   "ramSysMB": 17.34986114501953,
-  "uptime": "7h51m40s"
+  "uptime": "7h53m42s"
 }
