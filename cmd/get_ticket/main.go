@@ -48,9 +48,14 @@ func main() {
 
 	ticket := res.Ticket
 	wsURL := res.WSURL
+	token := res.TurnstileToken
 
 	fmt.Println("\n================================================================================")
-	fmt.Printf("FRESH_TICKET:%s\n", ticket)
+	if token != "" {
+		fmt.Printf("TURNSTILE_TOKEN_LEN:%d\n", len(token))
+	} else {
+		fmt.Printf("FRESH_TICKET:%s\n", ticket)
+	}
 	fmt.Printf("WS_URL:%s\n", wsURL)
 	fmt.Println("================================================================================")
 
@@ -61,12 +66,17 @@ func main() {
 	// 1. Enviar via HTTP direto se especificado
 	if *pushURL != "" {
 		target := strings.TrimRight(*pushURL, "/") + "/api/ticket"
-		log.Printf("[TicketGenerator] Enviando ticket via HTTP para %s ...", target)
+		log.Printf("[TicketGenerator] Enviando %s via HTTP para %s ...", map[bool]string{true: "token Turnstile", false: "ticket"}[token != ""], target)
 
-		payload, _ := json.Marshal(map[string]string{
-			"ticket": ticket,
-			"wsUrl":  wsURL,
-		})
+		var payload []byte
+		if token != "" {
+			payload, _ = json.Marshal(map[string]string{"turnstileToken": token})
+		} else {
+			payload, _ = json.Marshal(map[string]string{
+				"ticket": ticket,
+				"wsUrl":  wsURL,
+			})
+		}
 		client := &http.Client{Timeout: 10 * time.Second}
 		resp, err := client.Post(target, "application/json", bytes.NewReader(payload))
 		if err != nil {
@@ -75,7 +85,7 @@ func main() {
 			defer resp.Body.Close()
 			body, _ := io.ReadAll(resp.Body)
 			if resp.StatusCode == http.StatusOK {
-				log.Printf("✔ SUCESSO HTTP! Ticket aceito pelo bot: %s", string(body))
+				log.Printf("✔ SUCESSO HTTP! %s aceito pelo bot: %s", map[bool]string{true: "token", false: "ticket"}[token != ""], string(body))
 				return
 			}
 		}
@@ -83,8 +93,14 @@ func main() {
 
 	// 2. Enviar via SSH direto para a VPS
 	if *sshTarget != "" {
-		log.Printf("[TicketGenerator] Enviando ticket com segurança via SSH para %s ...", *sshTarget)
-		remoteCmd := fmt.Sprintf(`curl -s -X POST http://127.0.0.1:3001/api/ticket -H 'Content-Type: application/json' -d '{"ticket":"%s","wsUrl":"%s"}'`, ticket, wsURL)
+		var remoteBody string
+		if token != "" {
+			remoteBody = fmt.Sprintf(`{"turnstileToken":%q}`, token)
+		} else {
+			remoteBody = fmt.Sprintf(`{"ticket":"%s","wsUrl":"%s"}`, ticket, wsURL)
+		}
+		log.Printf("[TicketGenerator] Enviando %s com segurança via SSH para %s ...", map[bool]string{true: "token Turnstile", false: "ticket"}[token != ""], *sshTarget)
+		remoteCmd := fmt.Sprintf(`curl -s -X POST http://127.0.0.1:3001/api/ticket -H 'Content-Type: application/json' -d '%s'`, remoteBody)
 
 		keyPath := *sshKey
 		if _, err := os.Stat(keyPath); err != nil {

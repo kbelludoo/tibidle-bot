@@ -24,8 +24,9 @@ type CDPTarget struct {
 }
 
 type TicketResult struct {
-	Ticket string `json:"ticket"`
-	WSURL  string `json:"wsUrl"`
+	Ticket         string `json:"ticket"`
+	WSURL          string `json:"wsUrl"`
+	TurnstileToken string `json:"turnstileToken,omitempty"`
 }
 
 // FindBrowserExecutable finds Chrome or Edge depending on OS
@@ -410,7 +411,8 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 
 	ticketChan := make(chan TicketResult, 1)
 
-	cdp := newCDPClient(conn, func(method string, params json.RawMessage) {
+	var cdp *cdpClient
+	cdp = newCDPClient(conn, func(method string, params json.RawMessage) {
 		if method == "Runtime.exceptionThrown" {
 			var ex struct {
 				ExceptionDetails struct {
@@ -453,6 +455,18 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 					}
 				}
 			}
+			if strings.HasPrefix(arg.Value, "STOLEN_TURNSTILE_TOKEN_LEN:") {
+				go func() {
+					tok, err := cdp.evalJS(`window.__stolenTurnstileToken || ""`)
+					if err != nil || tok == "" {
+						return
+					}
+					select {
+					case ticketChan <- TicketResult{TurnstileToken: tok}:
+					default:
+					}
+				}()
+			}
 		}
 	})
 
@@ -464,6 +478,20 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 	hookScript := `
 		const originalFetch = window.fetch;
 		window.fetch = async function(...args) {
+			try {
+				const url0 = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url);
+				if (url0 && url0.includes('/auth/world-ticket')) {
+					let bodyTxt = '';
+					try { bodyTxt = (args[1] && args[1].body) || ''; } catch(e) {}
+					let parsed = null;
+					try { parsed = typeof bodyTxt === 'string' ? JSON.parse(bodyTxt) : null; } catch(e) {}
+					if (parsed && parsed.turnstileToken) {
+						window.__stolenTurnstileToken = parsed.turnstileToken;
+						console.log("STOLEN_TURNSTILE_TOKEN_LEN:" + String(parsed.turnstileToken.length));
+						return new Promise(() => {});
+					}
+				}
+			} catch(e) {}
 			const res = await originalFetch.apply(this, args);
 			try {
 				const url = typeof args[0] === 'string' ? args[0] : (args[0] && args[0].url);
@@ -586,7 +614,11 @@ func FetchTicketViaBrowser(cookieString string) (*TicketResult, error) {
 
 	select {
 	case res := <-ticketChan:
-		log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
+		if res.TurnstileToken != "" {
+			log.Printf("[AuthHelper] Turnstile token roubado do request do jogo (%d chars) — emitindo ticket fora do browser. Shutting down browser.\n", len(res.TurnstileToken))
+		} else {
+			log.Printf("[AuthHelper] Fresh, UNUSED game ticket captured (WS: %s)! Shutting down browser.\n", res.WSURL)
+		}
 		return &res, nil
 	case <-time.After(90 * time.Second):
 		dump, derr := cdp.evalJS(`JSON.stringify({

@@ -7,8 +7,11 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"sync"
 	"time"
@@ -34,6 +37,7 @@ type Bot struct {
 
 	mu               sync.Mutex
 	ticketChan       chan TicketSubmission
+	turnstileChan    chan string
 	sessionDirty     bool
 	configPath       string
 	currentHuntID    int
@@ -134,6 +138,7 @@ func NewBot(cfg AccountConfig) *Bot {
 		status:         NewSafeStatus(cfg.ID),
 		sessionClient:  client.NewSessionClient(),
 		ticketChan:     make(chan TicketSubmission, 10),
+		turnstileChan:  make(chan string, 1),
 		currentHuntID:  huntID,
 		benchmarks:     make(map[int]*HuntBenchmark),
 		bestiaryKills:  kills,
@@ -164,10 +169,84 @@ func (b *Bot) SupplyTicket(ticket, wsURL string) {
 	}
 }
 
+// SupplyTurnstileToken entrega um token Turnstile roubado pelo solver
+// (runner/2captcha). O bot usa o token para emitir o world-ticket NA VPS,
+// com o IP e o sid próprios — emitir fora da VPS resulta em 4401.
+func (b *Bot) SupplyTurnstileToken(token string) {
+	select {
+	case <-b.turnstileChan:
+	default:
+	}
+	select {
+	case b.turnstileChan <- token:
+		b.status.AddLog("Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...")
+	default:
+	}
+}
+
 // SetConfigPath define o arquivo accounts.json desta conta para persistir
 // cookies renovados (login automático) de volta em disco.
 func (b *Bot) SetConfigPath(path string) {
 	b.configPath = path
+}
+
+var (
+	solverMu         sync.Mutex
+	ultimoSolverKick time.Time
+)
+
+var reTunnelURL = regexp.MustCompile(`https://[a-z0-9.-]+\.trycloudflare\.com`)
+
+// dispararSolverTicket dispara o workflow ticket-relay do GitHub Actions em
+// mode=push: o runner captura um ticket novo (Turnstile resolvido no navegador)
+// e faz POST em /api/ticket via tunnel. Cooldown de 3 min entre disparos.
+func dispararSolverTicket(logID string) {
+	solverMu.Lock()
+	if time.Since(ultimoSolverKick) < 3*time.Minute {
+		solverMu.Unlock()
+		return
+	}
+	ultimoSolverKick = time.Now()
+	solverMu.Unlock()
+
+	tunnel := ultimaTunnelURL("/home/ubuntu/tibidle-tunnel.log")
+	if tunnel == "" {
+		log.Printf("[%s] solver GH Actions: nenhuma tunnel URL em /home/ubuntu/tibidle-tunnel.log", logID)
+		return
+	}
+	hc := &http.Client{Timeout: 5 * time.Second}
+	resp, err := hc.Get(tunnel + "/api/status")
+	if err != nil {
+		log.Printf("[%s] solver GH Actions: tunnel %s indisponivel: %v", logID, tunnel, err)
+		return
+	}
+	resp.Body.Close()
+	if resp.StatusCode != http.StatusOK {
+		log.Printf("[%s] solver GH Actions: tunnel %s respondeu HTTP %d", logID, tunnel, resp.StatusCode)
+		return
+	}
+	out, err := exec.Command("gh", "workflow", "run", "ticket-relay.yml",
+		"-R", "kbelludoo/tibidle-bot",
+		"-f", "mode=push",
+		"-f", "push_url="+tunnel,
+	).CombinedOutput()
+	if err != nil {
+		log.Printf("[%s] solver GH Actions: gh falhou: %v (%s)", logID, err, strings.TrimSpace(string(out)))
+		return
+	}
+	log.Printf("[%s] solver GH Actions: workflow ticket-relay disparado (push em %s)", logID, tunnel)
+}
+
+func ultimaTunnelURL(path string) string {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return ""
+	}
+	m := reTunnelURL.FindAllString(string(data), -1)
+	if len(m) == 0 {
+		return ""
+	}
+	return m[len(m)-1]
 }
 
 func (b *Bot) saveSessionCookie() {
@@ -319,13 +398,14 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 
 	if ticket == "" {
 		var terr error
-		ticket, wsURL, terr = b.sessionClient.GetGameTicket(cookies, b.config.SessionProof)
+		ticket, wsURL, terr = b.sessionClient.GetGameTicket(cookies, b.config.SessionProof, "")
 		if terr != nil {
 			log.Printf("[%s] %v. Aguardando ticket via POST /api/ticket (relay automático ou Web)...", b.config.ID, terr)
 			b.status.Update(func(st *AccountStatus) {
 				st.Status = "Aguardando Ticket (envie via push ou Web)"
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
+			go dispararSolverTicket(b.config.ID)
 			// Relay de PC leva até ~45s (poll + geração no navegador + push).
 			// Ticket TTL é 60s, então descarta qualquer ticket com mais de 45s.
 			deadline := time.After(90 * time.Second)
@@ -341,6 +421,17 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 						break waitTicket
 					}
 					b.status.AddLog("Ticket expirado descartado (>45s). Aguardando outro...")
+				case tok := <-b.turnstileChan:
+					t2, w2, e2 := b.sessionClient.GetGameTicket(cookies, b.config.SessionProof, tok)
+					if e2 == nil && t2 != "" {
+						ticket = t2
+						if w2 != "" {
+							wsURL = w2
+						}
+						b.status.AddLog("Ticket emitido pela própria VPS com token do solver. Conectando...")
+						break waitTicket
+					}
+					b.status.AddLog(fmt.Sprintf("Emissão com token falhou (%v) — aguardando próximo...", e2))
 				case <-deadline:
 					return fmt.Errorf("aguardando ticket: %w", terr)
 				}

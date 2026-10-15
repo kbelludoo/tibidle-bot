@@ -96,16 +96,18 @@ func (s *SocketClient) SendRaw(msg any) error {
 }
 
 func (s *SocketClient) readLoop() {
+	var readErr error
 	defer func() {
 		s.Close()
 		if s.onClose != nil {
-			s.onClose(nil)
+			s.onClose(readErr)
 		}
 	}()
 
 	for {
 		_, payload, err := s.conn.ReadMessage()
 		if err != nil {
+			readErr = err
 			return
 		}
 

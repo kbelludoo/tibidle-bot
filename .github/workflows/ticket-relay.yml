@@ -35,24 +35,24 @@ jobs:
           fi
           COOKIE="$TIBIDLE_SESSION"
           echo "cookie sid-only da VPS (${#COOKIE} chars)"
-          OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
-          TICKET=$(printf '%s' "$OUT" | grep -o 'FRESH_TICKET:.*' | head -1 | cut -d: -f2-)
-          WSURL=$(printf '%s' "$OUT" | grep -o 'WS_URL:.*' | head -1 | cut -d: -f2-)
-          if [ -z "$TICKET" ]; then
-            echo "::error::ticket nao capturado (Turnstile falhou no runner)"
-            exit 1
-          fi
-          echo "ticket capturado ($(printf '%s' "$TICKET" | wc -c) chars)"
           if [ "$MODE" = "push" ]; then
             if [ -z "$PUSH_URL" ]; then
               echo "::error::mode=push exige push_url"
               exit 1
             fi
-            curl -fsS -m 15 -X POST "$PUSH_URL/api/ticket" \
-              -H 'Content-Type: application/json' \
-              -d "{\"ticket\":\"$TICKET\",\"wsUrl\":\"$WSURL\"}"
-            echo
-            echo "ticket enviado pro bot em $PUSH_URL"
+            # get_ticket rouba o token Turnstile e ele mesmo faz POST /api/ticket
+            # (o valor do token nunca aparece no log do runner)
+            xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -push "$PUSH_URL"
+            echo "resultado enviado pro bot em $PUSH_URL"
+          else
+            OUT=$(xvfb-run -a go run ./cmd/get_ticket -cookies "$COOKIE" -no-push 2>&1 | tee /dev/stderr)
+            if printf '%s' "$OUT" | grep -q 'TURNSTILE_TOKEN_LEN:'; then
+              echo "token Turnstile capturado (runner so resolve; bot emite na VPS)"
+            elif printf '%s' "$OUT" | grep -q 'FRESH_TICKET:'; then
+              echo "ticket capturado (modo legado)"
+            else
+              echo "::error::nem token nem ticket capturados (Turnstile falhou no runner)"
+              exit 1
+            fi
           fi
-
 

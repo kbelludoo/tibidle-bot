@@ -3,6 +3,7 @@ package client
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -11,6 +12,10 @@ import (
 
 	"tibidle-bot/pkg/auth"
 )
+
+// ErrCaptchaRequired: /auth/world-ticket exige Turnstile token quando o laudo
+// não vem de um navegador real. Rota direta nunca passa dessa parede.
+var ErrCaptchaRequired = errors.New("captcha_required")
 
 const (
 	BaseURL   = "https://play.tibidle.com"
@@ -108,18 +113,25 @@ func (s *SessionClient) LoginWithEmailPassword(email, password string) (string, 
 	return cookieStr, &res.Account, nil
 }
 
-// GetGameTicket obtains ticket via direct API or via the 4-second headless browser helper
-func (s *SessionClient) GetGameTicket(cookies string, sessionProof string) (string, string, error) {
+// GetGameTicket obtains ticket via direct API or via the 4-second headless browser helper.
+// turnstileToken (opcional): token roubado/solvido por terceiro — emitido direto da VPS.
+func (s *SessionClient) GetGameTicket(cookies string, sessionProof string, turnstileToken string) (string, string, error) {
 	// 1. Try direct HTTP route first (if sessionProof or cached token works)
-	ticket, wsURL, err := s.tryDirectTicket(cookies, sessionProof)
+	ticket, wsURL, err := s.tryDirectTicket(cookies, sessionProof, turnstileToken)
 	if err == nil && ticket != "" {
 		return ticket, wsURL, nil
 	}
+	if turnstileToken != "" {
+		return "", "", fmt.Errorf("world-ticket com token recusado: %w", err)
+	}
 
 	// 2. If captcha or browser challenge is required, use lightweight CDP helper
-	res, err := auth.FetchTicketViaBrowser(cookies)
-	if err != nil {
-		return "", "", fmt.Errorf("failed to obtain ticket: %w", err)
+	res, berr := auth.FetchTicketViaBrowser(cookies)
+	if berr != nil {
+		if errors.Is(err, ErrCaptchaRequired) {
+			return "", "", fmt.Errorf("rota direta bloqueada (%w), navegador local falhou: %v", err, berr)
+		}
+		return "", "", fmt.Errorf("failed to obtain ticket: %w", berr)
 	}
 
 	wsURL = res.WSURL
@@ -129,7 +141,7 @@ func (s *SessionClient) GetGameTicket(cookies string, sessionProof string) (stri
 	return res.Ticket, wsURL, nil
 }
 
-func (s *SessionClient) tryDirectTicket(cookies string, sessionProof string) (string, string, error) {
+func (s *SessionClient) tryDirectTicket(cookies string, sessionProof string, turnstileToken string) (string, string, error) {
 	// A. Nonce
 	nonceReq, err := http.NewRequest("POST", BaseURL+"/auth/world-nonce", nil)
 	if err != nil {
@@ -185,6 +197,9 @@ func (s *SessionClient) tryDirectTicket(cookies string, sessionProof string) (st
 			},
 		},
 	}
+	if turnstileToken != "" {
+		laudoPayload["turnstileToken"] = turnstileToken
+	}
 	payloadBytes, _ := json.Marshal(laudoPayload)
 
 	ticketReq, err := http.NewRequest("POST", BaseURL+"/auth/world-ticket", bytes.NewReader(payloadBytes))
@@ -210,7 +225,12 @@ func (s *SessionClient) tryDirectTicket(cookies string, sessionProof string) (st
 	defer ticketResp.Body.Close()
 
 	if ticketResp.StatusCode != http.StatusOK {
-		return "", "", fmt.Errorf("world-ticket HTTP %d", ticketResp.StatusCode)
+		body, _ := io.ReadAll(ticketResp.Body)
+		trimmed := strings.TrimSpace(string(body))
+		if strings.Contains(trimmed, "captcha_required") {
+			return "", "", ErrCaptchaRequired
+		}
+		return "", "", fmt.Errorf("world-ticket HTTP %d: %s", ticketResp.StatusCode, trimmed)
 	}
 
 	var ticketData struct {

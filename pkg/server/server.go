@@ -17,6 +17,7 @@ var indexHTML []byte
 type BotController interface {
 	GetAllStatuses() []bot.AccountStatus
 	SupplyTicket(accountID, ticket, wsURL string) error
+	SupplyTurnstileToken(accountID, token string) error
 }
 
 type Server struct {
@@ -78,13 +79,28 @@ func (s *Server) handleAPITicket(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var body struct {
-		AccountID string `json:"accountId"`
-		Ticket    string `json:"ticket"`
-		WSURL     string `json:"wsUrl"`
+		AccountID      string `json:"accountId"`
+		Ticket         string `json:"ticket"`
+		WSURL          string `json:"wsUrl"`
+		TurnstileToken string `json:"turnstileToken"`
 	}
-	if err := json.NewDecoder(r.Body).Decode(&body); err != nil || body.Ticket == "" {
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil ||
+		(body.Ticket == "" && body.TurnstileToken == "") {
 		w.WriteHeader(http.StatusBadRequest)
-		_ = json.NewEncoder(w).Encode(map[string]any{"ok": false, "error": "Campo 'ticket' é obrigatório"})
+		_ = json.NewEncoder(w).Encode(map[string]any{"ok": false, "error": "Campos 'ticket' ou 'turnstileToken' são obrigatórios"})
+		return
+	}
+
+	if body.TurnstileToken != "" {
+		if err := s.controller.SupplyTurnstileToken(body.AccountID, body.TurnstileToken); err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			_ = json.NewEncoder(w).Encode(map[string]any{"ok": false, "error": err.Error()})
+			return
+		}
+		_ = json.NewEncoder(w).Encode(map[string]any{
+			"ok":      true,
+			"message": "Token Turnstile entregue ao bot — emitindo ticket na VPS...",
+		})
 		return
 	}
 

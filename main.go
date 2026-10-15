@@ -45,6 +45,21 @@ func (m *BotManager) SupplyTicket(accountID, ticket, wsURL string) error {
 	return nil
 }
 
+func (m *BotManager) SupplyTurnstileToken(accountID, token string) error {
+	if len(m.bots) == 0 {
+		return fmt.Errorf("nenhum bot ativo no momento")
+	}
+	for _, b := range m.bots {
+		st := b.GetStatus()
+		if accountID == "" || st.ID == accountID || st.Name == accountID {
+			b.SupplyTurnstileToken(token)
+			return nil
+		}
+	}
+	m.bots[0].SupplyTurnstileToken(token)
+	return nil
+}
+
 func formatGold(n int) string {
 	if n < 1000 {
 		return fmt.Sprintf("%d gp", n)
@@ -129,6 +144,7 @@ func main() {
 	manager := &BotManager{}
 	for _, cfg := range activeConfigs {
 		b := bot.NewBot(cfg)
+		b.SetConfigPath(configFile)
 		manager.bots = append(manager.bots, b)
 		go b.Run(ctx)
 	}
