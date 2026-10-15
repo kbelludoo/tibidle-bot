@@ -1282,8 +1282,8 @@
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.2001419067382812,
+  "goroutines": 11,
+  "ramAllocMB": 2.2128524780273438,
   "ramSysMB": 16.595970153808594,
-  "uptime": "4s"
+  "uptime": "10s"
 }
