@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Wasps Dungeons",
       "bestiaryTotal": 209,
       "currentHunt": "Wasps Dungeons",
-      "durationSec": 32959,
+      "durationSec": 33057,
       "expPerHour": 9303,
       "gold": 0,
       "goldPerHour": 0,
@@ -1284,12 +1284,12 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
+        "Sessão expirou. Fazendo login automático...",
+        "Login automático OK. Nova sessão salva.",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Sessão expirou. Fazendo login automático...",
-        "Login automático OK. Nova sessão salva.",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1302,13 +1302,13 @@
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Wasps Dungeons",
-      "updatedAt": 1792097875097,
+      "updatedAt": 1792097972030,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.2862014770507812,
+  "ramAllocMB": 2.0460739135742188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "19h55m40s"
+  "uptime": "19h57m41s"
 }
