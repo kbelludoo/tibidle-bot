@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 11525,
+      "durationSec": 11703,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,10 +1300,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 1006)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
@@ -1314,17 +1310,21 @@
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
+      "status": "hunting",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792162915667,
+      "updatedAt": 1792163028710,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 1.4866943359375,
+  "goroutines": 10,
+  "ramAllocMB": 2.4736175537109375,
   "ramSysMB": 17.59986114501953,
-  "uptime": "37h59m41s"
+  "uptime": "38h1m40s"
 }
