@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 36560,
+      "durationSec": 36680,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792144682705,
+      "updatedAt": 1792144802706,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 2.85491943359375,
+  "ramAllocMB": 1.2503662109375,
   "ramSysMB": 17.59986114501953,
-  "uptime": "32h55m40s"
+  "uptime": "32h57m41s"
 }
