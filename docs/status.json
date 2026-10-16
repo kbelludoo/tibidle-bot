@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 11465,
+      "durationSec": 11525,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,8 +1300,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
-        "Servidor fechou conexão (code 1001)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1314,17 +1312,19 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
       ],
-      "status": "hunting",
+      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792162791109,
+      "updatedAt": 1792162915667,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 3.0380859375,
+  "goroutines": 11,
+  "ramAllocMB": 1.4866943359375,
   "ramSysMB": 17.59986114501953,
-  "uptime": "37h57m40s"
+  "uptime": "37h59m41s"
 }
