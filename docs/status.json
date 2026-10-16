@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 8705,
+      "durationSec": 8825,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,10 +1300,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "🎯 Bestiário avançou para 'Rotworms Darashia' (Lure: 2) para abater novas criaturas!",
-        "📊 Hunt 'Goblins Femor Hills' concluída: 15068 XP/h (Duração: 43200s, Kills: 15068)",
-        "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
         "Servidor fechou conexão (code 1001)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1314,17 +1310,21 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792160031377,
+      "updatedAt": 1792160151107,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.7838973999023438,
+  "goroutines": 11,
+  "ramAllocMB": 2.8332061767578125,
   "ramSysMB": 17.59986114501953,
-  "uptime": "37h11m40s"
+  "uptime": "37h13m40s"
 }
