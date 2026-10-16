@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 6425,
+      "durationSec": 6546,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792157751356,
+      "updatedAt": 1792157871351,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 3.01531982421875,
+  "ramAllocMB": 1.5952377319335938,
   "ramSysMB": 17.59986114501953,
-  "uptime": "36h33m41s"
+  "uptime": "36h35m40s"
 }
