@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 4364,
+      "durationSec": 4521,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1292,9 +1292,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
@@ -1306,17 +1303,20 @@
         "Conexão WebSocket estabelecida com sucesso!",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo..."
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792112505793,
+      "updatedAt": 1792112643407,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.390960693359375,
-  "ramSysMB": 17.34986114501953,
-  "uptime": "23h59m40s"
+  "goroutines": 9,
+  "ramAllocMB": 2.8415069580078125,
+  "ramSysMB": 17.59986114501953,
+  "uptime": "24h1m39s"
 }
