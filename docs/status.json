@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 1207,
+      "durationSec": 1384,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1292,8 +1292,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "🏆 Bestiário de 'Wasps Dungeons' CONCLUÍDO (500+ abates)! Progresso geral: 3/209 monstros.",
-        "🎯 Bestiário avançou para 'Goblins Femor Hills' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Wasps Dungeons' concluída: 8876 XP/h (Duração: 43200s, Kills: 15216)",
         "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
@@ -1306,17 +1304,19 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket emitido pela própria VPS com token do solver. Conectando..."
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
       ],
-      "status": "Conectando ao WebSocket...",
+      "status": "hunting",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792109406488,
+      "updatedAt": 1792109507118,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 15,
-  "ramAllocMB": 2.5766448974609375,
+  "goroutines": 9,
+  "ramAllocMB": 1.98675537109375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "23h7m41s"
+  "uptime": "23h9m40s"
 }
