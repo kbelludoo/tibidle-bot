@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 12203,
+      "durationSec": 12263,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,11 +1300,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1314,17 +1309,22 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "hunting",
+      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:53444-\u003e104.26.14.146:443: read: connection reset by peer)",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792163528712,
+      "updatedAt": 1792163641101,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.0550613403320312,
+  "goroutines": 11,
+  "ramAllocMB": 1.3508453369140625,
   "ramSysMB": 17.59986114501953,
-  "uptime": "38h9m44s"
+  "uptime": "38h11m40s"
 }
