@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 4264,
+      "durationSec": 4364,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1292,8 +1292,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "📊 Hunt 'Wasps Dungeons' concluída: 8876 XP/h (Duração: 43200s, Kills: 15216)",
-        "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 125, Lure: 2)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1306,17 +1304,19 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo..."
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792112387126,
+      "updatedAt": 1792112505793,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.4189224243164062,
+  "goroutines": 10,
+  "ramAllocMB": 2.390960693359375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "23h57m41s"
+  "uptime": "23h59m40s"
 }
