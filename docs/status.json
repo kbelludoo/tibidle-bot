@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 4146,
+      "durationSec": 4226,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,8 +1300,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "🏆 Bestiário de 'Goblins Femor Hills' CONCLUÍDO (500+ abates)! Progresso geral: 4/209 monstros.",
@@ -1314,17 +1312,19 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792155471449,
+      "updatedAt": 1792155576986,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.3876800537109375,
+  "goroutines": 10,
+  "ramAllocMB": 2.2760391235351562,
   "ramSysMB": 17.59986114501953,
-  "uptime": "35h55m40s"
+  "uptime": "35h57m41s"
 }
