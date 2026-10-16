@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 31398,
+      "durationSec": 31508,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1292,12 +1292,12 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
+        "Servidor fechou conexão (code 1001)",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 1001)",
+        "Servidor fechou conexão (code 1006)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792139521038,
+      "updatedAt": 1792139630885,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.7838058471679688,
+  "goroutines": 12,
+  "ramAllocMB": 1.9591217041015625,
   "ramSysMB": 17.59986114501953,
-  "uptime": "31h29m41s"
+  "uptime": "31h31m39s"
 }
