@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Rotworms Darashia",
       "bestiaryTotal": 209,
       "currentHunt": "Rotworms Darashia",
-      "durationSec": 1877,
+      "durationSec": 1986,
       "expPerHour": 15068,
       "gold": 0,
       "goldPerHour": 0,
@@ -1304,27 +1304,27 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
         "🏆 Bestiário de 'Goblins Femor Hills' CONCLUÍDO (500+ abates)! Progresso geral: 4/209 monstros.",
         "🎯 Bestiário avançou para 'Rotworms Darashia' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Goblins Femor Hills' concluída: 15068 XP/h (Duração: 43200s, Kills: 15068)",
         "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 126, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 126, Lure: 2)...",
+        "Servidor fechou conexão (code 1001)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Rotworms Darashia",
-      "updatedAt": 1792153202708,
+      "updatedAt": 1792153311447,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 3.1845321655273438,
+  "goroutines": 12,
+  "ramAllocMB": 1.3481903076171875,
   "ramSysMB": 17.59986114501953,
-  "uptime": "35h17m40s"
+  "uptime": "35h19m40s"
 }
