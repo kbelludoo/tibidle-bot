@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Goblins Femor Hills",
       "bestiaryTotal": 209,
       "currentHunt": "Goblins Femor Hills",
-      "durationSec": 1147,
+      "durationSec": 1207,
       "expPerHour": 8876,
       "gold": 0,
       "goldPerHour": 0,
@@ -1292,11 +1292,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
         "🏆 Bestiário de 'Wasps Dungeons' CONCLUÍDO (500+ abates)! Progresso geral: 3/209 monstros.",
         "🎯 Bestiário avançou para 'Goblins Femor Hills' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Wasps Dungeons' concluída: 8876 XP/h (Duração: 43200s, Kills: 15216)",
@@ -1306,17 +1301,22 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Ticket emitido pela própria VPS com token do solver. Conectando..."
       ],
-      "status": "hunting",
+      "status": "Conectando ao WebSocket...",
       "targetHunt": "Goblins Femor Hills",
-      "updatedAt": 1792109269421,
+      "updatedAt": 1792109406488,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.4815216064453125,
+  "goroutines": 15,
+  "ramAllocMB": 2.5766448974609375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "23h5m40s"
+  "uptime": "23h7m41s"
 }
