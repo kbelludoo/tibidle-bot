@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Salamander Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Salamander Cave",
-      "durationSec": 11712,
+      "durationSec": 11822,
       "expPerHour": 12100,
       "gold": 0,
       "goldPerHour": 0,
@@ -1309,10 +1309,6 @@
       "name": "Conta #1",
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 400: {\"code\":\"captcha_failed\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1322,17 +1318,21 @@
         "📊 Hunt 'Rotworms Darashia' concluída: 12100 XP/h (Duração: 43200s, Kills: 11169)",
         "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 178, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Salamander Cave",
-      "updatedAt": 1792206241023,
+      "updatedAt": 1792206350987,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 3.20556640625,
+  "goroutines": 12,
+  "ramAllocMB": 2.3446731567382812,
   "ramSysMB": 17.59986114501953,
-  "uptime": "50h1m41s"
+  "uptime": "50h3m40s"
 }
