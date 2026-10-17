@@ -1303,7 +1303,7 @@
       "bestiaryTarget": "Dwarven Mines",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarven Mines",
-      "durationSec": 9661,
+      "durationSec": 9782,
       "expPerHour": 14002,
       "gold": 0,
       "goldPerHour": 0,
@@ -1316,11 +1316,6 @@
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🏆 Bestiário de 'Rotworms Darashia' CONCLUÍDO (500+ abates)! Progresso geral: 5/209 monstros.",
-        "🎯 Bestiário avançou para 'Salamander Cave' (Lure: 2) para abater novas criaturas!",
-        "📊 Hunt 'Rotworms Darashia' concluída: 12100 XP/h (Duração: 43200s, Kills: 11169)",
-        "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 178, Lure: 2)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1330,17 +1325,22 @@
         "🏆 Bestiário de 'Salamander Cave' CONCLUÍDO (500+ abates)! Progresso geral: 8/209 monstros.",
         "🎯 Bestiário avançou para 'Dwarven Mines' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Salamander Cave' concluída: 14002 XP/h (Duração: 43200s, Kills: 14012)",
-        "Iniciando caçada (Hunt ID: 131, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 131, Lure: 2)...",
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Dwarven Mines",
-      "updatedAt": 1792247390896,
+      "updatedAt": 1792247511716,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 1.092071533203125,
+  "goroutines": 12,
+  "ramAllocMB": 1.7539825439453125,
   "ramSysMB": 17.59986114501953,
-  "uptime": "61h27m40s"
+  "uptime": "61h29m40s"
 }
