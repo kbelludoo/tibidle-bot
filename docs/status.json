@@ -1,48 +1,6 @@
 {
   "accounts": [
     {
-      "benchmarks": [
-        {
-          "bestXpPerHour": 9303,
-          "deaths": 0,
-          "huntId": 170,
-          "huntName": "Wolves Den",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 8876,
-          "deaths": 0,
-          "huntId": 176,
-          "huntName": "Wasps Dungeons",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 15068,
-          "deaths": 0,
-          "huntId": 125,
-          "huntName": "Goblins Femor Hills",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 12100,
-          "deaths": 0,
-          "huntId": 126,
-          "huntName": "Rotworms Darashia",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 14002,
-          "deaths": 0,
-          "huntId": 178,
-          "huntName": "Salamander Cave",
-          "lastDuration": 43200,
-          "runs": 1
-        }
-      ],
       "bestiary": [
         {
           "completed": false,
@@ -1300,47 +1258,32 @@
         }
       ],
       "bestiaryCompleted": 8,
-      "bestiaryTarget": "Dwarven Mines",
       "bestiaryTotal": 209,
-      "currentHunt": "Dwarven Mines",
-      "durationSec": 42912,
-      "expPerHour": 14002,
+      "currentHunt": "",
+      "durationSec": 0,
+      "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 49,
+      "level": 0,
       "mana": 0,
       "maxHp": 0,
       "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🏆 Bestiário de 'Salamander Cave' CONCLUÍDO (500+ abates)! Progresso geral: 8/209 monstros.",
-        "🎯 Bestiário avançou para 'Dwarven Mines' (Lure: 2) para abater novas criaturas!",
-        "📊 Hunt 'Salamander Cave' concluída: 14002 XP/h (Duração: 43200s, Kills: 14012)",
-        "Iniciando caçada (Hunt ID: 131, Lure: 2)...",
-        "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
-      "targetHunt": "Dwarven Mines",
-      "updatedAt": 1792280641611,
-      "vocation": "KNIGHT",
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "updatedAt": 1792280762069,
+      "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.9283599853515625,
-  "ramSysMB": 17.59986114501953,
-  "uptime": "70h41m40s"
+  "goroutines": 11,
+  "ramAllocMB": 2.2430496215820312,
+  "ramSysMB": 12.537361145019531,
+  "uptime": "3s"
 }
