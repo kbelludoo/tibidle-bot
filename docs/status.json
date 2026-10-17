@@ -1303,7 +1303,7 @@
       "bestiaryTarget": "Dwarven Mines",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarven Mines",
-      "durationSec": 27311,
+      "durationSec": 27431,
       "expPerHour": 14002,
       "gold": 0,
       "goldPerHour": 0,
@@ -1334,13 +1334,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Dwarven Mines",
-      "updatedAt": 1792265041540,
+      "updatedAt": 1792265161537,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.5978775024414062,
+  "ramAllocMB": 1.7808380126953125,
   "ramSysMB": 17.59986114501953,
-  "uptime": "66h21m40s"
+  "uptime": "66h23m39s"
 }
