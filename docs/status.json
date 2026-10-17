@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Salamander Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Salamander Cave",
-      "durationSec": 9912,
+      "durationSec": 10032,
       "expPerHour": 12100,
       "gold": 0,
       "goldPerHour": 0,
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Salamander Cave",
-      "updatedAt": 1792204441022,
+      "updatedAt": 1792204561022,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 9,
-  "ramAllocMB": 3.3240509033203125,
+  "ramAllocMB": 2.0379791259765625,
   "ramSysMB": 17.59986114501953,
-  "uptime": "49h31m40s"
+  "uptime": "49h33m40s"
 }
