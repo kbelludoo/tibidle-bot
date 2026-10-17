@@ -1,6 +1,16 @@
 {
   "accounts": [
     {
+      "benchmarks": [
+        {
+          "bestXpPerHour": 13856,
+          "deaths": 0,
+          "huntId": 131,
+          "huntName": "Dwarven Mines",
+          "lastDuration": 43200,
+          "runs": 1
+        }
+      ],
       "bestiary": [
         {
           "completed": false,
@@ -342,12 +352,6 @@
           "completed": false,
           "kills": 0,
           "name": "Drillworm",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Dwarf",
           "target": 500
         },
         {
@@ -1222,6 +1226,12 @@
         },
         {
           "completed": true,
+          "kills": 15116,
+          "name": "Dwarf",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 15068,
           "name": "Goblin",
           "target": 500
@@ -1257,33 +1267,44 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 8,
+      "bestiaryCompleted": 9,
+      "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
-      "currentHunt": "",
-      "durationSec": 0,
-      "expPerHour": 0,
+      "currentHunt": "Daramian Minotaur Pyramid",
+      "durationSec": 57,
+      "expPerHour": 13856,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 0,
+      "hp": 815,
       "id": "acc-1",
       "kills": 0,
-      "level": 0,
-      "mana": 0,
-      "maxHp": 0,
-      "maxMana": 0,
+      "level": 49,
+      "mana": 240,
+      "maxHp": 815,
+      "maxMana": 240,
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🏆 Bestiário de 'Dwarven Mines' CONCLUÍDO (500+ abates)! Progresso geral: 9/209 monstros.",
+        "📊 Hunt 'Dwarven Mines' concluída: 13856 XP/h (Duração: 43200s, Kills: 15116)",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
+        "📖 Foco Bestiário (Lv. 49): alternando de 'Daramian Minotaur Pyramid' para 'Tarpit Tomb First Floor' (Lure: 1)"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
-      "updatedAt": 1792280897091,
-      "vocation": "",
+      "status": "hunting",
+      "targetHunt": "Tarpit Tomb First Floor",
+      "updatedAt": 1792280992056,
+      "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 12,
-  "ramAllocMB": 2.3257904052734375,
-  "ramSysMB": 12.529548645019531,
-  "uptime": "12s"
+  "ramAllocMB": 2.6474761962890625,
+  "ramSysMB": 13.099861145019531,
+  "uptime": "1m51s"
 }
