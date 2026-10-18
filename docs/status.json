@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Tarpit Tomb First Floor",
-      "durationSec": 6054,
+      "durationSec": 6174,
       "expPerHour": 16635,
       "gold": 0,
       "goldPerHour": 0,
@@ -1287,7 +1287,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 50,
-      "mana": 222,
+      "mana": 245,
       "maxHp": 830,
       "maxMana": 245,
       "name": "Conta #1",
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792330192056,
+      "updatedAt": 1792330312057,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.3722457885742188,
+  "ramAllocMB": 1.8718719482421875,
   "ramSysMB": 13.349861145019531,
-  "uptime": "13h41m50s"
+  "uptime": "13h43m50s"
 }
