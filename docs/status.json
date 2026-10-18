@@ -9,6 +9,14 @@
           "huntName": "Dwarven Mines",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 16635,
+          "deaths": 0,
+          "huntId": 26,
+          "huntName": "Daramian Minotaur Pyramid",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -1214,6 +1222,12 @@
         },
         {
           "completed": true,
+          "kills": 25236,
+          "name": "Minotaur",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 15948,
           "name": "Wolf",
           "target": 500
@@ -1234,12 +1248,6 @@
           "completed": true,
           "kills": 15068,
           "name": "Goblin",
-          "target": 500
-        },
-        {
-          "completed": true,
-          "kills": 11928,
-          "name": "Minotaur",
           "target": 500
         },
         {
@@ -1270,21 +1278,20 @@
       "bestiaryCompleted": 9,
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
-      "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 43137,
-      "expPerHour": 13856,
+      "currentHunt": "Tarpit Tomb First Floor",
+      "durationSec": 54,
+      "expPerHour": 16635,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 830,
       "id": "acc-1",
       "kills": 0,
       "level": 50,
-      "mana": 236,
+      "mana": 245,
       "maxHp": 830,
       "maxMana": 245,
       "name": "Conta #1",
       "recentLogs": [
-        "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1294,17 +1301,22 @@
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "📖 Foco Bestiário (Lv. 49): alternando de 'Daramian Minotaur Pyramid' para 'Tarpit Tomb First Floor' (Lure: 1)"
+        "📖 Foco Bestiário (Lv. 49): alternando de 'Daramian Minotaur Pyramid' para 'Tarpit Tomb First Floor' (Lure: 1)",
+        "🏆 Bestiário de 'Daramian Minotaur Pyramid' CONCLUÍDO (500+ abates)! Progresso geral: 9/209 monstros.",
+        "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 16635 XP/h (Duração: 43200s, Kills: 13308)",
+        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
+        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
+        "Iniciando caçada (Hunt ID: 28, Lure: 1)..."
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792324072056,
+      "updatedAt": 1792324192057,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.0496673583984375,
+  "ramAllocMB": 2.0204925537109375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "11h59m50s"
+  "uptime": "12h1m50s"
 }
