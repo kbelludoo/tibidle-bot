@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 24057,
+      "durationSec": 24177,
       "expPerHour": 13856,
       "gold": 0,
       "goldPerHour": 0,
@@ -1279,7 +1279,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 50,
-      "mana": 245,
+      "mana": 239,
       "maxHp": 830,
       "maxMana": 245,
       "name": "Conta #1",
@@ -1298,13 +1298,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792304992056,
+      "updatedAt": 1792305112125,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.8462066650390625,
+  "ramAllocMB": 1.4338455200195312,
   "ramSysMB": 13.349861145019531,
-  "uptime": "6h41m50s"
+  "uptime": "6h43m50s"
 }
