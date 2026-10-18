@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Tarpit Tomb First Floor",
-      "durationSec": 5454,
+      "durationSec": 5574,
       "expPerHour": 16635,
       "gold": 0,
       "goldPerHour": 0,
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792329592059,
+      "updatedAt": 1792329712056,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.0216598510742188,
+  "ramAllocMB": 1.6087570190429688,
   "ramSysMB": 13.349861145019531,
-  "uptime": "13h31m51s"
+  "uptime": "13h33m50s"
 }
