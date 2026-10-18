@@ -17,6 +17,14 @@
           "huntName": "Daramian Minotaur Pyramid",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 15412,
+          "deaths": 0,
+          "huntId": 28,
+          "huntName": "Tarpit Tomb First Floor",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -971,18 +979,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Skeleton",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Skeleton Warrior",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Skelleton",
           "target": 500
         },
@@ -1258,6 +1254,12 @@
         },
         {
           "completed": true,
+          "kills": 7044,
+          "name": "Skeleton",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 4686,
           "name": "Salamander",
           "target": 500
@@ -1273,14 +1275,20 @@
           "kills": 4642,
           "name": "Marsh Stalker",
           "target": 500
+        },
+        {
+          "completed": true,
+          "kills": 3612,
+          "name": "Skeleton Warrior",
+          "target": 500
         }
       ],
-      "bestiaryCompleted": 9,
-      "bestiaryTarget": "Tarpit Tomb First Floor",
+      "bestiaryCompleted": 11,
+      "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
-      "currentHunt": "Tarpit Tomb First Floor",
-      "durationSec": 43154,
-      "expPerHour": 16635,
+      "currentHunt": "Carlin Raids",
+      "durationSec": 51,
+      "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 860,
@@ -1292,11 +1300,6 @@
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "📊 Hunt 'Dwarven Mines' concluída: 13856 XP/h (Duração: 43200s, Kills: 15116)",
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
-        "📖 Foco Bestiário (Lv. 49): alternando de 'Daramian Minotaur Pyramid' para 'Tarpit Tomb First Floor' (Lure: 1)",
         "🏆 Bestiário de 'Daramian Minotaur Pyramid' CONCLUÍDO (500+ abates)! Progresso geral: 9/209 monstros.",
         "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 16635 XP/h (Duração: 43200s, Kills: 13308)",
         "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
@@ -1306,17 +1309,22 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🏆 Bestiário de 'Tarpit Tomb First Floor' CONCLUÍDO (500+ abates)! Progresso geral: 11/209 monstros.",
+        "🎯 Bestiário avançou para 'Carlin Raids' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Tarpit Tomb First Floor' concluída: 15412 XP/h (Duração: 43200s, Kills: 10656)",
+        "Iniciando caçada (Hunt ID: 175, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 175, Lure: 2)..."
       ],
       "status": "hunting",
-      "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792367292405,
+      "targetHunt": "Carlin Raids",
+      "updatedAt": 1792367392412,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.959991455078125,
+  "ramAllocMB": 1.6542892456054688,
   "ramSysMB": 13.349861145019531,
-  "uptime": "24h0m1s"
+  "uptime": "24h1m51s"
 }
