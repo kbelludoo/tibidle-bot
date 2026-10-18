@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 37497,
+      "durationSec": 37617,
       "expPerHour": 13856,
       "gold": 0,
       "goldPerHour": 0,
@@ -1298,13 +1298,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792318432056,
+      "updatedAt": 1792318552055,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.5107040405273438,
+  "ramAllocMB": 1.7985916137695312,
   "ramSysMB": 13.349861145019531,
-  "uptime": "10h25m50s"
+  "uptime": "10h27m50s"
 }
