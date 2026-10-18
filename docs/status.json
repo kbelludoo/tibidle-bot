@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Tarpit Tomb First Floor",
-      "durationSec": 35934,
+      "durationSec": 35994,
       "expPerHour": 16635,
       "gold": 0,
       "goldPerHour": 0,
@@ -1287,16 +1287,11 @@
       "id": "acc-1",
       "kills": 0,
       "level": 52,
-      "mana": 232,
+      "mana": 255,
       "maxHp": 860,
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🏆 Bestiário de 'Dwarven Mines' CONCLUÍDO (500+ abates)! Progresso geral: 9/209 monstros.",
         "📊 Hunt 'Dwarven Mines' concluída: 13856 XP/h (Duração: 43200s, Kills: 15116)",
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 26, Lure: 2)...",
@@ -1306,17 +1301,22 @@
         "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 16635 XP/h (Duração: 43200s, Kills: 13308)",
         "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
         "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
-        "Iniciando caçada (Hunt ID: 28, Lure: 1)..."
+        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
+        "Servidor fechou conexão (code 1001)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792360072056,
+      "updatedAt": 1792360193270,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 1.7070388793945312,
+  "goroutines": 14,
+  "ramAllocMB": 2.0203170776367188,
   "ramSysMB": 13.349861145019531,
-  "uptime": "21h59m55s"
+  "uptime": "22h1m54s"
 }
