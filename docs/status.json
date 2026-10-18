@@ -1279,17 +1279,17 @@
       "bestiaryTarget": "Tarpit Tomb First Floor",
       "bestiaryTotal": 209,
       "currentHunt": "Tarpit Tomb First Floor",
-      "durationSec": 35334,
+      "durationSec": 35454,
       "expPerHour": 16635,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 845,
+      "hp": 860,
       "id": "acc-1",
       "kills": 0,
-      "level": 51,
-      "mana": 250,
-      "maxHp": 845,
-      "maxMana": 250,
+      "level": 52,
+      "mana": 255,
+      "maxHp": 860,
+      "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Tarpit Tomb First Floor",
-      "updatedAt": 1792359472058,
+      "updatedAt": 1792359592066,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.0857925415039062,
+  "ramAllocMB": 3.23577880859375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "21h49m55s"
+  "uptime": "21h51m55s"
 }
