@@ -1308,13 +1308,6 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 1006)",
@@ -1322,17 +1315,24 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
-        "Servidor fechou conexão (code 4505)"
+        "Servidor fechou conexão (code 4505)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "Reconectando (websocket desconectou: websocket: close 4505: play_gate)",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792450803060,
+      "updatedAt": 1792450924989,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.1195907592773438,
+  "goroutines": 13,
+  "ramAllocMB": 1.3798446655273438,
   "ramSysMB": 13.599861145019531,
-  "uptime": "47h11m51s"
+  "uptime": "47h13m51s"
 }
