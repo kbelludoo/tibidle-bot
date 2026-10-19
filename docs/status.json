@@ -1287,17 +1287,17 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 23291,
+      "durationSec": 23411,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 860,
+      "hp": 875,
       "id": "acc-1",
       "kills": 0,
-      "level": 52,
-      "mana": 255,
-      "maxHp": 860,
-      "maxMana": 255,
+      "level": 53,
+      "mana": 260,
+      "maxHp": 875,
+      "maxMana": 260,
       "name": "Conta #1",
       "recentLogs": [
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792390681087,
+      "updatedAt": 1792390801087,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.7613525390625,
+  "ramAllocMB": 1.8553695678710938,
   "ramSysMB": 13.599861145019531,
-  "uptime": "30h29m51s"
+  "uptime": "30h31m50s"
 }
