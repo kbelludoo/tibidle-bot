@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 40080,
+      "durationSec": 40200,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
@@ -1303,12 +1303,11 @@
       "id": "acc-1",
       "kills": 0,
       "level": 54,
-      "mana": 265,
+      "mana": 263,
       "maxHp": 890,
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
@@ -1322,17 +1321,18 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 4505)"
       ],
-      "status": "hunting",
+      "status": "Reconectando (websocket desconectou: websocket: close 4505: play_gate)",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792450671705,
+      "updatedAt": 1792450803060,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.5056838989257812,
+  "goroutines": 9,
+  "ramAllocMB": 2.1195907592773438,
   "ramSysMB": 13.599861145019531,
-  "uptime": "47h9m50s"
+  "uptime": "47h11m51s"
 }
