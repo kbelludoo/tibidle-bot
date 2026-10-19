@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 16332,
+      "durationSec": 16452,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792426923810,
+      "updatedAt": 1792427043808,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.1446075439453125,
+  "ramAllocMB": 2.74591064453125,
   "ramSysMB": 13.599861145019531,
-  "uptime": "40h33m51s"
+  "uptime": "40h35m50s"
 }
