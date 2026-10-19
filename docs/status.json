@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 26411,
+      "durationSec": 26531,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792393801086,
+      "updatedAt": 1792393921087,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.8690032958984375,
+  "ramAllocMB": 2.2520294189453125,
   "ramSysMB": 13.599861145019531,
-  "uptime": "31h21m51s"
+  "uptime": "31h23m50s"
 }
