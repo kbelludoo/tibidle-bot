@@ -1308,10 +1308,6 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
@@ -1322,17 +1318,21 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo..."
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792451524959,
+      "updatedAt": 1792451636007,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.268280029296875,
+  "ramAllocMB": 1.2376937866210938,
   "ramSysMB": 13.599861145019531,
-  "uptime": "47h23m51s"
+  "uptime": "47h25m51s"
 }
