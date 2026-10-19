@@ -25,6 +25,14 @@
           "huntName": "Tarpit Tomb First Floor",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 14516,
+          "deaths": 0,
+          "huntId": 175,
+          "huntName": "Carlin Raids",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -1171,12 +1179,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Wild Warrior",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Worker Golem",
           "target": 500
         },
@@ -1254,6 +1256,12 @@
         },
         {
           "completed": true,
+          "kills": 10887,
+          "name": "Wild Warrior",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 7044,
           "name": "Skeleton",
           "target": 500
@@ -1283,12 +1291,12 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 11,
-      "bestiaryTarget": "Carlin Raids",
+      "bestiaryCompleted": 12,
+      "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
-      "currentHunt": "Carlin Raids",
-      "durationSec": 43116,
-      "expPerHour": 15412,
+      "currentHunt": "Larva Ankrahmuns",
+      "durationSec": 14,
+      "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
       "hp": 875,
@@ -1303,28 +1311,28 @@
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🏆 Bestiário de 'Carlin Raids' CONCLUÍDO (500+ abates)! Progresso geral: 12/209 monstros.",
+        "🎯 Bestiário avançou para 'Larva Ankrahmuns' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Carlin Raids' concluída: 14516 XP/h (Duração: 43200s, Kills: 10887)",
+        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 128, Lure: 2)..."
       ],
       "status": "hunting",
-      "targetHunt": "Carlin Raids",
-      "updatedAt": 1792410505874,
+      "targetHunt": "Larva Ankrahmuns",
+      "updatedAt": 1792410605884,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.6904983520507812,
+  "ramAllocMB": 2.45867919921875,
   "ramSysMB": 13.599861145019531,
-  "uptime": "36h0m19s"
+  "uptime": "36h1m51s"
 }
