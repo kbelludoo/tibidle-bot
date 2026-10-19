@@ -1262,31 +1262,36 @@
       "currentHunt": "Larva Ankrahmuns",
       "durationSec": 0,
       "expPerHour": 0,
-      "gold": 0,
+      "gold": 150475,
       "goldPerHour": 0,
-      "hp": 0,
+      "hp": 890,
       "id": "acc-1",
       "kills": 0,
-      "level": 0,
-      "mana": 0,
-      "maxHp": 0,
-      "maxMana": 0,
+      "level": 54,
+      "mana": 265,
+      "maxHp": 890,
+      "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
         "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!"
       ],
       "status": "hunting",
-      "updatedAt": 1792453321681,
-      "vocation": "",
+      "updatedAt": 1792453441992,
+      "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 13,
-  "ramAllocMB": 1.7015228271484375,
-  "ramSysMB": 17.34986114501953,
-  "uptime": "43s"
+  "ramAllocMB": 2.9505767822265625,
+  "ramSysMB": 17.09204864501953,
+  "uptime": "33s"
 }
