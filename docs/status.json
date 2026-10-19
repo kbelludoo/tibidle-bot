@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 7794,
+      "durationSec": 7874,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
@@ -1308,10 +1308,6 @@
       "maxMana": 260,
       "name": "Conta #1",
       "recentLogs": [
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
@@ -1322,17 +1318,21 @@
         "📊 Hunt 'Carlin Raids' concluída: 14516 XP/h (Duração: 43200s, Kills: 10887)",
         "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 128, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792418385875,
+      "updatedAt": 1792418523587,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.094329833984375,
+  "goroutines": 13,
+  "ramAllocMB": 1.6801528930664062,
   "ramSysMB": 13.599861145019531,
-  "uptime": "38h11m51s"
+  "uptime": "38h13m50s"
 }
