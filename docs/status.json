@@ -1,6 +1,16 @@
 {
   "accounts": [
     {
+      "benchmarks": [
+        {
+          "bestXpPerHour": 12547,
+          "deaths": 0,
+          "huntId": 128,
+          "huntName": "Larva Ankrahmuns",
+          "lastDuration": 43200,
+          "runs": 1
+        }
+      ],
       "bestiary": [
         {
           "completed": false,
@@ -570,12 +580,6 @@
           "completed": false,
           "kills": 0,
           "name": "Lancer Beetle",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Larva",
           "target": 500
         },
         {
@@ -1228,6 +1232,12 @@
         },
         {
           "completed": true,
+          "kills": 10755,
+          "name": "Larva",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 7044,
           "name": "Skeleton",
           "target": 500
@@ -1257,12 +1267,12 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 12,
-      "bestiaryTarget": "Larva Ankrahmuns",
+      "bestiaryCompleted": 13,
+      "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 43077,
-      "expPerHour": 0,
+      "durationSec": 43197,
+      "expPerHour": 12547,
       "gold": 150475,
       "goldPerHour": 0,
       "hp": 890,
@@ -1274,7 +1284,6 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1283,17 +1292,23 @@
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "🏆 Bestiário de 'Larva Ankrahmuns' CONCLUÍDO (500+ abates)! Progresso geral: 13/209 monstros.",
+        "🎯 Bestiário avançou para 'Orcs Edron Cave' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Larva Ankrahmuns' concluída: 12547 XP/h (Duração: 43200s, Kills: 10755)",
+        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!"
       ],
-      "status": "hunting",
-      "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792453681015,
+      "status": "idle",
+      "targetHunt": "Orcs Edron Cave",
+      "updatedAt": 1792453804544,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.563201904296875,
+  "ramAllocMB": 3.1199188232421875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "4m32s"
+  "uptime": "6m32s"
 }
