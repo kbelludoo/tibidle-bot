@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 19934,
+      "durationSec": 20034,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1295,13 +1295,11 @@
       "id": "acc-1",
       "kills": 0,
       "level": 52,
-      "mana": 232,
+      "mana": 239,
       "maxHp": 860,
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
@@ -1314,17 +1312,19 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Servidor fechou conexão (code 4505)",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792387309160,
+      "updatedAt": 1792387424616,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.5802001953125,
+  "goroutines": 11,
+  "ramAllocMB": 1.9083938598632812,
   "ramSysMB": 13.599861145019531,
-  "uptime": "29h33m50s"
+  "uptime": "29h35m50s"
 }
