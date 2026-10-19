@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 771,
+      "durationSec": 900,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,10 +1300,6 @@
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "🏆 Bestiário de 'Daramian Minotaur Pyramid' CONCLUÍDO (500+ abates)! Progresso geral: 9/209 monstros.",
-        "📊 Hunt 'Daramian Minotaur Pyramid' concluída: 16635 XP/h (Duração: 43200s, Kills: 13308)",
-        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
-        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
         "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
         "Servidor fechou conexão (code 1001)",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1314,17 +1310,21 @@
         "🎯 Bestiário avançou para 'Carlin Raids' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Tarpit Tomb First Floor' concluída: 15412 XP/h (Duração: 43200s, Kills: 10656)",
         "Iniciando caçada (Hunt ID: 175, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 175, Lure: 2)..."
+        "Iniciando caçada (Hunt ID: 175, Lure: 2)...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792368112351,
+      "updatedAt": 1792368241521,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.7229690551757812,
+  "goroutines": 13,
+  "ramAllocMB": 2.6021652221679688,
   "ramSysMB": 13.349861145019531,
-  "uptime": "24h13m54s"
+  "uptime": "24h15m50s"
 }
