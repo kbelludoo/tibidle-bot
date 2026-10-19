@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 900,
+      "durationSec": 960,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,10 +1300,6 @@
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 28, Lure: 1)...",
-        "Servidor fechou conexão (code 1001)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "🏆 Bestiário de 'Tarpit Tomb First Floor' CONCLUÍDO (500+ abates)! Progresso geral: 11/209 monstros.",
@@ -1314,17 +1310,21 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792368241521,
+      "updatedAt": 1792368360268,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 13,
-  "ramAllocMB": 2.6021652221679688,
+  "ramAllocMB": 2.79510498046875,
   "ramSysMB": 13.349861145019531,
-  "uptime": "24h15m50s"
+  "uptime": "24h17m50s"
 }
