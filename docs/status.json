@@ -1295,11 +1295,11 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 15601,
+      "durationSec": 15732,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 888,
+      "hp": 890,
       "id": "acc-1",
       "kills": 0,
       "level": 54,
@@ -1308,9 +1308,9 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 128, Lure: 2)...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792426193380,
+      "updatedAt": 1792426323806,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.7672958374023438,
+  "goroutines": 13,
+  "ramAllocMB": 1.6103134155273438,
   "ramSysMB": 13.599861145019531,
-  "uptime": "40h21m51s"
+  "uptime": "40h23m50s"
 }
