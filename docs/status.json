@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 37076,
+      "durationSec": 37196,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1295,7 +1295,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 53,
-      "mana": 260,
+      "mana": 244,
       "maxHp": 875,
       "maxMana": 260,
       "name": "Conta #1",
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792404465866,
+      "updatedAt": 1792404585923,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.1281967163085938,
+  "ramAllocMB": 2.9516983032226562,
   "ramSysMB": 13.599861145019531,
-  "uptime": "34h19m50s"
+  "uptime": "34h21m51s"
 }
