@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 12538,
+      "durationSec": 13454,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1300,10 +1300,6 @@
       "maxMana": 255,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1314,17 +1310,21 @@
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo..."
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
+      "status": "hunting",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792380715813,
+      "updatedAt": 1792380829161,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 1.4946823120117188,
-  "ramSysMB": 13.349861145019531,
-  "uptime": "27h43m50s"
+  "goroutines": 13,
+  "ramAllocMB": 1.3240966796875,
+  "ramSysMB": 13.599861145019531,
+  "uptime": "27h45m51s"
 }
