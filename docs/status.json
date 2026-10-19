@@ -1,40 +1,6 @@
 {
   "accounts": [
     {
-      "benchmarks": [
-        {
-          "bestXpPerHour": 13856,
-          "deaths": 0,
-          "huntId": 131,
-          "huntName": "Dwarven Mines",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 16635,
-          "deaths": 0,
-          "huntId": 26,
-          "huntName": "Daramian Minotaur Pyramid",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 15412,
-          "deaths": 0,
-          "huntId": 28,
-          "huntName": "Tarpit Tomb First Floor",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 14516,
-          "deaths": 0,
-          "huntId": 175,
-          "huntName": "Carlin Raids",
-          "lastDuration": 43200,
-          "runs": 1
-        }
-      ],
       "bestiary": [
         {
           "completed": false,
@@ -1292,47 +1258,35 @@
         }
       ],
       "bestiaryCompleted": 12,
-      "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 42584,
-      "expPerHour": 14516,
+      "durationSec": 0,
+      "expPerHour": 0,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 890,
+      "hp": 0,
       "id": "acc-1",
       "kills": 0,
-      "level": 54,
-      "mana": 249,
-      "maxHp": 890,
-      "maxMana": 265,
+      "level": 0,
+      "mana": 0,
+      "maxHp": 0,
+      "maxMana": 0,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Bot iniciado para ID: Conta #1",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)..."
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
       "status": "hunting",
-      "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792453189052,
-      "vocation": "KNIGHT",
+      "updatedAt": 1792453321681,
+      "vocation": "",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.8315200805664062,
-  "ramSysMB": 13.599861145019531,
-  "uptime": "47h51m52s"
+  "goroutines": 13,
+  "ramAllocMB": 1.7015228271484375,
+  "ramSysMB": 17.34986114501953,
+  "uptime": "43s"
 }
