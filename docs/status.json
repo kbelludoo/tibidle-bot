@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Carlin Raids",
       "bestiaryTotal": 209,
       "currentHunt": "Carlin Raids",
-      "durationSec": 36371,
+      "durationSec": 36471,
       "expPerHour": 15412,
       "gold": 0,
       "goldPerHour": 0,
@@ -1316,15 +1316,15 @@
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "hunting",
+      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:52740-\u003e104.26.14.146:443: read: connection reset by peer)",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792403761092,
+      "updatedAt": 1792403881580,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.5117874145507812,
+  "goroutines": 9,
+  "ramAllocMB": 2.263702392578125,
   "ramSysMB": 13.599861145019531,
-  "uptime": "34h7m50s"
+  "uptime": "34h9m50s"
 }
