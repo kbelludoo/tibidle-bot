@@ -1270,8 +1270,8 @@
       "bestiaryCompleted": 13,
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
-      "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 43197,
+      "currentHunt": "Orcs Edron Cave",
+      "durationSec": 96,
       "expPerHour": 12547,
       "gold": 150475,
       "goldPerHour": 0,
@@ -1284,12 +1284,6 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
@@ -1298,17 +1292,23 @@
         "📊 Hunt 'Larva Ankrahmuns' concluída: 12547 XP/h (Duração: 43200s, Kills: 10755)",
         "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!"
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 124, Lure: 2)..."
       ],
-      "status": "idle",
+      "status": "hunting",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792453804544,
+      "updatedAt": 1792453921045,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.1199188232421875,
+  "ramAllocMB": 1.3834915161132812,
   "ramSysMB": 17.34986114501953,
-  "uptime": "6m32s"
+  "uptime": "8m32s"
 }
