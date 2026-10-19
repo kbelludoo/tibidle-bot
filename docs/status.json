@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 15011,
+      "durationSec": 15111,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
@@ -1303,12 +1303,11 @@
       "id": "acc-1",
       "kills": 0,
       "level": 53,
-      "mana": 258,
+      "mana": 260,
       "maxHp": 875,
       "maxMana": 260,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
         "🏆 Bestiário de 'Carlin Raids' CONCLUÍDO (500+ abates)! Progresso geral: 12/209 monstros.",
         "🎯 Bestiário avançou para 'Larva Ankrahmuns' (Lure: 2) para abater novas criaturas!",
         "📊 Hunt 'Carlin Raids' concluída: 14516 XP/h (Duração: 43200s, Kills: 10887)",
@@ -1322,17 +1321,18 @@
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!"
+        "Conexão WebSocket estabelecida com sucesso!",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792425603129,
+      "updatedAt": 1792425724112,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 3.1179733276367188,
+  "goroutines": 13,
+  "ramAllocMB": 1.8471832275390625,
   "ramSysMB": 13.599861145019531,
-  "uptime": "40h11m52s"
+  "uptime": "40h13m51s"
 }
