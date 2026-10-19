@@ -1295,7 +1295,7 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 36103,
+      "durationSec": 36240,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
@@ -1308,9 +1308,6 @@
       "maxMana": 265,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Conectado como Conta #1 (Sessão Autenticada)",
@@ -1322,17 +1319,20 @@
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792446718262,
+      "updatedAt": 1792446831688,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 3.1200485229492188,
+  "goroutines": 10,
+  "ramAllocMB": 1.9849014282226562,
   "ramSysMB": 13.599861145019531,
-  "uptime": "46h3m50s"
+  "uptime": "46h5m50s"
 }
