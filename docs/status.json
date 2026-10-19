@@ -1316,15 +1316,15 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo..."
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792387646553,
+      "updatedAt": 1792387802557,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.2664566040039062,
+  "ramAllocMB": 1.3018798828125,
   "ramSysMB": 13.599861145019531,
-  "uptime": "29h39m50s"
+  "uptime": "29h41m50s"
 }
