@@ -1295,15 +1295,15 @@
       "bestiaryTarget": "Larva Ankrahmuns",
       "bestiaryTotal": 209,
       "currentHunt": "Larva Ankrahmuns",
-      "durationSec": 23772,
+      "durationSec": 23892,
       "expPerHour": 14516,
       "gold": 0,
       "goldPerHour": 0,
-      "hp": 884,
+      "hp": 877,
       "id": "acc-1",
       "kills": 0,
       "level": 54,
-      "mana": 265,
+      "mana": 259,
       "maxHp": 890,
       "maxMana": 265,
       "name": "Conta #1",
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Larva Ankrahmuns",
-      "updatedAt": 1792434363810,
+      "updatedAt": 1792434483808,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.4075851440429688,
+  "ramAllocMB": 2.7213592529296875,
   "ramSysMB": 13.599861145019531,
-  "uptime": "42h37m50s"
+  "uptime": "42h39m50s"
 }
