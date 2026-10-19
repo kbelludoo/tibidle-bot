@@ -1318,13 +1318,13 @@
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Carlin Raids",
-      "updatedAt": 1792387924115,
+      "updatedAt": 1792388035153,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 1.36871337890625,
+  "goroutines": 11,
+  "ramAllocMB": 1.359039306640625,
   "ramSysMB": 13.599861145019531,
-  "uptime": "29h43m50s"
+  "uptime": "29h45m50s"
 }
