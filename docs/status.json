@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 28529,
+      "durationSec": 28629,
       "expPerHour": 12547,
       "gold": 158453,
       "goldPerHour": 0,
@@ -1284,7 +1284,6 @@
       "maxMana": 276,
       "name": "Conta #1",
       "recentLogs": [
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
         "Conexão WebSocket estabelecida com sucesso!",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
@@ -1298,17 +1297,18 @@
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!"
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792482354659,
+      "updatedAt": 1792482470972,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.9396286010742188,
+  "goroutines": 11,
+  "ramAllocMB": 1.3081130981445312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "8h2m32s"
+  "uptime": "8h4m33s"
 }
