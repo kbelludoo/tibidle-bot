@@ -1271,9 +1271,9 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 28629,
+      "durationSec": 28774,
       "expPerHour": 12547,
-      "gold": 158453,
+      "gold": 170848,
       "goldPerHour": 0,
       "hp": 905,
       "id": "acc-1",
@@ -1284,12 +1284,6 @@
       "maxMana": 276,
       "name": "Conta #1",
       "recentLogs": [
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "📬 Correio do Sistema: 1 recompensas resgatadas!",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
-        "Servidor fechou conexão (code 1006)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1298,17 +1292,23 @@
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Ticket emitido pela própria VPS com token do solver. Conectando...",
+        "Conexão WebSocket estabelecida com sucesso!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792482470972,
+      "updatedAt": 1792482598839,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 1.3081130981445312,
+  "goroutines": 10,
+  "ramAllocMB": 2.1322250366210938,
   "ramSysMB": 17.34986114501953,
-  "uptime": "8h4m33s"
+  "uptime": "8h6m32s"
 }
