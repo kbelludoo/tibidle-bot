@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 14009,
+      "durationSec": 14129,
       "expPerHour": 12547,
       "gold": 158453,
       "goldPerHour": 0,
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792467834408,
+      "updatedAt": 1792467954408,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.3446502685546875,
+  "ramAllocMB": 1.1248550415039062,
   "ramSysMB": 17.34986114501953,
-  "uptime": "4h0m32s"
+  "uptime": "4h2m32s"
 }
