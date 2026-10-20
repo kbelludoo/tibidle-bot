@@ -1261,11 +1261,11 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 28624,
+      "durationSec": 28744,
       "expPerHour": 0,
       "gold": 272861,
       "goldPerHour": 0,
-      "hp": 881,
+      "hp": 929,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
@@ -1275,7 +1275,7 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-20)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1292,13 +1292,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792525670182,
+      "updatedAt": 1792525790184,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 2.2214736938476562,
+  "goroutines": 10,
+  "ramAllocMB": 2.5563735961914062,
   "ramSysMB": 13.349861145019531,
-  "uptime": "6h59m34s"
+  "uptime": "7h1m34s"
 }
