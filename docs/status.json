@@ -1261,9 +1261,9 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 21546,
+      "durationSec": 21675,
       "expPerHour": 0,
-      "gold": 240454,
+      "gold": 250180,
       "goldPerHour": 0,
       "hp": 926,
       "id": "acc-1",
@@ -1288,17 +1288,17 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Servidor fechou conexão (code 1006)"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Reconectando (websocket desconectou: websocket: close 1006 (abnormal closure): unexpected EOF)",
+      "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792518597653,
+      "updatedAt": 1792518720987,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 3.0117950439453125,
+  "goroutines": 12,
+  "ramAllocMB": 2.4764785766601562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "5h1m34s"
+  "uptime": "5h3m33s"
 }
