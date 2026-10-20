@@ -1292,13 +1292,13 @@
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792537551616,
+      "updatedAt": 1792537662774,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.60369873046875,
+  "ramAllocMB": 1.56378173828125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "10h17m33s"
+  "uptime": "10h19m34s"
 }
