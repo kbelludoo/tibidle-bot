@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 10770,
+      "durationSec": 10890,
       "expPerHour": 12547,
       "gold": 154280,
       "goldPerHour": 0,
@@ -1279,12 +1279,11 @@
       "id": "acc-1",
       "kills": 0,
       "level": 55,
-      "mana": 257,
+      "mana": 273,
       "maxHp": 905,
       "maxMana": 273,
       "name": "Conta #1",
       "recentLogs": [
-        "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 124, Lure: 2)...",
@@ -1298,17 +1297,18 @@
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "📬 Correio do Sistema: 1 recompensas resgatadas!",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!"
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
+        "Servidor fechou conexão (code 1006)"
       ],
-      "status": "hunting",
+      "status": "Reconectando (websocket desconectou: websocket: close 1006 (abnormal closure): unexpected EOF)",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792464595497,
+      "updatedAt": 1792464717478,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.6063613891601562,
+  "goroutines": 9,
+  "ramAllocMB": 2.75628662109375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "3h6m32s"
+  "uptime": "3h8m32s"
 }
