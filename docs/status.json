@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 34049,
+      "durationSec": 34169,
       "expPerHour": 12547,
       "gold": 172221,
       "goldPerHour": 0,
@@ -1284,7 +1284,6 @@
       "maxMana": 279,
       "name": "Conta #1",
       "recentLogs": [
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Ticket emitido pela própria VPS com token do solver. Conectando...",
@@ -1298,17 +1297,18 @@
         "Conexão WebSocket estabelecida com sucesso!",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!"
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
+        "Servidor fechou conexão (code 1006)"
       ],
-      "status": "hunting",
+      "status": "Reconectando (websocket desconectou: websocket: close 1006 (abnormal closure): unexpected EOF)",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792487874098,
+      "updatedAt": 1792487996727,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.3938980102539062,
+  "goroutines": 9,
+  "ramAllocMB": 2.5934524536132812,
   "ramSysMB": 17.34986114501953,
-  "uptime": "9h34m32s"
+  "uptime": "9h36m32s"
 }
