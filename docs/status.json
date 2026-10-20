@@ -1261,11 +1261,11 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 18550,
+      "durationSec": 18666,
       "expPerHour": 0,
-      "gold": 237792,
+      "gold": 240454,
       "goldPerHour": 0,
-      "hp": 851,
+      "hp": 926,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
@@ -1290,15 +1290,15 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:36336-\u003e104.26.15.146:443: read: connection reset by peer)",
+      "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792515599992,
+      "updatedAt": 1792515711513,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.29119873046875,
+  "goroutines": 11,
+  "ramAllocMB": 3.4258346557617188,
   "ramSysMB": 13.349861145019531,
-  "uptime": "4h11m34s"
+  "uptime": "4h13m33s"
 }
