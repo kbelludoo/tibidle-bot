@@ -1271,17 +1271,17 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 31049,
+      "durationSec": 31169,
       "expPerHour": 12547,
       "gold": 172221,
       "goldPerHour": 0,
-      "hp": 905,
+      "hp": 902,
       "id": "acc-1",
       "kills": 0,
       "level": 55,
-      "mana": 276,
+      "mana": 270,
       "maxHp": 905,
-      "maxMana": 276,
+      "maxMana": 279,
       "name": "Conta #1",
       "recentLogs": [
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792484873744,
+      "updatedAt": 1792484993755,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.2283782958984375,
+  "ramAllocMB": 1.62591552734375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "8h44m32s"
+  "uptime": "8h46m34s"
 }
