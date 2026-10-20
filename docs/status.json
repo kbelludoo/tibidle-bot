@@ -1261,15 +1261,15 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 5114,
+      "durationSec": 5234,
       "expPerHour": 0,
       "gold": 197675,
       "goldPerHour": 0,
-      "hp": 808,
+      "hp": 919,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
-      "mana": 284,
+      "mana": 278,
       "maxHp": 920,
       "maxMana": 284,
       "name": "Conta #1",
@@ -1292,13 +1292,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792502159529,
+      "updatedAt": 1792502279521,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 13,
-  "ramAllocMB": 2.1994552612304688,
+  "goroutines": 10,
+  "ramAllocMB": 2.1045913696289062,
   "ramSysMB": 13.349861145019531,
-  "uptime": "27m33s"
+  "uptime": "29m34s"
 }
