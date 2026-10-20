@@ -1,24 +1,6 @@
 {
   "accounts": [
     {
-      "benchmarks": [
-        {
-          "bestXpPerHour": 12547,
-          "deaths": 0,
-          "huntId": 128,
-          "huntName": "Larva Ankrahmuns",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 14704,
-          "deaths": 0,
-          "huntId": 124,
-          "huntName": "Orcs Edron Cave",
-          "lastDuration": 43200,
-          "runs": 1
-        }
-      ],
       "bestiary": [
         {
           "completed": false,
@@ -1279,44 +1261,44 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 3318,
-      "expPerHour": 14704,
-      "gold": 180462,
+      "durationSec": 3438,
+      "expPerHour": 0,
+      "gold": 191764,
       "goldPerHour": 0,
-      "hp": 905,
+      "hp": 825,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
-      "mana": 284,
+      "mana": 275,
       "maxHp": 920,
       "maxMana": 284,
       "name": "Conta #1",
       "recentLogs": [
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "🏆 Bestiário de 'Orcs Edron Cave' CONCLUÍDO (500+ abates)! Progresso geral: 16/209 monstros.",
-        "🎯 Bestiário avançou para 'Crocodiles Port Hope' (Lure: 3) para abater novas criaturas!",
-        "📊 Hunt 'Orcs Edron Cave' concluída: 14704 XP/h (Duração: 43200s, Kills: 13876)",
-        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
-        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!"
+        "🎁 Recompensa Diária de Login resgatada: Dia 17",
+        "🎁 Recompensa Diária de Login resgatada: Dia 18",
+        "🎁 Recompensa Diária de Login resgatada: Dia 19",
+        "🎁 Recompensa Diária de Login resgatada: Dia 20",
+        "🎁 Recompensa Diária de Login resgatada: Dia 21",
+        "🎁 Recompensa Diária de Login resgatada: Dia 22",
+        "🎁 Recompensa Diária de Login resgatada: Dia 23",
+        "🎁 Recompensa Diária de Login resgatada: Dia 24",
+        "🎁 Recompensa Diária de Login resgatada: Dia 25",
+        "🎁 Recompensa Diária de Login resgatada: Dia 26",
+        "🎁 Recompensa Diária de Login resgatada: Dia 27",
+        "🎁 Recompensa Diária de Login resgatada: Dia 28",
+        "🎁 Recompensa Diária de Login resgatada: Dia 29",
+        "🎁 Recompensa Diária de Login resgatada: Dia 30",
+        "🎁 Recompensas diárias de login resgatadas com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792500363287,
+      "updatedAt": 1792500484217,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.2534561157226562,
+  "goroutines": 13,
+  "ramAllocMB": 2.6400527954101562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "13h2m32s"
+  "uptime": "1m16s"
 }
