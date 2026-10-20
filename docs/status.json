@@ -1,6 +1,16 @@
 {
   "accounts": [
     {
+      "benchmarks": [
+        {
+          "bestXpPerHour": 7572,
+          "deaths": 0,
+          "huntId": 139,
+          "huntName": "Crocodiles Port Hope",
+          "lastDuration": 43200,
+          "runs": 1
+        }
+      ],
       "bestiary": [
         {
           "completed": false,
@@ -162,12 +172,6 @@
           "completed": false,
           "kills": 0,
           "name": "Crawler",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Crocodile",
           "target": 500
         },
         {
@@ -1180,6 +1184,12 @@
         },
         {
           "completed": true,
+          "kills": 15145,
+          "name": "Crocodile",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 15116,
           "name": "Dwarf",
           "target": 500
@@ -1257,19 +1267,19 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 16,
-      "bestiaryTarget": "Crocodiles Port Hope",
+      "bestiaryCompleted": 17,
+      "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
-      "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 43122,
-      "expPerHour": 0,
+      "currentHunt": "idle",
+      "durationSec": 43181,
+      "expPerHour": 7572,
       "gold": 312030,
       "goldPerHour": 0,
-      "hp": 929,
+      "hp": 887,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
-      "mana": 282,
+      "mana": 284,
       "maxHp": 929,
       "maxMana": 284,
       "name": "Conta #1",
@@ -1279,26 +1289,26 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 180, Lure: 1)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-20)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 180, Lure: 1)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "hunting",
-      "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792540187017,
+      "status": "idle",
+      "targetHunt": "Amazon Camp",
+      "updatedAt": 1792540313180,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.5696640014648438,
+  "ramAllocMB": 3.4069137573242188,
   "ramSysMB": 13.349861145019531,
-  "uptime": "11h1m34s"
+  "uptime": "11h3m33s"
 }
