@@ -50,6 +50,11 @@ type Bot struct {
 	bestiaryKills    map[string]int
 	knownMinLevels   map[int]int
 	consecutiveFails int
+	lastPreyRoll      time.Time
+	lastMailCheck     time.Time
+	lastInvasionCheck time.Time
+	formationDone     bool
+	lastPurifyCheck   time.Time
 }
 
 // HuntTier defines the recommended progression hunt for level brackets
@@ -131,6 +136,14 @@ func NewBot(cfg AccountConfig) *Bot {
 	}
 	cfg.Lure = lure
 	cfg.HuntID = huntID
+
+	// Novas automações ativas por padrão
+	cfg.AutoPrey = true
+	cfg.AutoBoxes = true
+	cfg.AutoMail = true
+	cfg.AutoInvasion = true
+	cfg.AutoFormation = true
+	cfg.AutoPurify = true
 
 	kills, minLevels := LoadBestiary(cfg.ID)
 	b := &Bot{
@@ -480,8 +493,21 @@ func (b *Bot) connectAndPlay(ctx context.Context) error {
 	actionTicker := time.NewTicker(3 * time.Second)
 	defer actionTicker.Stop()
 
-	// Pedir status de eventos inicial
+	// Pedir status de eventos inicial e inicializar automações
 	_ = sock.Send("eventos_get", map[string]any{"requestId": fmt.Sprintf("req-%d", time.Now().UnixNano())})
+	if b.config.AutoMail {
+		_ = sock.Send("system_mail_get", map[string]any{})
+		_ = sock.Send("mailbox_get", map[string]any{})
+	}
+	if b.config.AutoInvasion {
+		_ = sock.Send("invasion_today", map[string]any{})
+	}
+	if b.config.AutoFormation {
+		b.applyBattleFormation()
+	}
+	if b.config.AutoPrey {
+		b.rollPreyBuffs()
+	}
 
 	for {
 		select {
@@ -539,6 +565,42 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
 
+			// Auto-boxes: abrir caixas de loot do inventário
+			if b.config.AutoBoxes && len(fp.State.Inventory) > 0 {
+				b.mu.Lock()
+				sock := b.socket
+				b.mu.Unlock()
+				if sock != nil {
+					for _, item := range fp.State.Inventory {
+						nameLower := strings.ToLower(item.Name)
+						if (strings.Contains(nameLower, "box") || strings.Contains(nameLower, "caixa")) && item.Count > 0 {
+							_ = sock.Send("box_sweep", protocol.BoxSweepPayload{
+								ItemID:    item.Name,
+								Count:     item.Count,
+								RequestID: fmt.Sprintf("box-%d", time.Now().UnixNano()),
+							})
+							b.status.AddLog(fmt.Sprintf("🎁 Auto-Boxes: Abrindo %dx %s...", item.Count, item.Name))
+						}
+					}
+				}
+			}
+
+			// Auto-purify: purificar bolsas seladas
+			if b.config.AutoPurify && time.Since(b.lastPurifyCheck) > 2*time.Minute {
+				hasBag := false
+				for _, item := range fp.State.Inventory {
+					nameLower := strings.ToLower(item.Name)
+					if strings.Contains(nameLower, "bag") || strings.Contains(nameLower, "sacola") || strings.Contains(nameLower, "selad") {
+						hasBag = true
+						break
+					}
+				}
+				if hasBag {
+					b.lastPurifyCheck = time.Now()
+					b.purifyAllBags()
+				}
+			}
+
 			// Auto-sell se capacidade estiver cheia ou tiver itens
 			if b.config.AutoSell && len(fp.State.Inventory) > 0 && time.Since(b.lastSellTime) > 30*time.Second {
 				b.autoSellInventory(fp.State.Inventory)
@@ -558,15 +620,24 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				}
 			}
 
-			// Descobrir nível mais alto ou médio da party
+			// Descobrir nível mais alto ou médio da party e extrair HP/Mana do líder
 			maxLevel := 0
 			var leaderVocation string
+			leaderHP, leaderMaxHP, leaderMana, leaderMaxMana := 0, 0, 0, 0
 			for _, m := range ps.Members {
 				if m.Level > maxLevel {
 					maxLevel = m.Level
 				}
-				if m.IsLeader {
+				if m.IsLeader || leaderVocation == "" {
 					leaderVocation = m.Vocation
+					if m.MaxHP > 0 {
+						leaderHP = m.HP
+						leaderMaxHP = m.MaxHP
+					}
+					if m.MaxMana > 0 {
+						leaderMana = m.Mana
+						leaderMaxMana = m.MaxMana
+					}
 				}
 			}
 			autoProg := b.config.AutoProgress
@@ -580,6 +651,14 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				}
 				if leaderVocation != "" {
 					st.Vocation = leaderVocation
+				}
+				if leaderMaxHP > 0 {
+					st.HP = leaderHP
+					st.MaxHP = leaderMaxHP
+				}
+				if leaderMaxMana > 0 {
+					st.Mana = leaderMana
+					st.MaxMana = leaderMaxMana
 				}
 				if ps.ElapsedSec > 0 {
 					st.DurationSec = ps.ElapsedSec
@@ -648,6 +727,27 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 				st.Status = "hunting"
 				if def := protocol.FindHuntByID(rp.HuntID); def != nil {
 					st.CurrentHunt = def.Title
+				}
+				ch := rp.State.Character
+				if ch.Name != "" {
+					st.Name = ch.Name
+				}
+				if ch.Vocation != "" {
+					st.Vocation = ch.Vocation
+				}
+				if ch.Level > 0 {
+					st.Level = ch.Level
+				}
+				if ch.MaxHP > 0 {
+					st.HP = ch.HP
+					st.MaxHP = ch.MaxHP
+				}
+				if ch.MaxMana > 0 {
+					st.Mana = ch.Mana
+					st.MaxMana = ch.MaxMana
+				}
+				if ch.Gold > 0 {
+					st.Gold = ch.Gold
 				}
 				st.UpdatedAt = time.Now().UnixMilli()
 			})
@@ -820,6 +920,17 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			st.UpdatedAt = time.Now().UnixMilli()
 		})
 
+		// Purificar bolsas e fechar modal de resumo
+		if b.config.AutoPurify {
+			b.purifyAllBags()
+		}
+		b.mu.Lock()
+		sockEnd := b.socket
+		b.mu.Unlock()
+		if sockEnd != nil {
+			_ = sockEnd.Send("dismiss_summary", map[string]any{})
+		}
+
 	case "error":
 		var errData struct {
 			Code   string `json:"code"`
@@ -860,8 +971,100 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 			}
 		}
 
-	case "eventos_state":
-		// Apenas estado informativo de eventos
+	case "welcome":
+		var wData struct {
+			Eventos *protocol.EventosDataPayload `json:"eventos"`
+		}
+		if err := json.Unmarshal(msg.Data, &wData); err == nil && wData.Eventos != nil {
+			b.handleEventos(*wData.Eventos)
+		}
+		if b.config.AutoFormation {
+			b.applyBattleFormation()
+		}
+		if b.config.AutoPrey {
+			b.rollPreyBuffs()
+		}
+		if b.config.AutoMail {
+			b.checkMailAndParcels()
+		}
+		if b.config.AutoInvasion {
+			b.checkInvasion()
+		}
+
+	case "eventos_state", "eventos_result":
+		var ev protocol.EventosDataPayload
+		if err := json.Unmarshal(msg.Data, &ev); err == nil && (ev.Login.Janela.StartDate != "" || ev.Login.StartDate != "" || ev.StartDate != "") {
+			b.handleEventos(ev)
+		} else {
+			var stateWrapper struct {
+				State protocol.EventosDataPayload `json:"state"`
+			}
+			if err2 := json.Unmarshal(msg.Data, &stateWrapper); err2 == nil {
+				b.handleEventos(stateWrapper.State)
+			}
+		}
+
+	case "system_mail_state":
+		var sm protocol.SystemMailStatePayload
+		if err := json.Unmarshal(msg.Data, &sm); err == nil && len(sm.Mails) > 0 {
+			b.mu.Lock()
+			sock := b.socket
+			b.mu.Unlock()
+			if sock != nil {
+				collected := 0
+				for _, m := range sm.Mails {
+					if !m.Collected && m.ID != "" {
+						_ = sock.Send("system_mail_collect", protocol.SystemMailCollectPayload{
+							MailID:    m.ID,
+							RequestID: fmt.Sprintf("mail-%s-%d", m.ID, time.Now().UnixNano()),
+						})
+						collected++
+					}
+				}
+				if collected > 0 {
+					b.status.AddLog(fmt.Sprintf("📬 Correio do Sistema: %d recompensas resgatadas!", collected))
+				}
+			}
+		}
+
+	case "mailbox_state":
+		var mb protocol.MailboxStatePayload
+		if err := json.Unmarshal(msg.Data, &mb); err == nil && len(mb.Parcels) > 0 {
+			b.mu.Lock()
+			sock := b.socket
+			b.mu.Unlock()
+			if sock != nil {
+				collected := 0
+				for _, p := range mb.Parcels {
+					if !p.Collected && p.ID != "" {
+						_ = sock.Send("parcel_collect", protocol.ParcelCollectPayload{
+							ParcelID:  p.ID,
+							RequestID: fmt.Sprintf("parcel-%s-%d", p.ID, time.Now().UnixNano()),
+						})
+						collected++
+					}
+				}
+				if collected > 0 {
+					b.status.AddLog(fmt.Sprintf("📦 Caixa de Correio: %d parcels coletados!", collected))
+				}
+			}
+		}
+
+	case "invasion_today_data":
+		var inv protocol.InvasionTodayPayload
+		if err := json.Unmarshal(msg.Data, &inv); err == nil {
+			if inv.Inscricao != "inscrito" && inv.Inscricao != "encerrada" && b.config.AutoInvasion {
+				b.mu.Lock()
+				sock := b.socket
+				b.mu.Unlock()
+				if sock != nil {
+					_ = sock.Send("invasion_join", protocol.InvasionJoinPayload{
+						RequestID: fmt.Sprintf("inv-join-%d", time.Now().UnixNano()),
+					})
+					b.status.AddLog(fmt.Sprintf("⚔️ Invasão Diária: Grupo inscrito com sucesso (%s)!", inv.Date))
+				}
+			}
+		}
 	}
 }
 
@@ -876,6 +1079,13 @@ func (b *Bot) autoSellInventory(inv []protocol.InventoryItem) {
 	var itemsToSell []protocol.SellItem
 	for _, it := range inv {
 		if it.Count > 0 {
+			nameLower := strings.ToLower(it.Name)
+			// Proteger caixas, chaves e bolsas seladas de venda acidental
+			if strings.Contains(nameLower, "box") || strings.Contains(nameLower, "caixa") ||
+				strings.Contains(nameLower, "bag") || strings.Contains(nameLower, "sacola") ||
+				strings.Contains(nameLower, "chave") || strings.Contains(nameLower, "key") {
+				continue
+			}
 			itemsToSell = append(itemsToSell, protocol.SellItem{
 				Name:  it.Name,
 				Count: it.Count,
@@ -932,22 +1142,10 @@ func (b *Bot) performPeriodicActions() {
 	}
 	b.mu.Unlock()
 
-	// Se está caçando, atualiza target para a hunt em andamento até ela finalizar naturalmente
-	if isHunting {
-		return
-	}
-
-	// 1. Auto-Hunt se estiver idle
-	if !isHunting && time.Since(b.lastActionTime) > 5*time.Second {
-		b.lastActionTime = time.Now()
-		b.status.AddLog(fmt.Sprintf("Iniciando caçada (Hunt ID: %d, Lure: %d)...", targetHuntID, lure))
-
-		huntPayload := protocol.StartHuntPayload{
-			HuntID:   targetHuntID,
-			Lure:     lure,
-			AutoBoss: true,
-		}
-		_ = sock.Send("start_hunt", huntPayload)
+	// 1. Auto-Formation (executado mesmo em caçada para garantir posicionamento ideal)
+	if b.config.AutoFormation && !b.formationDone {
+		b.formationDone = true
+		b.applyBattleFormation()
 	}
 
 	// 2. Auto-Blessings a cada 15 minutos
@@ -963,6 +1161,186 @@ func (b *Bot) performPeriodicActions() {
 		b.lastDailyCheck = time.Now()
 		_ = sock.Send("eventos_get", map[string]any{"requestId": fmt.Sprintf("ev-%d", time.Now().UnixNano())})
 	}
+
+	// 4. Auto-Prey sorteio diário gratuito a cada 6 horas
+	if b.config.AutoPrey && time.Since(b.lastPreyRoll) > 6*time.Hour {
+		b.lastPreyRoll = time.Now()
+		b.rollPreyBuffs()
+	}
+
+	// 5. Auto-Mail & Parcels a cada 30 minutos
+	if b.config.AutoMail && time.Since(b.lastMailCheck) > 30*time.Minute {
+		b.lastMailCheck = time.Now()
+		b.checkMailAndParcels()
+	}
+
+	// 6. Auto-Invasion a cada 30 minutos
+	if b.config.AutoInvasion && time.Since(b.lastInvasionCheck) > 30*time.Minute {
+		b.lastInvasionCheck = time.Now()
+		b.checkInvasion()
+	}
+
+	// Se está caçando, atualiza target para a hunt em andamento até ela finalizar naturalmente
+	if isHunting {
+		return
+	}
+
+	// 7. Auto-Hunt se estiver idle
+	if !isHunting && time.Since(b.lastActionTime) > 5*time.Second {
+		b.lastActionTime = time.Now()
+		b.status.AddLog(fmt.Sprintf("Iniciando caçada (Hunt ID: %d, Lure: %d)...", targetHuntID, lure))
+
+		huntPayload := protocol.StartHuntPayload{
+			HuntID:   targetHuntID,
+			Lure:     lure,
+			AutoBoss: true,
+		}
+		_ = sock.Send("start_hunt", huntPayload)
+	}
+}
+
+func (b *Bot) handleEventos(ev protocol.EventosDataPayload) {
+	if !b.config.AutoDaily {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+
+	// 1. Claim daily tasks nos slots 0, 1, 2 SOMENTE se houver tarefas concluídas resgatáveis
+	if ev.Resgataveis.Diarias > 0 {
+		for slot := 0; slot < 3; slot++ {
+			_ = sock.Send("eventos_daily_claim", protocol.EventosClaimPayload{
+				Slot:      slot,
+				RequestID: fmt.Sprintf("claim-%d-%d", slot, time.Now().UnixNano()),
+			})
+		}
+	}
+
+	// 2. Claim daily streak login rewards APENAS para dias desbloqueados e pendentes
+	startDate := ev.Login.Janela.StartDate
+	if startDate == "" {
+		startDate = ev.Login.StartDate
+	}
+	if startDate == "" {
+		startDate = ev.StartDate
+	}
+	dias := ev.Login.Janela.Dias
+	if len(dias) == 0 {
+		dias = ev.Login.Dias
+	}
+	if len(dias) == 0 {
+		dias = ev.Dias
+	}
+
+	if (ev.Resgataveis.Login > 0 || ev.Resgataveis.Total > 0) && startDate != "" && len(dias) > 0 {
+		indiceHoje := ev.Login.Janela.IndiceHoje
+		if indiceHoje <= 0 {
+			indiceHoje = 1
+		}
+		for _, d := range dias {
+			// Apenas dias até o dia atual permitido que ainda não foram resgatados
+			if !d.Resgatado && d.Day > 0 && d.Day <= indiceHoje {
+				_ = sock.Send("eventos_login_claim", protocol.EventosLoginClaimPayload{
+					StartDate: startDate,
+					Day:       d.Day,
+					RequestID: fmt.Sprintf("login-claim-%d-%d", d.Day, time.Now().UnixNano()),
+				})
+				b.status.AddLog(fmt.Sprintf("🎁 Recompensa Diária de Login: Dia %d resgatado com sucesso!", d.Day))
+				break // Resgata 1 dia por ciclo para evitar rate limit
+			}
+		}
+	}
+}
+
+func (b *Bot) rollPreyBuffs() {
+	if !b.config.AutoPrey {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+
+	// Sorteia buff diário gratuito para cada uma das vocações do grupo
+	for _, voc := range []string{"KNIGHT", "PALADIN", "SORCERER", "DRUID"} {
+		_ = sock.Send("prey_buff_roll", protocol.PreyBuffRollPayload{
+			Vocation:  voc,
+			RequestID: fmt.Sprintf("prey-%s-%d", voc, time.Now().UnixNano()),
+		})
+	}
+	b.status.AddLog("🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!")
+}
+
+func (b *Bot) applyBattleFormation() {
+	if !b.config.AutoFormation {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+
+	// Formação tática ótima padrão:
+	// Pos 0: Knight (Tank frente absorvendo dano)
+	// Pos 1: Paladin (Off-tank / dano à distância média)
+	// Pos 2: Sorcerer (Ranged Magic DPS)
+	// Pos 3: Druid (Suporte / Curandeiro na retaguarda)
+	_ = sock.Send("set_formation", protocol.SetFormationPayload{Vocation: "KNIGHT", Pos: 0})
+	_ = sock.Send("set_formation", protocol.SetFormationPayload{Vocation: "PALADIN", Pos: 1})
+	_ = sock.Send("set_formation", protocol.SetFormationPayload{Vocation: "SORCERER", Pos: 2})
+	_ = sock.Send("set_formation", protocol.SetFormationPayload{Vocation: "DRUID", Pos: 3})
+	b.status.AddLog("🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)")
+}
+
+func (b *Bot) checkMailAndParcels() {
+	if !b.config.AutoMail {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+	_ = sock.Send("system_mail_get", map[string]any{})
+	_ = sock.Send("mailbox_get", map[string]any{})
+}
+
+func (b *Bot) checkInvasion() {
+	if !b.config.AutoInvasion {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+	_ = sock.Send("invasion_today", map[string]any{})
+}
+
+func (b *Bot) purifyAllBags() {
+	if !b.config.AutoPurify {
+		return
+	}
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+	if sock == nil {
+		return
+	}
+	_ = sock.Send("purify_all", protocol.PurifyAllPayload{
+		RequestID: fmt.Sprintf("pur-all-%d", time.Now().UnixNano()),
+	})
+	b.status.AddLog("✨ Auto-Purify: Purificando bolsas seladas do inventário...")
 }
 
 func (b *Bot) claimDailyEvents() {

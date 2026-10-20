@@ -19,15 +19,21 @@ type AccountConfig struct {
 	AutoDaily     bool   `json:"autoDaily"`
 	AutoProgress  bool   `json:"autoProgress"`
 	BestiaryMode  bool   `json:"bestiaryMode"`
+	AutoPrey      bool   `json:"autoPrey"`
+	AutoBoxes     bool   `json:"autoBoxes"`
+	AutoMail      bool   `json:"autoMail"`
+	AutoInvasion  bool   `json:"autoInvasion"`
+	AutoFormation bool   `json:"autoFormation"`
+	AutoPurify    bool   `json:"autoPurify"`
 }
 
 type HuntBenchmark struct {
-	HuntID      int     `json:"huntId"`
-	HuntName    string  `json:"huntName"`
+	HuntID        int     `json:"huntId"`
+	HuntName      string  `json:"huntName"`
 	BestXpPerHour float64 `json:"bestXpPerHour"`
-	LastDuration int     `json:"lastDuration"`
-	Deaths       int     `json:"deaths"`
-	Runs         int     `json:"runs"`
+	LastDuration  int     `json:"lastDuration"`
+	Deaths        int     `json:"deaths"`
+	Runs          int     `json:"runs"`
 }
 
 type MonsterKillStat struct {
@@ -38,23 +44,23 @@ type MonsterKillStat struct {
 }
 
 type AccountStatus struct {
-	ID          string   `json:"id"`
-	Name        string   `json:"name"`
-	Vocation    string   `json:"vocation"`
-	Level       int      `json:"level"`
-	HP          int      `json:"hp"`
-	MaxHP       int      `json:"maxHp"`
-	Mana        int      `json:"mana"`
-	MaxMana     int      `json:"maxMana"`
-	Gold        int      `json:"gold"`
-	XP          string   `json:"xp"`
-	Status      string   `json:"status"` // "hunting", "training", "idle", "connected", "offline"
-	CurrentHunt string   `json:"currentHunt"`
-	Kills       int      `json:"kills"`
-	ExpPerHour  float64  `json:"expPerHour"`
-	GoldPerHour float64  `json:"goldPerHour"`
-	DurationSec int      `json:"durationSec"`
-	TargetHunt  string   `json:"targetHunt,omitempty"`
+	ID                string            `json:"id"`
+	Name              string            `json:"name"`
+	Vocation          string            `json:"vocation"`
+	Level             int               `json:"level"`
+	HP                int               `json:"hp"`
+	MaxHP             int               `json:"maxHp"`
+	Mana              int               `json:"mana"`
+	MaxMana           int               `json:"maxMana"`
+	Gold              int               `json:"gold"`
+	XP                string            `json:"xp"`
+	Status            string            `json:"status"` // "hunting", "training", "idle", "connected", "offline"
+	CurrentHunt       string            `json:"currentHunt"`
+	Kills             int               `json:"kills"`
+	ExpPerHour        float64           `json:"expPerHour"`
+	GoldPerHour       float64           `json:"goldPerHour"`
+	DurationSec       int               `json:"durationSec"`
+	TargetHunt        string            `json:"targetHunt,omitempty"`
 	Benchmarks        []HuntBenchmark   `json:"benchmarks,omitempty"`
 	Bestiary          []MonsterKillStat `json:"bestiary,omitempty"`
 	BestiaryCompleted int               `json:"bestiaryCompleted"`
