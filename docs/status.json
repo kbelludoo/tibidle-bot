@@ -1261,15 +1261,15 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 5954,
+      "durationSec": 6034,
       "expPerHour": 0,
       "gold": 197675,
       "goldPerHour": 0,
-      "hp": 845,
+      "hp": 881,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
-      "mana": 268,
+      "mana": 284,
       "maxHp": 923,
       "maxMana": 284,
       "name": "Conta #1",
@@ -1288,17 +1288,17 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792502999519,
+      "updatedAt": 1792503107921,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.1511077880859375,
+  "goroutines": 11,
+  "ramAllocMB": 1.2401199340820312,
   "ramSysMB": 13.349861145019531,
-  "uptime": "41m34s"
+  "uptime": "43m34s"
 }
