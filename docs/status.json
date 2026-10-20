@@ -1261,11 +1261,11 @@
       "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
       "currentHunt": "Crocodiles Port Hope",
-      "durationSec": 34141,
+      "durationSec": 34281,
       "expPerHour": 0,
       "gold": 286791,
       "goldPerHour": 0,
-      "hp": 925,
+      "hp": 835,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
@@ -1292,13 +1292,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Crocodiles Port Hope",
-      "updatedAt": 1792531186405,
+      "updatedAt": 1792531326411,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.9656906127929688,
+  "ramAllocMB": 1.6292495727539062,
   "ramSysMB": 13.349861145019531,
-  "uptime": "8h31m34s"
+  "uptime": "8h33m37s"
 }
