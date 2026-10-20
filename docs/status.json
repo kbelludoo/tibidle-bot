@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Orcs Edron Cave",
       "bestiaryTotal": 209,
       "currentHunt": "Orcs Edron Cave",
-      "durationSec": 6570,
+      "durationSec": 6691,
       "expPerHour": 12547,
       "gold": 154280,
       "goldPerHour": 0,
@@ -1279,7 +1279,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 54,
-      "mana": 268,
+      "mana": 266,
       "maxHp": 890,
       "maxMana": 268,
       "name": "Conta #1",
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792460395565,
+      "updatedAt": 1792460516425,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.6089859008789062,
+  "ramAllocMB": 3.1576690673828125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "1h56m33s"
+  "uptime": "1h58m31s"
 }
