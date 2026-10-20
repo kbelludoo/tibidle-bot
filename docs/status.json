@@ -9,6 +9,14 @@
           "huntName": "Larva Ankrahmuns",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 14704,
+          "deaths": 0,
+          "huntId": 124,
+          "huntName": "Orcs Edron Cave",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -771,12 +779,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Orc",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Orc Berserker",
           "target": 500
         },
@@ -790,18 +792,6 @@
           "completed": false,
           "kills": 0,
           "name": "Orc Shaman",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Orc Spearman",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Orc Warrior",
           "target": 500
         },
         {
@@ -1244,6 +1234,12 @@
         },
         {
           "completed": true,
+          "kills": 7016,
+          "name": "Orc",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 4686,
           "name": "Salamander",
           "target": 500
@@ -1265,17 +1261,29 @@
           "kills": 3612,
           "name": "Skeleton Warrior",
           "target": 500
+        },
+        {
+          "completed": true,
+          "kills": 3436,
+          "name": "Orc Spearman",
+          "target": 500
+        },
+        {
+          "completed": true,
+          "kills": 3424,
+          "name": "Orc Warrior",
+          "target": 500
         }
       ],
-      "bestiaryCompleted": 13,
-      "bestiaryTarget": "Orcs Edron Cave",
+      "bestiaryCompleted": 16,
+      "bestiaryTarget": "Crocodiles Port Hope",
       "bestiaryTotal": 209,
-      "currentHunt": "Orcs Edron Cave",
-      "durationSec": 43178,
-      "expPerHour": 12547,
+      "currentHunt": "Crocodiles Port Hope",
+      "durationSec": 78,
+      "expPerHour": 14704,
       "gold": 180462,
       "goldPerHour": 0,
-      "hp": 905,
+      "hp": 879,
       "id": "acc-1",
       "kills": 0,
       "level": 55,
@@ -1284,31 +1292,31 @@
       "maxMana": 279,
       "name": "Conta #1",
       "recentLogs": [
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "🏆 Bestiário de 'Orcs Edron Cave' CONCLUÍDO (500+ abates)! Progresso geral: 16/209 monstros.",
+        "🎯 Bestiário avançou para 'Crocodiles Port Hope' (Lure: 3) para abater novas criaturas!",
+        "📊 Hunt 'Orcs Edron Cave' concluída: 14704 XP/h (Duração: 43200s, Kills: 13876)",
+        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
         "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
         "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
-        "Servidor fechou conexão (code 1006)",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Ticket emitido pela própria VPS com token do solver. Conectando...",
-        "Conexão WebSocket estabelecida com sucesso!",
-        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-19)!",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!"
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)...",
+        "Iniciando caçada (Hunt ID: 139, Lure: 3)..."
       ],
       "status": "hunting",
-      "targetHunt": "Orcs Edron Cave",
-      "updatedAt": 1792497003286,
+      "targetHunt": "Crocodiles Port Hope",
+      "updatedAt": 1792497123285,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.9044952392578125,
+  "ramAllocMB": 1.5683212280273438,
   "ramSysMB": 17.34986114501953,
-  "uptime": "12h6m33s"
+  "uptime": "12h8m32s"
 }
