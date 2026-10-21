@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 29278,
+      "durationSec": 29399,
       "expPerHour": 7572,
       "gold": 336796,
       "goldPerHour": 0,
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792569590435,
+      "updatedAt": 1792569710546,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.1641311645507812,
+  "ramAllocMB": 2.207366943359375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "19h11m35s"
+  "uptime": "19h13m33s"
 }
