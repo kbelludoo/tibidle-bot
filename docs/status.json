@@ -1271,11 +1271,11 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 9954,
+      "durationSec": 10094,
       "expPerHour": 7572,
       "gold": 312030,
       "goldPerHour": 0,
-      "hp": 922,
+      "hp": 929,
       "id": "acc-1",
       "kills": 0,
       "level": 56,
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792550265781,
+      "updatedAt": 1792550405734,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.8366317749023438,
+  "ramAllocMB": 2.2140579223632812,
   "ramSysMB": 13.349861145019531,
-  "uptime": "13h49m34s"
+  "uptime": "13h51m34s"
 }
