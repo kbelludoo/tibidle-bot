@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 37797,
+      "durationSec": 37917,
       "expPerHour": 7572,
       "gold": 345554,
       "goldPerHour": 0,
@@ -1279,7 +1279,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 57,
-      "mana": 287,
+      "mana": 289,
       "maxHp": 944,
       "maxMana": 289,
       "name": "Conta #1",
@@ -1302,13 +1302,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792578109395,
+      "updatedAt": 1792578229395,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.9015426635742188,
+  "ramAllocMB": 2.8950424194335938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "21h33m34s"
+  "uptime": "21h35m34s"
 }
