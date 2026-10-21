@@ -1279,7 +1279,7 @@
       "bestiaryTarget": "Dwarf Bridge",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarf Bridge",
-      "durationSec": 9,
+      "durationSec": 129,
       "expPerHour": 16566,
       "gold": 348872,
       "goldPerHour": 0,
@@ -1293,30 +1293,30 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🏆 Bestiário de 'Amazon Camp' CONCLUÍDO (500+ abates)! Progresso geral: 19/209 monstros.",
-        "🎯 Bestiário avançou para 'Dwarf Bridge' (Lure: 2) para abater novas criaturas!",
-        "📊 Hunt 'Amazon Camp' concluída: 16566 XP/h (Duração: 43200s, Kills: 13266)",
-        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Iniciando caçada (Hunt ID: 119, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 119, Lure: 2)..."
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Dwarf Bridge",
-      "updatedAt": 1792583524021,
+      "updatedAt": 1792583644079,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.7339553833007812,
+  "ramAllocMB": 2.2889404296875,
   "ramSysMB": 13.349861145019531,
-  "uptime": "23h3m34s"
+  "uptime": "23h5m33s"
 }
