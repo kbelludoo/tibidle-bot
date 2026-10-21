@@ -1271,15 +1271,15 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 24834,
+      "durationSec": 24958,
       "expPerHour": 7572,
-      "gold": 312030,
+      "gold": 336796,
       "goldPerHour": 0,
       "hp": 944,
       "id": "acc-1",
       "kills": 0,
       "level": 57,
-      "mana": 280,
+      "mana": 259,
       "maxHp": 944,
       "maxMana": 289,
       "name": "Conta #1",
@@ -1298,17 +1298,17 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Servidor fechou conexão (code 1006)"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Reconectando (websocket desconectou: websocket: close 1006 (abnormal closure): unexpected EOF)",
+      "status": "hunting",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792565156553,
+      "updatedAt": 1792565270451,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.3458709716796875,
+  "goroutines": 12,
+  "ramAllocMB": 3.0131759643554688,
   "ramSysMB": 13.349861145019531,
-  "uptime": "17h57m34s"
+  "uptime": "17h59m34s"
 }
