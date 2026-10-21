@@ -1279,11 +1279,11 @@
       "bestiaryTarget": "Dwarf Bridge",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarf Bridge",
-      "durationSec": 29886,
+      "durationSec": 30006,
       "expPerHour": 16566,
       "gold": 379842,
       "goldPerHour": 0,
-      "hp": 965,
+      "hp": 948,
       "id": "acc-1",
       "kills": 0,
       "level": 58,
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Dwarf Bridge",
-      "updatedAt": 1792613401578,
+      "updatedAt": 1792613521578,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.5089263916015625,
+  "ramAllocMB": 3.2490768432617188,
   "ramSysMB": 13.349861145019531,
-  "uptime": "31h21m35s"
+  "uptime": "31h23m35s"
 }
