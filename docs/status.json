@@ -17,6 +17,14 @@
           "huntName": "Amazon Camp",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 12819,
+          "deaths": 0,
+          "huntId": 119,
+          "huntName": "Dwarf Bridge",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -348,12 +356,6 @@
           "completed": false,
           "kills": 0,
           "name": "Drillworm",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Dwarf Soldier",
           "target": 500
         },
         {
@@ -1198,6 +1200,12 @@
         },
         {
           "completed": true,
+          "kills": 13984,
+          "name": "Dwarf Soldier",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 11169,
           "name": "Rotworm",
           "target": 500
@@ -1275,12 +1283,12 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 19,
-      "bestiaryTarget": "Dwarf Bridge",
+      "bestiaryCompleted": 20,
+      "bestiaryTarget": "Desert Quest",
       "bestiaryTotal": 209,
-      "currentHunt": "Dwarf Bridge",
-      "durationSec": 43089,
-      "expPerHour": 16566,
+      "currentHunt": "Desert Quest",
+      "durationSec": 7,
+      "expPerHour": 12819,
       "gold": 383654,
       "goldPerHour": 0,
       "hp": 968,
@@ -1292,31 +1300,31 @@
       "maxMana": 294,
       "name": "Conta #1",
       "recentLogs": [
+        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 194, Lure: 1)...",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-21)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Iniciando caçada (Hunt ID: 194, Lure: 1)..."
       ],
       "status": "hunting",
-      "targetHunt": "Dwarf Bridge",
-      "updatedAt": 1792626604204,
+      "targetHunt": "Desert Quest",
+      "updatedAt": 1792626724202,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.2800369262695312,
+  "ramAllocMB": 2.5558319091796875,
   "ramSysMB": 13.349861145019531,
-  "uptime": "35h1m36s"
+  "uptime": "35h3m34s"
 }
