@@ -1279,15 +1279,15 @@
       "bestiaryTarget": "Dwarf Bridge",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarf Bridge",
-      "durationSec": 21485,
+      "durationSec": 21604,
       "expPerHour": 16566,
       "gold": 370411,
       "goldPerHour": 0,
-      "hp": 965,
+      "hp": 939,
       "id": "acc-1",
       "kills": 0,
       "level": 58,
-      "mana": 278,
+      "mana": 294,
       "maxHp": 965,
       "maxMana": 294,
       "name": "Conta #1",
@@ -1310,13 +1310,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Dwarf Bridge",
-      "updatedAt": 1792604999683,
+      "updatedAt": 1792605119679,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.3881301879882812,
+  "ramAllocMB": 2.1451644897460938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "29h1m34s"
+  "uptime": "29h3m38s"
 }
