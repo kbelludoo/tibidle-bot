@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 36853,
+      "durationSec": 36953,
       "expPerHour": 7572,
       "gold": 343444,
       "goldPerHour": 0,
@@ -1279,7 +1279,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 57,
-      "mana": 289,
+      "mana": 280,
       "maxHp": 944,
       "maxMana": 289,
       "name": "Conta #1",
@@ -1297,18 +1297,18 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "hunting",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792577165165,
+      "updatedAt": 1792577279546,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.893951416015625,
+  "goroutines": 11,
+  "ramAllocMB": 1.488677978515625,
   "ramSysMB": 13.349861145019531,
-  "uptime": "21h17m34s"
+  "uptime": "21h19m34s"
 }
