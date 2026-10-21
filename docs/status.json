@@ -1271,7 +1271,7 @@
       "bestiaryTarget": "Amazon Camp",
       "bestiaryTotal": 209,
       "currentHunt": "Amazon Camp",
-      "durationSec": 2974,
+      "durationSec": 3094,
       "expPerHour": 7572,
       "gold": 312030,
       "goldPerHour": 0,
@@ -1279,7 +1279,7 @@
       "id": "acc-1",
       "kills": 0,
       "level": 56,
-      "mana": 284,
+      "mana": 268,
       "maxHp": 929,
       "maxMana": 284,
       "name": "Conta #1",
@@ -1296,19 +1296,19 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "targetHunt": "Amazon Camp",
-      "updatedAt": 1792543452977,
+      "updatedAt": 1792543804436,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.800628662109375,
+  "ramAllocMB": 1.2537384033203125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "11h59m33s"
+  "uptime": "12h1m36s"
 }
