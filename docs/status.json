@@ -9,6 +9,14 @@
           "huntName": "Crocodiles Port Hope",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 16566,
+          "deaths": 0,
+          "huntId": 180,
+          "huntName": "Amazon Camp",
+          "lastDuration": 43200,
+          "runs": 1
         }
       ],
       "bestiary": [
@@ -22,12 +30,6 @@
           "completed": false,
           "kills": 0,
           "name": "Adept of the Cult",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Amazon",
           "target": 500
         },
         {
@@ -1053,12 +1055,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Valkyrie",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Vampire",
           "target": 500
         },
@@ -1220,6 +1216,12 @@
         },
         {
           "completed": true,
+          "kills": 8877,
+          "name": "Amazon",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 7044,
           "name": "Skeleton",
           "target": 500
@@ -1250,6 +1252,12 @@
         },
         {
           "completed": true,
+          "kills": 4389,
+          "name": "Valkyrie",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 3612,
           "name": "Skeleton Warrior",
           "target": 500
@@ -1267,12 +1275,12 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 17,
-      "bestiaryTarget": "Amazon Camp",
+      "bestiaryCompleted": 19,
+      "bestiaryTarget": "Dwarf Bridge",
       "bestiaryTotal": 209,
-      "currentHunt": "Amazon Camp",
-      "durationSec": 43092,
-      "expPerHour": 7572,
+      "currentHunt": "Dwarf Bridge",
+      "durationSec": 9,
+      "expPerHour": 16566,
       "gold": 348872,
       "goldPerHour": 0,
       "hp": 944,
@@ -1285,30 +1293,30 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🏆 Bestiário de 'Amazon Camp' CONCLUÍDO (500+ abates)! Progresso geral: 19/209 monstros.",
+        "🎯 Bestiário avançou para 'Dwarf Bridge' (Lure: 2) para abater novas criaturas!",
+        "📊 Hunt 'Amazon Camp' concluída: 16566 XP/h (Duração: 43200s, Kills: 13266)",
+        "✨ Auto-Purify: Purificando bolsas seladas do inventário...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Iniciando caçada (Hunt ID: 119, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 119, Lure: 2)..."
       ],
       "status": "hunting",
-      "targetHunt": "Amazon Camp",
-      "updatedAt": 1792583404078,
+      "targetHunt": "Dwarf Bridge",
+      "updatedAt": 1792583524021,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.6962661743164062,
+  "ramAllocMB": 1.7339553833007812,
   "ramSysMB": 13.349861145019531,
-  "uptime": "23h1m35s"
+  "uptime": "23h3m34s"
 }
