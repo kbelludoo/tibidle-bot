@@ -1279,11 +1279,11 @@
       "bestiaryTarget": "Dwarf Bridge",
       "bestiaryTotal": 209,
       "currentHunt": "Dwarf Bridge",
-      "durationSec": 11349,
+      "durationSec": 11516,
       "expPerHour": 16566,
-      "gold": 358451,
+      "gold": 361557,
       "goldPerHour": 0,
-      "hp": 873,
+      "hp": 962,
       "id": "acc-1",
       "kills": 0,
       "level": 58,
@@ -1306,17 +1306,17 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Dwarf Bridge",
-      "updatedAt": 1792594887401,
+      "updatedAt": 1792595030680,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 2.4253082275390625,
+  "goroutines": 10,
+  "ramAllocMB": 2.7625961303710938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "26h13m36s"
+  "uptime": "26h15m36s"
 }
