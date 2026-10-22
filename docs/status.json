@@ -1295,15 +1295,15 @@
       "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
       "currentHunt": "Elfs Shadowthorn",
-      "durationSec": 4409,
+      "durationSec": 4550,
       "expPerHour": 13133,
-      "gold": 397428,
+      "gold": 397621,
       "goldPerHour": 0,
-      "hp": 917,
+      "hp": 978,
       "id": "acc-1",
       "kills": 0,
       "level": 59,
-      "mana": 299,
+      "mana": 297,
       "maxHp": 992,
       "maxMana": 299,
       "name": "Conta #1",
@@ -1322,17 +1322,17 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Conectado como Conta #1 (Sessão Autenticada)"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792674354779,
+      "updatedAt": 1792674468522,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 11,
-  "ramAllocMB": 1.9279327392578125,
+  "goroutines": 10,
+  "ramAllocMB": 2.6584701538085938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "48h17m34s"
+  "uptime": "48h19m34s"
 }
