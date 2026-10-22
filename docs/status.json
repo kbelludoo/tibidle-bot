@@ -1295,15 +1295,15 @@
       "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
       "currentHunt": "Elfs Shadowthorn",
-      "durationSec": 32391,
+      "durationSec": 32527,
       "expPerHour": 13133,
-      "gold": 412633,
+      "gold": 418970,
       "goldPerHour": 0,
-      "hp": 957,
+      "hp": 1016,
       "id": "acc-1",
       "kills": 0,
       "level": 60,
-      "mana": 302,
+      "mana": 304,
       "maxHp": 1016,
       "maxMana": 304,
       "name": "Conta #1",
@@ -1324,15 +1324,15 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "Reconectando (websocket desconectou: read tcp 10.0.0.191:51716-\u003e104.26.14.146:443: read: connection reset by peer)",
+      "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792702321338,
+      "updatedAt": 1792702445242,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 9,
-  "ramAllocMB": 2.9164581298828125,
+  "goroutines": 12,
+  "ramAllocMB": 2.65338134765625,
   "ramSysMB": 13.349861145019531,
-  "uptime": "56h3m34s"
+  "uptime": "56h5m34s"
 }
