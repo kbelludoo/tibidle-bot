@@ -1295,15 +1295,15 @@
       "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
       "currentHunt": "Elfs Shadowthorn",
-      "durationSec": 37807,
+      "durationSec": 37927,
       "expPerHour": 13133,
       "gold": 418970,
       "goldPerHour": 0,
-      "hp": 932,
+      "hp": 1016,
       "id": "acc-1",
       "kills": 0,
       "level": 60,
-      "mana": 295,
+      "mana": 304,
       "maxHp": 1016,
       "maxMana": 304,
       "name": "Conta #1",
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792707725236,
+      "updatedAt": 1792707845212,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.8804397583007812,
+  "ramAllocMB": 1.9597549438476562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "57h33m34s"
+  "uptime": "57h35m34s"
 }
