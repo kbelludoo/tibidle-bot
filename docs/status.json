@@ -3,14 +3,6 @@
     {
       "benchmarks": [
         {
-          "bestXpPerHour": 7572,
-          "deaths": 0,
-          "huntId": 139,
-          "huntName": "Crocodiles Port Hope",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
           "bestXpPerHour": 16566,
           "deaths": 0,
           "huntId": 180,
@@ -23,6 +15,22 @@
           "deaths": 0,
           "huntId": 119,
           "huntName": "Dwarf Bridge",
+          "lastDuration": 43200,
+          "runs": 1
+        },
+        {
+          "bestXpPerHour": 13133,
+          "deaths": 0,
+          "huntId": 194,
+          "huntName": "Desert Quest",
+          "lastDuration": 43200,
+          "runs": 1
+        },
+        {
+          "bestXpPerHour": 7572,
+          "deaths": 0,
+          "huntId": 139,
+          "huntName": "Crocodiles Port Hope",
           "lastDuration": 43200,
           "runs": 1
         }
@@ -404,12 +412,6 @@
           "completed": false,
           "kills": 0,
           "name": "Enraged Crystal Golem",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Fire Devil",
           "target": 500
         },
         {
@@ -925,12 +927,6 @@
         {
           "completed": false,
           "kills": 0,
-          "name": "Scorpion",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
           "name": "Shaper Matriarch",
           "target": 500
         },
@@ -1242,6 +1238,12 @@
         },
         {
           "completed": true,
+          "kills": 6408,
+          "name": "Scorpion",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 4686,
           "name": "Salamander",
           "target": 500
@@ -1281,14 +1283,20 @@
           "kills": 3424,
           "name": "Orc Warrior",
           "target": 500
+        },
+        {
+          "completed": true,
+          "kills": 3228,
+          "name": "Fire Devil",
+          "target": 500
         }
       ],
-      "bestiaryCompleted": 20,
-      "bestiaryTarget": "Desert Quest",
+      "bestiaryCompleted": 22,
+      "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
       "currentHunt": "Desert Quest",
-      "durationSec": 43073,
-      "expPerHour": 12819,
+      "durationSec": 43193,
+      "expPerHour": 13133,
       "gold": 394174,
       "goldPerHour": 0,
       "hp": 992,
@@ -1301,7 +1309,7 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 32, Lure: 3)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1316,15 +1324,15 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "hunting",
-      "targetHunt": "Desert Quest",
-      "updatedAt": 1792669789399,
+      "status": "idle",
+      "targetHunt": "Elfs Shadowthorn",
+      "updatedAt": 1792669916826,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.3364334106445312,
+  "ramAllocMB": 2.4546127319335938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "47h1m35s"
+  "uptime": "47h3m35s"
 }
