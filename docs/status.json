@@ -1287,17 +1287,17 @@
       "bestiaryTarget": "Desert Quest",
       "bestiaryTotal": 209,
       "currentHunt": "Desert Quest",
-      "durationSec": 6958,
+      "durationSec": 7078,
       "expPerHour": 12819,
       "gold": 394174,
       "goldPerHour": 0,
-      "hp": 961,
+      "hp": 986,
       "id": "acc-1",
       "kills": 0,
-      "level": 58,
-      "mana": 278,
-      "maxHp": 971,
-      "maxMana": 294,
+      "level": 59,
+      "mana": 299,
+      "maxHp": 986,
+      "maxMana": 299,
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Desert Quest",
-      "updatedAt": 1792633675067,
+      "updatedAt": 1792633795060,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.0748977661132812,
+  "ramAllocMB": 3.1168212890625,
   "ramSysMB": 13.349861145019531,
-  "uptime": "36h59m35s"
+  "uptime": "37h1m34s"
 }
