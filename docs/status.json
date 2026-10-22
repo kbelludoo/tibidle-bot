@@ -3,6 +3,22 @@
     {
       "benchmarks": [
         {
+          "bestXpPerHour": 9101,
+          "deaths": 0,
+          "huntId": 32,
+          "huntName": "Elfs Shadowthorn",
+          "lastDuration": 43200,
+          "runs": 1
+        },
+        {
+          "bestXpPerHour": 7572,
+          "deaths": 0,
+          "huntId": 139,
+          "huntName": "Crocodiles Port Hope",
+          "lastDuration": 43200,
+          "runs": 1
+        },
+        {
           "bestXpPerHour": 16566,
           "deaths": 0,
           "huntId": 180,
@@ -23,14 +39,6 @@
           "deaths": 0,
           "huntId": 194,
           "huntName": "Desert Quest",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 7572,
-          "deaths": 0,
-          "huntId": 139,
-          "huntName": "Crocodiles Port Hope",
           "lastDuration": 43200,
           "runs": 1
         }
@@ -388,12 +396,6 @@
           "completed": false,
           "kills": 0,
           "name": "Elf",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Elf Scout",
           "target": 500
         },
         {
@@ -1202,6 +1204,12 @@
         },
         {
           "completed": true,
+          "kills": 13651,
+          "name": "Elf Scout",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 11169,
           "name": "Rotworm",
           "target": 500
@@ -1291,48 +1299,48 @@
           "target": 500
         }
       ],
-      "bestiaryCompleted": 22,
-      "bestiaryTarget": "Elfs Shadowthorn",
+      "bestiaryCompleted": 23,
+      "bestiaryTarget": "Elfs Yalahar",
       "bestiaryTotal": 209,
-      "currentHunt": "Elfs Shadowthorn",
-      "durationSec": 43087,
-      "expPerHour": 13133,
+      "currentHunt": "idle",
+      "durationSec": 43187,
+      "expPerHour": 9101,
       "gold": 418970,
       "goldPerHour": 0,
-      "hp": 1010,
+      "hp": 996,
       "id": "acc-1",
       "kills": 0,
       "level": 60,
-      "mana": 304,
+      "mana": 295,
       "maxHp": 1016,
       "maxMana": 304,
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🛡️ Formação tática alinhada: Knight (frente), Paladin, Sorcerer, Druid (retaguarda)",
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-22)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "hunting",
-      "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792713005207,
+      "status": "idle",
+      "targetHunt": "Elfs Yalahar",
+      "updatedAt": 1792713125213,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.8103790283203125,
+  "ramAllocMB": 1.7123184204101562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "59h1m35s"
+  "uptime": "59h3m34s"
 }
