@@ -1287,7 +1287,7 @@
       "bestiaryTarget": "Desert Quest",
       "bestiaryTotal": 209,
       "currentHunt": "Desert Quest",
-      "durationSec": 14518,
+      "durationSec": 14638,
       "expPerHour": 12819,
       "gold": 394174,
       "goldPerHour": 0,
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Desert Quest",
-      "updatedAt": 1792641234956,
+      "updatedAt": 1792641354954,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.7628250122070312,
+  "ramAllocMB": 1.4588241577148438,
   "ramSysMB": 13.349861145019531,
-  "uptime": "39h5m34s"
+  "uptime": "39h7m33s"
 }
