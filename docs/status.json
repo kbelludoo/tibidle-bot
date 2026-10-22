@@ -1287,15 +1287,15 @@
       "bestiaryTarget": "Desert Quest",
       "bestiaryTotal": 209,
       "currentHunt": "Desert Quest",
-      "durationSec": 14998,
+      "durationSec": 15118,
       "expPerHour": 12819,
       "gold": 394174,
       "goldPerHour": 0,
-      "hp": 986,
+      "hp": 973,
       "id": "acc-1",
       "kills": 0,
       "level": 59,
-      "mana": 290,
+      "mana": 299,
       "maxHp": 986,
       "maxMana": 299,
       "name": "Conta #1",
@@ -1318,13 +1318,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Desert Quest",
-      "updatedAt": 1792641715317,
+      "updatedAt": 1792641835012,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.1975631713867188,
+  "ramAllocMB": 1.2920303344726562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "39h13m33s"
+  "uptime": "39h15m34s"
 }
