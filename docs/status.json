@@ -1294,12 +1294,12 @@
       "bestiaryCompleted": 22,
       "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
-      "currentHunt": "Desert Quest",
-      "durationSec": 43193,
+      "currentHunt": "Elfs Shadowthorn",
+      "durationSec": 111,
       "expPerHour": 13133,
       "gold": 394174,
       "goldPerHour": 0,
-      "hp": 992,
+      "hp": 904,
       "id": "acc-1",
       "kills": 0,
       "level": 59,
@@ -1309,7 +1309,7 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "Iniciando caçada (Hunt ID: 32, Lure: 3)...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1324,15 +1324,15 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "idle",
+      "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792669916826,
+      "updatedAt": 1792670029364,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.4546127319335938,
+  "ramAllocMB": 1.6946182250976562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "47h3m35s"
+  "uptime": "47h5m34s"
 }
