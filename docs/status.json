@@ -1295,11 +1295,11 @@
       "bestiaryTarget": "Elfs Shadowthorn",
       "bestiaryTotal": 209,
       "currentHunt": "Elfs Shadowthorn",
-      "durationSec": 5391,
+      "durationSec": 5510,
       "expPerHour": 13133,
       "gold": 397621,
       "goldPerHour": 0,
-      "hp": 992,
+      "hp": 959,
       "id": "acc-1",
       "kills": 0,
       "level": 59,
@@ -1326,13 +1326,13 @@
       ],
       "status": "hunting",
       "targetHunt": "Elfs Shadowthorn",
-      "updatedAt": 1792675308563,
+      "updatedAt": 1792675428532,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.4079666137695312,
+  "ramAllocMB": 2.5889434814453125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "48h33m34s"
+  "uptime": "48h35m34s"
 }
