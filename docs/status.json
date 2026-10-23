@@ -1322,25 +1322,25 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792731005205,
+      "updatedAt": 1792731125208,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.543121337890625,
+  "ramAllocMB": 1.472503662109375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "64h1m34s"
+  "uptime": "64h3m34s"
 }
