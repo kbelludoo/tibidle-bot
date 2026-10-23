@@ -1329,18 +1329,18 @@
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-22)!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792715045209,
+      "updatedAt": 1792715165210,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.5086517333984375,
+  "ramAllocMB": 1.4889144897460938,
   "ramSysMB": 13.349861145019531,
-  "uptime": "59h35m33s"
+  "uptime": "59h37m34s"
 }
