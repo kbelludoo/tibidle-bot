@@ -1329,18 +1329,18 @@
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
+        "Servidor fechou conexão (code 1006)",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "idle",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792737365208,
+      "updatedAt": 1792737466105,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.75006103515625,
+  "goroutines": 11,
+  "ramAllocMB": 1.5996170043945312,
   "ramSysMB": 13.349861145019531,
-  "uptime": "65h47m33s"
+  "uptime": "65h49m35s"
 }
