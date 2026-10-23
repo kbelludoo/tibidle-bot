@@ -1326,21 +1326,21 @@
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
+        "Servidor fechou conexão (code 4505)",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "idle",
+      "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792763997549,
+      "updatedAt": 1792764095645,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.0730209350585938,
+  "goroutines": 11,
+  "ramAllocMB": 1.4965133666992188,
   "ramSysMB": 13.349861145019531,
-  "uptime": "73h11m34s"
+  "uptime": "73h13m34s"
 }
