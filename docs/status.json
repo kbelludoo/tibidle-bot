@@ -1316,31 +1316,31 @@
       "maxMana": 304,
       "name": "Conta #1",
       "recentLogs": [
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792782120439,
+      "updatedAt": 1792782240438,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.4031906127929688,
+  "ramAllocMB": 2.757293701171875,
   "ramSysMB": 13.599861145019531,
-  "uptime": "78h13m34s"
+  "uptime": "78h15m34s"
 }
