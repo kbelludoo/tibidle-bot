@@ -1316,10 +1316,10 @@
       "maxMana": 304,
       "name": "Conta #1",
       "recentLogs": [
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-23)!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
@@ -1334,13 +1334,13 @@
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792780320435,
+      "updatedAt": 1792780440434,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 12,
-  "ramAllocMB": 3.0183944702148438,
+  "goroutines": 10,
+  "ramAllocMB": 2.859130859375,
   "ramSysMB": 13.349861145019531,
-  "uptime": "77h43m34s"
+  "uptime": "77h45m34s"
 }
