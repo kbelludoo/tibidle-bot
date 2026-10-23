@@ -1334,13 +1334,13 @@
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792765429910,
+      "updatedAt": 1792765540963,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.45379638671875,
+  "ramAllocMB": 1.4272003173828125,
   "ramSysMB": 13.349861145019531,
-  "uptime": "73h35m34s"
+  "uptime": "73h37m34s"
 }
