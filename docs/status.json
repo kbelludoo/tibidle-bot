@@ -1332,15 +1332,15 @@
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo..."
       ],
-      "status": "Aguardando Ticket (envie via push ou Web)",
+      "status": "Reconectando (aguardando ticket: rota direta bloqueada (captcha_required), navegador local falhou: no browser executable found (install chromium or google-chrome))",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792779563850,
+      "updatedAt": 1792779719884,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.60784912109375,
+  "ramAllocMB": 1.5542984008789062,
   "ramSysMB": 13.349861145019531,
-  "uptime": "77h31m35s"
+  "uptime": "77h33m36s"
 }
