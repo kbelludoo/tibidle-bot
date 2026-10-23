@@ -1316,12 +1316,12 @@
       "maxMana": 304,
       "name": "Conta #1",
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
@@ -1334,13 +1334,13 @@
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792731125208,
+      "updatedAt": 1792731245209,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.472503662109375,
+  "ramAllocMB": 1.3560409545898438,
   "ramSysMB": 13.349861145019531,
-  "uptime": "64h3m34s"
+  "uptime": "64h5m34s"
 }
