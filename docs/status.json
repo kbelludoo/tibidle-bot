@@ -1316,31 +1316,31 @@
       "maxMana": 304,
       "name": "Conta #1",
       "recentLogs": [
+        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "📬 Correio do Sistema: 1 recompensas resgatadas!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-23)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "📬 Correio do Sistema: 1 recompensas resgatadas!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-23)!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792791120439,
+      "updatedAt": 1792791244540,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.53656005859375,
+  "goroutines": 13,
+  "ramAllocMB": 3.2932510375976562,
   "ramSysMB": 13.599861145019531,
-  "uptime": "80h43m34s"
+  "uptime": "80h45m33s"
 }
