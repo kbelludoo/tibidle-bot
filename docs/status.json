@@ -1318,7 +1318,7 @@
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1334,13 +1334,13 @@
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792751997664,
+      "updatedAt": 1792752117590,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.3891067504882812,
+  "ramAllocMB": 1.5037994384765625,
   "ramSysMB": 13.349861145019531,
-  "uptime": "69h51m34s"
+  "uptime": "69h53m34s"
 }
