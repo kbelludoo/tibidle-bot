@@ -1325,7 +1325,7 @@
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "🎲 Prey: Verificação de buffs gratuitos enviada para o grupo!",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
@@ -1334,13 +1334,13 @@
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792781400485,
+      "updatedAt": 1792781520432,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.5800094604492188,
+  "ramAllocMB": 2.571929931640625,
   "ramSysMB": 13.599861145019531,
-  "uptime": "78h1m35s"
+  "uptime": "78h3m33s"
 }
