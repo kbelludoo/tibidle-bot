@@ -1334,13 +1334,13 @@
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792745637577,
+      "updatedAt": 1792745757581,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.8113555908203125,
+  "ramAllocMB": 3.0787734985351562,
   "ramSysMB": 13.349861145019531,
-  "uptime": "68h5m33s"
+  "uptime": "68h7m33s"
 }
