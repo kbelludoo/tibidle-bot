@@ -1317,30 +1317,30 @@
       "name": "Conta #1",
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "⚔️ Invasão Diária: Grupo inscrito com sucesso (2026-10-23)!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
+        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
       ],
       "status": "idle",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792839352387,
+      "updatedAt": 1792839475938,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 2.6016387939453125,
+  "goroutines": 12,
+  "ramAllocMB": 1.81500244140625,
   "ramSysMB": 13.599861145019531,
-  "uptime": "94h7m33s"
+  "uptime": "94h9m34s"
 }
