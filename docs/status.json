@@ -1330,17 +1330,17 @@
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
         "Iniciando caçada (Hunt ID: 132, Lure: 2)...",
-        "Iniciando caçada (Hunt ID: 132, Lure: 2)..."
+        "Servidor fechou conexão (code 1006)"
       ],
-      "status": "idle",
+      "status": "Reconectando (websocket desconectou: websocket: close 1006 (abnormal closure): unexpected EOF)",
       "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792835523110,
+      "updatedAt": 1792835641454,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
-  "goroutines": 10,
-  "ramAllocMB": 1.9635543823242188,
+  "goroutines": 8,
+  "ramAllocMB": 1.949737548828125,
   "ramSysMB": 13.599861145019531,
-  "uptime": "93h3m33s"
+  "uptime": "93h5m33s"
 }
