@@ -1262,16 +1262,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 7517,
+      "durationSec": 7637,
       "expPerHour": 0,
       "gold": 426879,
       "goldPerHour": 0,
-      "hp": 1014,
+      "hp": 1016,
       "id": "acc-1",
       "isPremium": false,
       "kills": 0,
       "level": 60,
-      "mana": 298,
+      "mana": 304,
       "maxHp": 1016,
       "maxMana": 304,
       "name": "Conta #1",
@@ -1297,13 +1297,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792954673142,
+      "updatedAt": 1792954793100,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.853668212890625,
+  "ramAllocMB": 2.631988525390625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "2h6m7s"
+  "uptime": "2h8m7s"
 }
