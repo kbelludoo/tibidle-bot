@@ -1262,7 +1262,7 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 15557,
+      "durationSec": 15677,
       "expPerHour": 0,
       "gold": 426879,
       "goldPerHour": 0,
@@ -1297,13 +1297,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792962713102,
+      "updatedAt": 1792962833100,
       "vocation": "KNIGHT",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.5541000366210938,
+  "ramAllocMB": 1.8582763671875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "4h20m8s"
+  "uptime": "4h22m10s"
 }
