@@ -1,48 +1,6 @@
 {
   "accounts": [
     {
-      "benchmarks": [
-        {
-          "bestXpPerHour": 9101,
-          "deaths": 0,
-          "huntId": 32,
-          "huntName": "Elfs Shadowthorn",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 7572,
-          "deaths": 0,
-          "huntId": 139,
-          "huntName": "Crocodiles Port Hope",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 16566,
-          "deaths": 0,
-          "huntId": 180,
-          "huntName": "Amazon Camp",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 12819,
-          "deaths": 0,
-          "huntId": 119,
-          "huntName": "Dwarf Bridge",
-          "lastDuration": 43200,
-          "runs": 1
-        },
-        {
-          "bestXpPerHour": 13133,
-          "deaths": 0,
-          "huntId": 194,
-          "huntName": "Desert Quest",
-          "lastDuration": 43200,
-          "runs": 1
-        }
-      ],
       "bestiary": [
         {
           "completed": false,
@@ -1300,47 +1258,37 @@
         }
       ],
       "bestiaryCompleted": 23,
-      "bestiaryTarget": "Elfs Yalahar",
       "bestiaryTotal": 209,
-      "currentHunt": "idle",
-      "durationSec": 43187,
-      "expPerHour": 9101,
-      "gold": 418970,
+      "coins": 0,
+      "currentHunt": "",
+      "durationSec": 0,
+      "expPerHour": 0,
+      "gold": 0,
       "goldPerHour": 0,
-      "hp": 996,
+      "hp": 0,
       "id": "acc-1",
+      "isPremium": false,
       "kills": 0,
-      "level": 60,
-      "mana": 295,
-      "maxHp": 1016,
-      "maxMana": 304,
+      "level": 0,
+      "mana": 0,
+      "maxHp": 0,
+      "maxMana": 0,
       "name": "Conta #1",
+      "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "Bot iniciado para ID: Conta #1",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
-      "status": "idle",
-      "targetHunt": "Elfs Yalahar",
-      "updatedAt": 1792946996011,
-      "vocation": "KNIGHT",
+      "status": "Aguardando Ticket (envie via push ou Web)",
+      "strategyGoal": "",
+      "strategyPhase": 0,
+      "updatedAt": 1792947119108,
+      "vocation": "",
       "xp": ""
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.4769515991210938,
-  "ramSysMB": 13.599861145019531,
-  "uptime": "124h1m37s"
+  "ramAllocMB": 2.289154052734375,
+  "ramSysMB": 16.53736114501953,
+  "uptime": "9s"
 }
