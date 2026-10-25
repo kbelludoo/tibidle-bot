@@ -781,11 +781,18 @@
               '<div style="color:var(--text-muted);font-size:0.7rem;">🎯 Meta: <span style="color:var(--accent);">' + esc(a.bestiaryTarget || 'Auto') + '</span></div>' +
             '</div>'
           ) : '';
+          const strategyLine = a.strategyGoal ? (
+            '<div style="margin-top:8px;padding:6px 10px;background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.25);border-radius:6px;font-size:0.75rem;color:var(--accent);font-weight:600;">' +
+              '🎯 ' + esc(a.strategyGoal) +
+            '</div>'
+          ) : '';
           return '<div class="acc-card"><div><div class="acc-top"><div class="acc-title-group"><h3><span>🛡️</span><span>Conta #' + (idx + 1) + '</span></h3>' +
             '<div class="acc-vocation-tag">Nv. ' + level + ' • ' + voc + '</div></div><span class="badge-online">' + status + '</span></div>' +
             '<div class="bar-group">' + bar('HP', a.hp, a.maxHp, 'fill-hp', '#f87171') + bar('MANA', a.mana, a.maxMana, 'fill-mana', '#38bdf8') + '</div>' +
+            strategyLine +
             '<div class="acc-stats">' +
               stat('Ouro', missing(a.gold) ? '—' : formatNumber(a.gold) + ' gp', 'var(--gold)') +
+              stat('Coins', (a.coins || 0) + ' 🪙', '#fbbf24') +
               stat('Hunt', missing(a.currentHunt) ? '—' : esc(a.currentHunt)) +
               stat('Kills', missing(a.kills) ? '—' : formatNumber(a.kills), 'var(--green)') +
               stat('EXP/hora', formatNumber(a.expPerHour), 'var(--accent)') +

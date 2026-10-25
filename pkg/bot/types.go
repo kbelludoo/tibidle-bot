@@ -25,6 +25,7 @@ type AccountConfig struct {
 	AutoInvasion  bool   `json:"autoInvasion"`
 	AutoFormation bool   `json:"autoFormation"`
 	AutoPurify    bool   `json:"autoPurify"`
+	AutoVip       bool   `json:"autoVip"`
 }
 
 type HuntBenchmark struct {
@@ -53,6 +54,11 @@ type AccountStatus struct {
 	Mana              int               `json:"mana"`
 	MaxMana           int               `json:"maxMana"`
 	Gold              int               `json:"gold"`
+	Coins             int               `json:"coins"`
+	IsPremium         bool              `json:"isPremium"`
+	PremiumUntil      int64             `json:"premiumUntil"`
+	StrategyPhase     int               `json:"strategyPhase"` // 1 = Farm VIP 30d (250 coins), 2 = Farm VIP 90d (650 coins), 3 = Bestiário Endgame
+	StrategyGoal      string            `json:"strategyGoal"`
 	XP                string            `json:"xp"`
 	Status            string            `json:"status"` // "hunting", "training", "idle", "connected", "offline"
 	CurrentHunt       string            `json:"currentHunt"`

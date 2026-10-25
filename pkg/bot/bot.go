@@ -55,6 +55,7 @@ type Bot struct {
 	lastInvasionCheck time.Time
 	formationDone     bool
 	lastPurifyCheck   time.Time
+	lastVipCheck      time.Time
 }
 
 // HuntTier defines the recommended progression hunt for level brackets
@@ -144,6 +145,7 @@ func NewBot(cfg AccountConfig) *Bot {
 	cfg.AutoInvasion = true
 	cfg.AutoFormation = true
 	cfg.AutoPurify = true
+	cfg.AutoVip = true
 
 	kills, minLevels := LoadBestiary(cfg.ID)
 	b := &Bot{
@@ -704,10 +706,11 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 					b.config.HuntID = rec.HuntID
 					b.config.HuntName = rec.HuntName
 					b.config.Lure = rec.Lure
-					b.status.AddLog(fmt.Sprintf("⭐ Auto-Progresso (Lv. %d): alternando de '%s' para '%s' (Lure: %d)", maxLevel, oldHunt, rec.HuntName, rec.Lure))
+					b.status.AddLog(fmt.Sprintf("⭐ Auto-Progresso (Lv. %d): alternando de '%s' para '%s' (Lure: %d) para farm de VIP", maxLevel, oldHunt, rec.HuntName, rec.Lure))
 				}
 				b.status.Update(func(st *AccountStatus) {
 					st.TargetHunt = rec.HuntName
+					st.BestiaryTarget = fmt.Sprintf("Farm VIP -> %s", rec.HuntName)
 				})
 				b.mu.Unlock()
 			}
@@ -871,6 +874,19 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 					b.status.AddLog(fmt.Sprintf("⚡ Todos os monstros de nível %d concluídos! Focando XP máxima em '%s' até subir de nível.", currLvl, fallback.HuntName))
 				}
 			}
+		} else if b.config.AutoProgress {
+			currLvl := b.status.Get().Level
+			if currLvl <= 0 {
+				currLvl = 1
+			}
+			rec := GetProgressionHuntForLevel(currLvl)
+			bestiaryTargetName = fmt.Sprintf("Farm VIP -> %s", rec.HuntName)
+			if b.config.HuntID != rec.HuntID {
+				b.config.HuntID = rec.HuntID
+				b.config.HuntName = rec.HuntName
+				b.config.Lure = rec.Lure
+				b.status.AddLog(fmt.Sprintf("⭐ Auto-Progresso (Lv. %d): alternando para '%s' (Lure: %d) para farm de VIP", currLvl, rec.HuntName, rec.Lure))
+			}
 		}
 
 		// Tratar mortes ou falhas
@@ -974,9 +990,25 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 	case "welcome":
 		var wData struct {
 			Eventos *protocol.EventosDataPayload `json:"eventos"`
+			Account struct {
+				Coins        int   `json:"coins"`
+				Gold         int   `json:"gold"`
+				PremiumUntil int64 `json:"premiumUntil"`
+			} `json:"account"`
 		}
-		if err := json.Unmarshal(msg.Data, &wData); err == nil && wData.Eventos != nil {
-			b.handleEventos(*wData.Eventos)
+		if err := json.Unmarshal(msg.Data, &wData); err == nil {
+			if wData.Eventos != nil {
+				b.handleEventos(*wData.Eventos)
+			}
+			b.status.Update(func(st *AccountStatus) {
+				st.Coins = wData.Account.Coins
+				st.PremiumUntil = wData.Account.PremiumUntil
+				st.IsPremium = wData.Account.PremiumUntil > time.Now().UnixMilli()
+				if wData.Account.Gold > 0 {
+					st.Gold = wData.Account.Gold
+				}
+			})
+			b.checkVipStrategy()
 		}
 		if b.config.AutoFormation {
 			b.applyBattleFormation()
@@ -989,6 +1021,28 @@ func (b *Bot) handleMessage(msg protocol.InboundMessage) {
 		}
 		if b.config.AutoInvasion {
 			b.checkInvasion()
+		}
+
+	case "account_update", "account_state":
+		var accData struct {
+			Coins        int   `json:"coins"`
+			Gold         int   `json:"gold"`
+			PremiumUntil int64 `json:"premiumUntil"`
+		}
+		if err := json.Unmarshal(msg.Data, &accData); err == nil {
+			b.status.Update(func(st *AccountStatus) {
+				if accData.Coins > 0 {
+					st.Coins = accData.Coins
+				}
+				if accData.PremiumUntil > 0 {
+					st.PremiumUntil = accData.PremiumUntil
+					st.IsPremium = accData.PremiumUntil > time.Now().UnixMilli()
+				}
+				if accData.Gold > 0 {
+					st.Gold = accData.Gold
+				}
+			})
+			b.checkVipStrategy()
 		}
 
 	case "eventos_state", "eventos_result":
@@ -1139,16 +1193,33 @@ func (b *Bot) performPeriodicActions() {
 			b.config.HuntName = tier.HuntName
 			b.config.Lure = tier.Lure
 		}
+	} else if b.config.AutoProgress {
+		lvl := b.status.Get().Level
+		if lvl <= 0 {
+			lvl = 1
+		}
+		rec := GetProgressionHuntForLevel(lvl)
+		targetHuntID = rec.HuntID
+		lure = rec.Lure
+		b.config.HuntID = rec.HuntID
+		b.config.HuntName = rec.HuntName
+		b.config.Lure = rec.Lure
 	}
 	b.mu.Unlock()
 
-	// 1. Auto-Formation (executado mesmo em caçada para garantir posicionamento ideal)
+	// 1. Auto-VIP e verificação de estratégia de fases a cada 30 segundos
+	if time.Since(b.lastVipCheck) > 30*time.Second {
+		b.lastVipCheck = time.Now()
+		b.checkVipStrategy()
+	}
+
+	// 2. Auto-Formation (executado mesmo em caçada para garantir posicionamento ideal)
 	if b.config.AutoFormation && !b.formationDone {
 		b.formationDone = true
 		b.applyBattleFormation()
 	}
 
-	// 2. Auto-Blessings a cada 15 minutos
+	// 3. Auto-Blessings a cada 15 minutos
 	if b.config.AutoBlessings && time.Since(b.lastBlessingBuy) > 15*time.Minute {
 		b.lastBlessingBuy = time.Now()
 		_ = sock.Send("buy_all_blessings", protocol.BuyBlessingsPayload{
@@ -1156,25 +1227,25 @@ func (b *Bot) performPeriodicActions() {
 		})
 	}
 
-	// 3. Auto-Daily Quests a cada 1 hora
+	// 4. Auto-Daily Quests a cada 1 hora
 	if b.config.AutoDaily && time.Since(b.lastDailyCheck) > 1*time.Hour {
 		b.lastDailyCheck = time.Now()
 		_ = sock.Send("eventos_get", map[string]any{"requestId": fmt.Sprintf("ev-%d", time.Now().UnixNano())})
 	}
 
-	// 4. Auto-Prey sorteio diário gratuito a cada 6 horas
+	// 5. Auto-Prey sorteio diário gratuito a cada 6 horas
 	if b.config.AutoPrey && time.Since(b.lastPreyRoll) > 6*time.Hour {
 		b.lastPreyRoll = time.Now()
 		b.rollPreyBuffs()
 	}
 
-	// 5. Auto-Mail & Parcels a cada 30 minutos
+	// 6. Auto-Mail & Parcels a cada 30 minutos
 	if b.config.AutoMail && time.Since(b.lastMailCheck) > 30*time.Minute {
 		b.lastMailCheck = time.Now()
 		b.checkMailAndParcels()
 	}
 
-	// 6. Auto-Invasion a cada 30 minutos
+	// 7. Auto-Invasion a cada 30 minutos
 	if b.config.AutoInvasion && time.Since(b.lastInvasionCheck) > 30*time.Minute {
 		b.lastInvasionCheck = time.Now()
 		b.checkInvasion()
@@ -1358,6 +1429,68 @@ func (b *Bot) claimDailyEvents() {
 			RequestID: fmt.Sprintf("claim-%d-%d", slot, time.Now().UnixNano()),
 		})
 	}
+}
+
+func (b *Bot) checkVipStrategy() {
+	b.mu.Lock()
+	sock := b.socket
+	b.mu.Unlock()
+
+	st := b.status.Get()
+	now := time.Now().UnixMilli()
+	isPremium := st.PremiumUntil > now
+	coins := st.Coins
+
+	phase := 1
+	var goal string
+
+	if isPremium {
+		daysLeft := (st.PremiumUntil - now) / (1000 * 86400)
+		if daysLeft > 60 {
+			// Mais de 60 dias de VIP acumulados -> Fase 3: Bestiário Total / Charms
+			phase = 3
+			goal = fmt.Sprintf("VIP Ativa (%dd restantes)! Fase 3: Modo Bestiário (Charms)", daysLeft)
+			b.mu.Lock()
+			b.config.BestiaryMode = true
+			b.mu.Unlock()
+		} else {
+			// VIP 30d ativo. Fase 2: Acumular moedas para renovar/empilhar VIP (premium_30d = 290 coins)
+			phase = 2
+			goal = fmt.Sprintf("Fase 2: VIP Ativa (%dd) -> Farmando renovação VIP (Coins: %d/290)", daysLeft, coins)
+			b.mu.Lock()
+			b.config.BestiaryMode = false
+			b.mu.Unlock()
+
+			if b.config.AutoVip && coins >= 290 && sock != nil {
+				_ = sock.Send("store_buy", map[string]any{
+					"item":      "premium_30d",
+					"requestId": fmt.Sprintf("vip-renew-%d", time.Now().UnixNano()),
+				})
+				b.status.AddLog("🌟 META ALCANÇADA! Acumulando mais 30 Dias de VIP (premium_30d) por 290 Coins!")
+			}
+		}
+	} else {
+		// Conta Free. Fase 1: Rushar EXP/Ouro e acumular 290 coins para a 1ª VIP de 30 dias
+		phase = 1
+		goal = fmt.Sprintf("Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: %d/290)", coins)
+		b.mu.Lock()
+		b.config.BestiaryMode = false
+		b.mu.Unlock()
+
+		if b.config.AutoVip && coins >= 290 && sock != nil {
+			_ = sock.Send("store_buy", map[string]any{
+				"item":      "premium_30d",
+				"requestId": fmt.Sprintf("vip-first-%d", time.Now().UnixNano()),
+			})
+			b.status.AddLog("🎉 META ALCANÇADA! Ativando 1ª VIP de 30 Dias (premium_30d) por 290 Coins!")
+		}
+	}
+
+	b.status.Update(func(s *AccountStatus) {
+		s.IsPremium = isPremium
+		s.StrategyPhase = phase
+		s.StrategyGoal = goal
+	})
 }
 
 func (b *Bot) persistStatus() {

@@ -211,7 +211,10 @@ func main() {
 					}
 
 					fmt.Printf("▸ [%s] %s (Lv. %d %s) | Status: %s\n", st.ID, st.Name, st.Level, st.Vocation, st.Status)
-					fmt.Printf("  HP: %d/%d (%d%%) | Mana: %d/%d (%d%%) | Ouro: %s | Kills: %d\n", st.HP, st.MaxHP, hpPct, st.Mana, st.MaxMana, manaPct, formatGold(st.Gold), st.Kills)
+					fmt.Printf("  HP: %d/%d (%d%%) | Mana: %d/%d (%d%%) | Ouro: %s | Coins: %d | Kills: %d\n", st.HP, st.MaxHP, hpPct, st.Mana, st.MaxMana, manaPct, formatGold(st.Gold), st.Coins, st.Kills)
+					if st.StrategyGoal != "" {
+						fmt.Printf("  🎯 Meta: %s\n", st.StrategyGoal)
+					}
 					if st.CurrentHunt != "" {
 						fmt.Printf("  Caçada: %s | EXP/H: %.0f | Duração: %ds\n", st.CurrentHunt, st.ExpPerHour, st.DurationSec)
 					}
