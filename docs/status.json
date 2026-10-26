@@ -1262,16 +1262,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 42458,
-      "expPerHour": 16961,
-      "gold": 445559,
+      "durationSec": 42580,
+      "expPerHour": 16963,
+      "gold": 445619,
       "goldPerHour": 0,
       "hp": 1031,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 13336,
+      "kills": 13376,
       "level": 61,
-      "mana": 309,
+      "mana": 307,
       "maxHp": 1031,
       "maxMana": 309,
       "name": "Conta #1",
@@ -1291,19 +1291,19 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792989615584,
+      "updatedAt": 1792989736586,
       "vocation": "KNIGHT",
-      "xp": "3532445"
+      "xp": "3533045"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.2701416015625,
+  "ramAllocMB": 1.3313522338867188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "11h48m18s"
+  "uptime": "11h50m18s"
 }
