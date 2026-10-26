@@ -9,9 +9,29 @@
           "huntName": "Daramian Minotaur Pyramid",
           "lastDuration": 43200,
           "runs": 1
+        },
+        {
+          "bestXpPerHour": 5309,
+          "deaths": 2,
+          "huntId": 46,
+          "huntName": "Dragon Lair",
+          "lastDuration": 19,
+          "runs": 2
         }
       ],
       "bestiary": [
+        {
+          "completed": false,
+          "kills": 387,
+          "name": "Dragon",
+          "target": 500
+        },
+        {
+          "completed": false,
+          "kills": 259,
+          "name": "Dragon Hatchling",
+          "target": 500
+        },
         {
           "completed": false,
           "kills": 0,
@@ -292,18 +312,6 @@
           "completed": false,
           "kills": 0,
           "name": "Diamond Servant Replica",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Dragon",
-          "target": 500
-        },
-        {
-          "completed": false,
-          "kills": 0,
-          "name": "Dragon Hatchling",
           "target": 500
         },
         {
@@ -1272,48 +1280,48 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Dragon Lair",
-      "durationSec": 16526,
-      "expPerHour": 5313,
-      "gold": 2410,
+      "durationSec": 19,
+      "expPerHour": 0,
+      "gold": 9,
       "goldPerHour": 0,
-      "hp": 720,
+      "hp": 0,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 643,
-      "level": 61,
-      "mana": 83,
-      "maxHp": 1031,
-      "maxMana": 309,
+      "kills": 0,
+      "level": 60,
+      "mana": 15,
+      "maxHp": 1016,
+      "maxMana": 304,
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "Iniciando caçada (Hunt ID: 46, Lure: 3)...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
-      "status": "hunting",
+      "status": "idle",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
-      "targetHunt": "Dragon Lair",
-      "updatedAt": 1793006885604,
+      "targetHunt": "Farm VIP -\u003e Dragon Lair",
+      "updatedAt": 1793007004751,
       "vocation": "KNIGHT",
-      "xp": "3560375"
+      "xp": "3423677"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.120635986328125,
+  "ramAllocMB": 1.6223678588867188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "16h36m8s"
+  "uptime": "16h38m11s"
 }
