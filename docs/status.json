@@ -1262,16 +1262,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 38489,
-      "expPerHour": 16965,
-      "gold": 443898,
+      "durationSec": 38609,
+      "expPerHour": 16967,
+      "gold": 443939,
       "goldPerHour": 0,
       "hp": 1031,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 12092,
+      "kills": 12131,
       "level": 61,
-      "mana": 309,
+      "mana": 293,
       "maxHp": 1031,
       "maxMana": 309,
       "name": "Conta #1",
@@ -1279,6 +1279,8 @@
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1287,23 +1289,21 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792985646026,
+      "updatedAt": 1792985766150,
       "vocation": "KNIGHT",
-      "xp": "3513785"
+      "xp": "3514370"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.8867645263671875,
+  "ramAllocMB": 2.5309524536132812,
   "ramSysMB": 17.34986114501953,
-  "uptime": "10h42m8s"
+  "uptime": "10h44m8s"
 }
