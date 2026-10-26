@@ -1280,23 +1280,21 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 37149,
+      "durationSec": 37269,
       "expPerHour": 11371,
-      "gold": 23495,
+      "gold": 23575,
       "goldPerHour": 0,
-      "hp": 730,
+      "hp": 751,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 6176,
+      "kills": 6196,
       "level": 60,
-      "mana": 138,
+      "mana": 116,
       "maxHp": 1016,
       "maxMana": 310,
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1309,19 +1307,21 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793044206379,
+      "updatedAt": 1793044326391,
       "vocation": "KNIGHT",
-      "xp": "3359081"
+      "xp": "3359461"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.8715362548828125,
+  "ramAllocMB": 1.8123931884765625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "26h58m9s"
+  "uptime": "27h0m8s"
 }
