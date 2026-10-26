@@ -1280,16 +1280,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 1268,
-      "expPerHour": 11165,
-      "gold": 647,
+      "durationSec": 1388,
+      "expPerHour": 11136,
+      "gold": 747,
       "goldPerHour": 0,
-      "hp": 575,
+      "hp": 659,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 207,
+      "kills": 226,
       "level": 59,
-      "mana": 41,
+      "mana": 79,
       "maxHp": 1001,
       "maxMana": 299,
       "name": "Conta #1",
@@ -1297,7 +1297,6 @@
       "recentLogs": [
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
@@ -1307,21 +1306,22 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Scarabs Cave",
-      "updatedAt": 1793008325413,
+      "updatedAt": 1793008445409,
       "vocation": "KNIGHT",
-      "xp": "3245670"
+      "xp": "3246031"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.5075912475585938,
+  "ramAllocMB": 2.726593017578125,
   "ramSysMB": 17.34986114501953,
-  "uptime": "17h0m7s"
+  "uptime": "17h2m7s"
 }
