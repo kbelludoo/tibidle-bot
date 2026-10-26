@@ -1262,16 +1262,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 31410,
-      "expPerHour": 16965,
-      "gold": 440709,
+      "durationSec": 31531,
+      "expPerHour": 16968,
+      "gold": 440770,
       "goldPerHour": 0,
       "hp": 1031,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 9868,
+      "kills": 9908,
       "level": 61,
-      "mana": 309,
+      "mana": 300,
       "maxHp": 1031,
       "maxMana": 309,
       "name": "Conta #1",
@@ -1279,6 +1279,9 @@
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1288,22 +1291,19 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792978566712,
+      "updatedAt": 1792978687681,
       "vocation": "KNIGHT",
-      "xp": "3480425"
+      "xp": "3481025"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.0597763061523438,
+  "ramAllocMB": 2.12274169921875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "8h44m9s"
+  "uptime": "8h46m10s"
 }
