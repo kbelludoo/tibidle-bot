@@ -1280,16 +1280,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 33908,
-      "expPerHour": 11361,
-      "gold": 21249,
+      "durationSec": 34028,
+      "expPerHour": 11363,
+      "gold": 21345,
       "goldPerHour": 0,
-      "hp": 641,
+      "hp": 649,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 5632,
+      "kills": 5653,
       "level": 60,
-      "mana": 88,
+      "mana": 116,
       "maxHp": 1016,
       "maxMana": 310,
       "name": "Conta #1",
@@ -1297,10 +1297,6 @@
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
@@ -1308,20 +1304,24 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793040965746,
+      "updatedAt": 1793041085860,
       "vocation": "KNIGHT",
-      "xp": "3348745"
+      "xp": "3349144"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.5546493530273438,
+  "ramAllocMB": 3.2830963134765625,
   "ramSysMB": 17.34986114501953,
-  "uptime": "26h4m7s"
+  "uptime": "26h6m8s"
 }
