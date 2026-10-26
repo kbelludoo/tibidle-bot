@@ -1262,14 +1262,14 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 37768,
-      "expPerHour": 16963,
-      "gold": 443540,
+      "durationSec": 37888,
+      "expPerHour": 16966,
+      "gold": 443601,
       "goldPerHour": 0,
       "hp": 1031,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 11864,
+      "kills": 11904,
       "level": 61,
       "mana": 309,
       "maxHp": 1031,
@@ -1278,6 +1278,8 @@
       "premiumUntil": 0,
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1286,8 +1288,6 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1297,13 +1297,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792984924770,
+      "updatedAt": 1792985044624,
       "vocation": "KNIGHT",
-      "xp": "3510365"
+      "xp": "3510965"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.8132171630859375,
+  "ramAllocMB": 1.3369064331054688,
   "ramSysMB": 17.34986114501953,
-  "uptime": "10h30m7s"
+  "uptime": "10h32m7s"
 }
