@@ -1262,14 +1262,14 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Daramian Minotaur Pyramid",
-      "durationSec": 33449,
-      "expPerHour": 16970,
-      "gold": 441627,
+      "durationSec": 33569,
+      "expPerHour": 16973,
+      "gold": 441688,
       "goldPerHour": 0,
       "hp": 1031,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 10512,
+      "kills": 10551,
       "level": 61,
       "mana": 309,
       "maxHp": 1031,
@@ -1277,7 +1277,6 @@
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1285,10 +1284,11 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
@@ -1297,13 +1297,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1792980605779,
+      "updatedAt": 1792980725681,
       "vocation": "KNIGHT",
-      "xp": "3490085"
+      "xp": "3490670"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.9762115478515625,
+  "ramAllocMB": 3.0439834594726562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "9h18m8s"
+  "uptime": "9h20m8s"
 }
