@@ -25,3 +25,9 @@ data/
 # OS artifacts
 .DS_Store
 Thumbs.db
+
+# Agent & DB caches
+.opencode/
+*.mbvmdb
+*.mbvm
+.gemini/
