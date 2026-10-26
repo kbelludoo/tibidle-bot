@@ -1272,14 +1272,14 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Dragon Lair",
-      "durationSec": 11726,
-      "expPerHour": 5314,
-      "gold": 128668,
+      "durationSec": 11848,
+      "expPerHour": 5315,
+      "gold": 126037,
       "goldPerHour": 0,
-      "hp": 893,
+      "hp": 592,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 459,
+      "kills": 463,
       "level": 61,
       "mana": 13,
       "maxHp": 1031,
@@ -1287,7 +1287,6 @@
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1296,24 +1295,25 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793002086403,
+      "updatedAt": 1793002208332,
       "vocation": "KNIGHT",
-      "xp": "3553295"
+      "xp": "3553480"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.3446731567382812,
+  "ramAllocMB": 3.2564010620117188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "15h16m8s"
+  "uptime": "15h18m10s"
 }
