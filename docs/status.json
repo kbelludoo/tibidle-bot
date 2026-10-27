@@ -1303,12 +1303,6 @@
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
-        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
-        "Conectado como Conta #1 (Sessão Autenticada)",
         "Conectado como Conta #1 (Sessão Autenticada)",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
@@ -1317,19 +1311,25 @@
         "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
         "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
         "Conectado como Conta #1 (Sessão Autenticada)",
-        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo..."
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)",
+        "Token Turnstile recebido do solver — emitindo ticket direto da VPS (IP+sid próprios)...",
+        "Emissão com token falhou (world-ticket com token recusado: world-ticket HTTP 403: {\"code\":\"play_not_allowed\",\"message\":\"acesso ao jogo ainda não liberado para esta conta\"}) — aguardando próximo...",
+        "Conectado como Conta #1 (Sessão Autenticada)"
       ],
       "status": "Aguardando Ticket (envie via push ou Web)",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793116576082,
+      "updatedAt": 1793116687286,
       "vocation": "KNIGHT",
       "xp": "3290554"
     }
   ],
   "goroutines": 13,
-  "ramAllocMB": 1.6961135864257812,
+  "ramAllocMB": 1.6653671264648438,
   "ramSysMB": 17.34986114501953,
-  "uptime": "47h4m21s"
+  "uptime": "47h6m11s"
 }
