@@ -19,12 +19,12 @@
           "runs": 6
         },
         {
-          "bestXpPerHour": 11381,
+          "bestXpPerHour": 11465,
           "deaths": 0,
           "huntId": 140,
           "huntName": "Scarabs Cave",
           "lastDuration": 43200,
-          "runs": 1
+          "runs": 2
         }
       ],
       "bestiary": [
@@ -1176,6 +1176,12 @@
         },
         {
           "completed": true,
+          "kills": 14429,
+          "name": "Scarab",
+          "target": 500
+        },
+        {
+          "completed": true,
           "kills": 13984,
           "name": "Dwarf Soldier",
           "target": 500
@@ -1208,12 +1214,6 @@
           "completed": true,
           "kills": 8877,
           "name": "Amazon",
-          "target": 500
-        },
-        {
-          "completed": true,
-          "kills": 7188,
-          "name": "Scarab",
           "target": 500
         },
         {
@@ -1287,34 +1287,34 @@
       "bestiaryTarget": "Farm VIP -\u003e Dragon Lair",
       "bestiaryTotal": 209,
       "coins": 0,
-      "currentHunt": "Scarabs Cave",
-      "durationSec": 43122,
-      "expPerHour": 11465,
-      "gold": 27720,
+      "currentHunt": "Dragon Lair",
+      "durationSec": 43,
+      "expPerHour": 4949,
+      "gold": 26645,
       "goldPerHour": 0,
-      "hp": 721,
+      "hp": 897,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 7228,
+      "kills": 1,
       "level": 60,
-      "mana": 208,
+      "mana": 15,
       "maxHp": 1016,
       "maxMana": 313,
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "Auto-Sell: vendendo 96 itens de loot...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
@@ -1323,13 +1323,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793094609695,
+      "updatedAt": 1793094733192,
       "vocation": "KNIGHT",
-      "xp": "3335432"
+      "xp": "3335739"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 2.4699554443359375,
+  "ramAllocMB": 2.5595016479492188,
   "ramSysMB": 17.34986114501953,
-  "uptime": "40h58m11s"
+  "uptime": "41h0m15s"
 }
