@@ -1288,16 +1288,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 27523,
-      "expPerHour": 11531,
-      "gold": 17506,
+      "durationSec": 27636,
+      "expPerHour": 11534,
+      "gold": 17604,
       "goldPerHour": 0,
-      "hp": 678,
+      "hp": 693,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 4640,
+      "kills": 4660,
       "level": 60,
-      "mana": 207,
+      "mana": 170,
       "maxHp": 1016,
       "maxMana": 313,
       "name": "Conta #1",
@@ -1305,7 +1305,6 @@
       "recentLogs": [
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
@@ -1315,21 +1314,22 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793123412784,
+      "updatedAt": 1793123525605,
       "vocation": "KNIGHT",
-      "xp": "3334634"
+      "xp": "3335014"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.2577362060546875,
+  "ramAllocMB": 1.3988494873046875,
   "ramSysMB": 17.34986114501953,
-  "uptime": "48h58m14s"
+  "uptime": "49h0m8s"
 }
