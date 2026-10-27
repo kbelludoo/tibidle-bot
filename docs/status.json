@@ -3,12 +3,20 @@
     {
       "benchmarks": [
         {
-          "bestXpPerHour": 5642,
-          "deaths": 7,
+          "bestXpPerHour": 16965,
+          "deaths": 0,
+          "huntId": 26,
+          "huntName": "Daramian Minotaur Pyramid",
+          "lastDuration": 43200,
+          "runs": 1
+        },
+        {
+          "bestXpPerHour": 5684,
+          "deaths": 9,
           "huntId": 46,
           "huntName": "Dragon Lair",
-          "lastDuration": 1126,
-          "runs": 7
+          "lastDuration": 16,
+          "runs": 9
         },
         {
           "bestXpPerHour": 11577,
@@ -17,26 +25,18 @@
           "huntName": "Scarabs Cave",
           "lastDuration": 43200,
           "runs": 3
-        },
-        {
-          "bestXpPerHour": 16965,
-          "deaths": 0,
-          "huntId": 26,
-          "huntName": "Daramian Minotaur Pyramid",
-          "lastDuration": 43200,
-          "runs": 1
         }
       ],
       "bestiary": [
         {
           "completed": false,
-          "kills": 442,
+          "kills": 473,
           "name": "Dragon",
           "target": 500
         },
         {
           "completed": false,
-          "kills": 298,
+          "kills": 320,
           "name": "Dragon Hatchling",
           "target": 500
         },
@@ -1284,28 +1284,27 @@
         }
       ],
       "bestiaryCompleted": 24,
-      "bestiaryTarget": "Farm VIP -\u003e Dragon Lair",
+      "bestiaryTarget": "Farm VIP -\u003e Scarabs Cave",
       "bestiaryTotal": 209,
       "coins": 0,
-      "currentHunt": "Dragon Lair",
-      "durationSec": 1235,
-      "expPerHour": 5565,
-      "gold": 24,
+      "currentHunt": "Scarabs Cave",
+      "durationSec": 86,
+      "expPerHour": 9480,
+      "gold": 41,
       "goldPerHour": 0,
-      "hp": 769,
+      "hp": 906,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 52,
-      "level": 60,
-      "mana": 38,
-      "maxHp": 1016,
-      "maxMana": 313,
+      "kills": 12,
+      "level": 59,
+      "mana": 127,
+      "maxHp": 1001,
+      "maxMana": 308,
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1316,20 +1315,21 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
-      "targetHunt": "Dragon Lair",
-      "updatedAt": 1793140325994,
+      "targetHunt": "Scarabs Cave",
+      "updatedAt": 1793140445666,
       "vocation": "KNIGHT",
-      "xp": "3387312"
+      "xp": "3205660"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.8038558959960938,
+  "ramAllocMB": 1.429443359375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "53h40m8s"
+  "uptime": "53h42m7s"
 }
