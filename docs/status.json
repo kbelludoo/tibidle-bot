@@ -1323,13 +1323,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793115464153,
+      "updatedAt": 1793115575049,
       "vocation": "KNIGHT",
       "xp": "3290554"
     }
   ],
   "goroutines": 11,
-  "ramAllocMB": 1.6626815795898438,
+  "ramAllocMB": 1.6998672485351562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "46h46m9s"
+  "uptime": "46h48m10s"
 }
