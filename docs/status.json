@@ -1288,16 +1288,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 13295,
-      "expPerHour": 11627,
-      "gold": 8625,
+      "durationSec": 13409,
+      "expPerHour": 11630,
+      "gold": 8674,
       "goldPerHour": 0,
-      "hp": 632,
+      "hp": 688,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 2260,
+      "kills": 2280,
       "level": 59,
-      "mana": 247,
+      "mana": 177,
       "maxHp": 1001,
       "maxMana": 308,
       "name": "Conta #1",
@@ -1305,7 +1305,10 @@
       "recentLogs": [
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
@@ -1314,22 +1317,19 @@
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
+        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Scarabs Cave",
-      "updatedAt": 1793153654481,
+      "updatedAt": 1793153768602,
       "vocation": "KNIGHT",
-      "xp": "3248372"
+      "xp": "3248752"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.084197998046875,
+  "ramAllocMB": 1.3707656860351562,
   "ramSysMB": 17.34986114501953,
-  "uptime": "57h22m16s"
+  "uptime": "57h24m10s"
 }
