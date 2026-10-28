@@ -1288,22 +1288,21 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 30448,
-      "expPerHour": 11646,
-      "gold": 19998,
+      "durationSec": 30577,
+      "expPerHour": 11650,
+      "gold": 20091,
       "goldPerHour": 0,
-      "hp": 788,
+      "hp": 728,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 5184,
+      "kills": 5208,
       "level": 60,
-      "mana": 170,
+      "mana": 211,
       "maxHp": 1016,
       "maxMana": 313,
       "name": "Conta #1",
       "premiumUntil": 0,
       "recentLogs": [
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
@@ -1314,22 +1313,23 @@
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
         "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight...",
         "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!",
-        "🎁 Auto-Boxes: Abrindo 1x Caixa de Treino Knight..."
+        "🎁 Recompensa Diária de Login: Dia 1 resgatado com sucesso!"
       ],
       "status": "hunting",
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793170807127,
+      "updatedAt": 1793170936288,
       "vocation": "KNIGHT",
-      "xp": "3303928"
+      "xp": "3304384"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 3.0083465576171875,
+  "ramAllocMB": 1.7078933715820312,
   "ramSysMB": 17.34986114501953,
-  "uptime": "62h8m9s"
+  "uptime": "62h10m18s"
 }
