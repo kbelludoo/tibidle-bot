@@ -1288,16 +1288,16 @@
       "bestiaryTotal": 209,
       "coins": 0,
       "currentHunt": "Scarabs Cave",
-      "durationSec": 41494,
-      "expPerHour": 11671,
-      "gold": 27409,
+      "durationSec": 41608,
+      "expPerHour": 11672,
+      "gold": 27501,
       "goldPerHour": 0,
-      "hp": 727,
+      "hp": 783,
       "id": "acc-1",
       "isPremium": false,
-      "kills": 7080,
+      "kills": 7100,
       "level": 60,
-      "mana": 247,
+      "mana": 187,
       "maxHp": 1016,
       "maxMana": 313,
       "name": "Conta #1",
@@ -1323,13 +1323,13 @@
       "strategyGoal": "Fase 1: Farmando Ouro/EXP para 1ª VIP 30d (Coins: 0/290)",
       "strategyPhase": 1,
       "targetHunt": "Dragon Lair",
-      "updatedAt": 1793181853282,
+      "updatedAt": 1793181967380,
       "vocation": "KNIGHT",
-      "xp": "3339952"
+      "xp": "3340332"
     }
   ],
   "goroutines": 10,
-  "ramAllocMB": 1.209930419921875,
+  "ramAllocMB": 2.3943939208984375,
   "ramSysMB": 17.34986114501953,
-  "uptime": "65h12m15s"
+  "uptime": "65h14m9s"
 }
